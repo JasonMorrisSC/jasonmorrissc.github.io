@@ -1,7 +1,7 @@
 ---
 title: "Avoiding the Clause Order Hassle in s(CASP)"
 date: 2022-01-09T21:50:38-07:00
-draft: true
+draft: false
 toc: true
 keywords: [scasp, "morris' laws"]
 ---
@@ -18,7 +18,7 @@ over, and need to spend time randomly trying things until the code worked.
 
 In my head, this was the "clause order hassle." 
 
-Recently Eric pointed out a problem in some example code I had posted earlier
+Recently Eric [pointed out a problem](https://medium.com/@eric64978338/hi-i-am-also-a-fans-of-logic-programming-7bcbba452d03) in some example code I had posted earlier
 (thanks Eric!) that was a perfect example of the clause order hassle. The rule, defining the winner of a game of Rock, Paper, Scissors; would fail if
 one line was first, or second, or fifth through ninth. But the code worked
 if the clause was third or forth.
