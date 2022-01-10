@@ -1,0 +1,240 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title>Jason’s Timepoint Algebra | Jason Morris</title>
+<meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=description content="If you’ve been following along over the last few weeks, you will know that I’ve been working on writing some code to do reasoning about…">
+<meta name=generator content="Hugo 0.91.2">
+<meta name=ROBOTS content="NOINDEX, NOFOLLOW">
+<link rel=stylesheet href=/ananke/css/main.min.css>
+<meta property="og:title" content="Jason’s Timepoint Algebra">
+<meta property="og:description" content="If you’ve been following along over the last few weeks, you will know that I’ve been working on writing some code to do reasoning about…">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://JasonMorrisSC.github.io/post/roundtablelaw/computational-law-diary-jasons-timepoint-algebra-d8bc215db2ce/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2020-12-01T00:26:14+00:00">
+<meta property="article:modified_time" content="2020-12-01T00:26:14+00:00">
+<meta itemprop=name content="Jason’s Timepoint Algebra">
+<meta itemprop=description content="If you’ve been following along over the last few weeks, you will know that I’ve been working on writing some code to do reasoning about…"><meta itemprop=datePublished content="2020-12-01T00:26:14+00:00">
+<meta itemprop=dateModified content="2020-12-01T00:26:14+00:00">
+<meta itemprop=wordCount content="946">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Jason’s Timepoint Algebra">
+<meta name=twitter:description content="If you’ve been following along over the last few weeks, you will know that I’ve been working on writing some code to do reasoning about…">
+</head>
+<body class="ma0 avenir bg-near-white">
+<header>
+<div class=bg-black>
+<nav class="pv3 ph3 ph4-ns" role=navigation>
+<div class="flex-l justify-between items-center center">
+<a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
+Jason Morris
+</a>
+<div class="flex-l items-center">
+<ul class="pl0 mr3">
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/about/ title="About Jason page">
+About Jason
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/project/ title="Projects page">
+Projects
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/post/ title="Rules as Code Diary page">
+Rules as Code Diary
+</a>
+</li>
+</ul>
+<div class=ananke-socials>
+<a href=https://twitter.com/RoundTableLaw target=_blank class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel=noopener aria-label="follow on Twitter——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</span></a>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main class=pb7 role=main>
+<article class="flex-l flex-wrap justify-between mw8 center ph3">
+<header class="mt4 w-100">
+<aside class="instapaper_ignoref b helvetica tracked">
+RULES AS CODE DIARY
+</aside>
+<div id=sharing class="mt3 ananke-socials">
+<a href="https://twitter.com/share?url=https://JasonMorrisSC.github.io/post/roundtablelaw/computational-law-diary-jasons-timepoint-algebra-d8bc215db2ce/&text=Jason%e2%80%99s%20Timepoint%20Algebra" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
+</span>
+</a>
+</div>
+<h1 class="f1 athelas mt3 mb1">Jason’s Timepoint Algebra</h1>
+<time class="f6 mv4 dib tracked" datetime=2020-12-01T00:26:14Z>December 1, 2020</time>
+</header>
+<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>If you’ve been following along over the last few weeks, you will know that I’ve been working on writing some code to do reasoning about time.</p>
+<p>I’ve been working on Allen Interval Algebra, but in order to use Allen Interval Algebra you need to model your problem as a set of intervals. That is to say, you need to model the things that happen as happening over a period of time, as opposed to at a specific time. That feels a little strange, so I was curious whether it was possible to get the same benefit, but using only time points, not intervals.</p>
+<p>I decided to find out if I could write some analogous code that only knew about “before, equal, and after,” but from those three properties could figure out the 13 properties in Allen Interval Algebra: “precedes, preceded by, overlaps, overlapped by, during, contains, finishes, finished by, meets, met by, starts, started by, and equal.”</p>
+<p>It turns out you can. (And in the course of doing it, you learn a lot about how to write Flora-2 code.)</p>
+<h4 id=jasons-timepoint-algebratm>Jason’s Timepoint Algebra(TM)</h4>
+<p>The way the code works is that you define timepoints, and you define interval relationships between them, you add those definitions to a network of time points, and then you can ask questions about the network.</p>
+<p>So to duplicate the effect of Allen Interval Algebra, we would need to say that there are four time points, <code>A, B, C, and D</code> the start and end of two intervals. And because we know that Allen Interval Algebra deals with intervals of non-zero duration, we can say that we know the relationship between two of them is <code>A&lt;B</code> and <code>C&lt;D</code>. Using my timepoints library, it would look like this:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog>{A,B,C,D}<span style=color:#e6db74>:</span>TimePoint.  
+AtoB<span style=color:#e6db74>:</span>IntervalRelation[<span style=color:#e6db74>from-&gt;</span>A,<span style=color:#e6db74>to-&gt;</span>B,<span style=color:#e6db74>relationship-&gt;</span><span style=color:#a6e22e>tpr</span>([<span style=color:#e6db74>before</span>])].  
+CtoD<span style=color:#e6db74>:</span>IntervalRelation[<span style=color:#e6db74>from-&gt;</span>C,<span style=color:#e6db74>to-&gt;</span>D,<span style=color:#e6db74>relationship-&gt;</span><span style=color:#a6e22e>tpr</span>([<span style=color:#e6db74>before</span>])].  
+AllenIntervals<span style=color:#e6db74>:</span>TimePointNet[<span style=color:#e6db74>point-&gt;</span>{A,B,C,D},<span style=color:#e6db74>interval-&gt;</span>{AtoB,CtoD}].
+</code></pre></div><p>Now we can ask for all valid completions of the Allen Interval network, by saying this:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog>AllenIntervals[<span style=color:#e6db74>completion-&gt;?x</span>[<span style=color:#e6db74>valid</span>]].
+</code></pre></div><p>And what you get, in about 20 seconds, is a list of the 13 Allen interval basic relations. So it works, and not in an unreasonable amount of time.</p>
+<pre tabindex=0><code>flora2 ?- AllenIntervals[completion-&gt;?x[valid]].
+
+?x = completion(AllenIntervals,[edge(A,C), edge(A,D), edge(B,C), edge(B,D)],[tpr([after]), tpr([after]), tpr([after]), tpr([after])])
+
+?x = completion(AllenIntervals,[edge(A,C), edge(A,D), edge(B,C), edge(B,D)],[tpr([after]), tpr([before]), tpr([after]), tpr([after])])
+
+?x = completion(AllenIntervals,[edge(A,C), edge(A,D), edge(B,C), edge(B,D)],[tpr([after]), tpr([before]), tpr([after]), tpr([before])])
+
+?x = completion(AllenIntervals,[edge(A,C), edge(A,D), edge(B,C), edge(B,D)],[tpr([after]), tpr([before]), tpr([after]), tpr([equal])])
+
+?x = completion(AllenIntervals,[edge(A,C), edge(A,D), edge(B,C), edge(B,D)],[tpr([after]), tpr([equal]), tpr([after]), tpr([after])])
+
+?x = completion(AllenIntervals,[edge(A,C), edge(A,D), edge(B,C), edge(B,D)],[tpr([before]), tpr([before]), tpr([after]), tpr([after])])
+
+?x = completion(AllenIntervals,[edge(A,C), edge(A,D), edge(B,C), edge(B,D)],[tpr([before]), tpr([before]), tpr([after]), tpr([before])])
+
+?x = completion(AllenIntervals,[edge(A,C), edge(A,D), edge(B,C), edge(B,D)],[tpr([before]), tpr([before]), tpr([after]), tpr([equal])])
+
+?x = completion(AllenIntervals,[edge(A,C), edge(A,D), edge(B,C), edge(B,D)],[tpr([before]), tpr([before]), tpr([before]), tpr([before])])
+
+?x = completion(AllenIntervals,[edge(A,C), edge(A,D), edge(B,C), edge(B,D)],[tpr([before]), tpr([before]), tpr([equal]), tpr([before])])
+
+?x = completion(AllenIntervals,[edge(A,C), edge(A,D), edge(B,C), edge(B,D)],[tpr([equal]), tpr([before]), tpr([after]), tpr([after])])
+
+?x = completion(AllenIntervals,[edge(A,C), edge(A,D), edge(B,C), edge(B,D)],[tpr([equal]), tpr([before]), tpr([after]), tpr([before])])
+
+?x = completion(AllenIntervals,[edge(A,C), edge(A,D), edge(B,C), edge(B,D)],[tpr([equal]), tpr([before]), tpr([after]), tpr([equal])])
+
+13 solution(s) in 21.797 seconds; elapsed time = 22.069
+</code></pre><p>I went through those 13 answers, and diagrammed them out, to confirm that they are in fact the 13 basic relations from Allen Interval Algebra. So it works!</p>
+<h4 id=simple-gets-complicated-fast>Simple Gets Complicated Fast</h4>
+<p>Now we could theoretically use the code to ask interesting questions about other sequences of events: For instance, consider a game of Rock Paper Scissors. What we know is that the game starts when or before the players count, both players shoot after the count, both shoot at the same time as or before they see the other’s shot, each sees the other’s shot after the other player shoots it, and the game ends when or after each player sees the other’s shot.</p>
+<p>If we set up that sequence of times and relationships in my time point algebra, we can ask “what are all the possible sequences of events that comply with those rules”, by typing this:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#e6db74>rps</span>[<span style=color:#e6db74>completion-&gt;?x</span>[<span style=color:#e6db74>valid</span>]].
+</code></pre></div><p>Looks simple, right? But we have a network of 7 timepoints, with a total of 21 possible relationships between them, only 9 of which are known. That leaves 12 relationships, each of which could be any of three values (before, equal, or after), which means there are 3¹² different possible concrete completions of the network, each of which would need to be generated and then tested for validity. That’s 531,441 possibilities. Which is confirmed when we run this query asking Flora-2 to count them.</p>
+<pre tabindex=0><code>flora2 ?- ?count = count{?c|rps[completion-&gt;?c]}.
+
+?count = 531441
+
+1 solution(s) in 7.641 seconds; elapsed time = 7.891
+
+Yes
+</code></pre><p>The good news is that it was able to figure that out in less than 8 seconds. The bad news is even after throwing a couple of simple optimizations at the problem, my best estimate of how long it would take it to test them all for validity with the current code is 134 days on my laptop!</p>
+<p>This is an example of the “combinatorial explosion” problem, which I think is part of the reason that Allen Interval Algebra is attractive. It reduces the complexity of the network by halving the number of entities. For every two timepoints, you have one interval instead. And reducing the number of entities has an exponential reduction in the number of relationships. If you can reduce from 7 entities to 4, you go from 21 possible relationships to 6. Which makes is faster to calculate inferences from data that fits into that model.</p>
+<h4 id=next-steps>Next Steps</h4>
+<p>Luckily, the inability to quickly check for all possible completions is not an obstacle to what I want to do. The next step is to take the time point code and use it to model the relationship in time between events that are relevant to a contract.</p>
+<h3 id=quick-notes>Quick Notes</h3>
+<ul>
+<li>Jan 12–14: Presenting on Blawx at the Legal Services Corporation Innovations in Technology (Virtual) Conference.</li>
+<li>TBD (Jan ’21): Cyberjustice Laboratory (University of Montreal) webinar on <a href=https://www.blawx.com/>Blawx</a>.</li>
+</ul>
+<ul class=pa0>
+</ul>
+<div class="mt6 instapaper_ignoref">
+</div>
+</div>
+<aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">What's in this post</p>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href=#jasons-timepoint-algebratm>Jason’s Timepoint Algebra(TM)</a></li>
+<li><a href=#simple-gets-complicated-fast>Simple Gets Complicated Fast</a></li>
+<li><a href=#next-steps>Next Steps</a></li>
+</ul>
+</li>
+<li><a href=#quick-notes>Quick Notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">Related</p>
+<ul class="pa0 list">
+<li class=mb2>
+<a href=/post/roundtablelaw/computational-law-diary-progress-on-allen-interval-algebra-e283a2ddf005/>Progress on Allen Interval Algebra</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/computational-law-diary-getting-smarter-about-time-7a72f5275ca7/>Getting Smarter about Time</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/computational-law-diary-more-explanations-encoding-safe-again-and-twitch-9f60d20d0a99/>More Explanations, Encoding SAFE again, and Twitch</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/computational-law-diary-progress-on-explanations-2ad8e37e30ad/>Progress on Explanations</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/computational-law-diary-adding-explanations-to-blawx-bdbd3e27e366/>Adding Explanations to Blawx</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/computational-law-diary-encoding-for-greater-clarity-provisions-698a83f4612c/>Encoding “For Greater Clarity” Provisions</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/playing-along-with-rules-as-code-6c837b42a33e/>Playing Along with Rules as Code</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/live-demo-integrating-docassemble-and-ergo-lite-for-logic-coding-f35e9f25f311/>Live Demo: Integrating Docassemble and Ergo Lite for Logic Coding</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/a-computer-takes-the-lsat-conclusion-86dc7467b14d/>A Computer Takes the LSAT: Conclusion</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/a-computer-takes-the-lsat-resources-77e5d07d7e3a/>A Computer Takes the LSAT: Resources</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/a-computer-takes-the-lsat-generating-fact-scenarios-3a52fd6fe908/>A Computer Takes the LSAT: Generating Fact Scenarios</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/a-computer-takes-the-lsat-question-6-884c47d55b2b/>A Computer Takes the LSAT: Question 6</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/a-computer-takes-the-lsat-question-7-aa98d14d3217/>A Computer Takes the LSAT: Question 7</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/a-computer-takes-the-lsat-question-8-bf39194443da/>A Computer Takes the LSAT: Question 8</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/a-computer-takes-the-lsat-question-9-f33d7200f48f/>A Computer Takes the LSAT: Question 9</a>
+</li>
+</ul>
+</div>
+</aside>
+</article>
+</main>
+<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+<div class="flex justify-between">
+<a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://JasonMorrisSC.github.io>
+&copy; Jason Morris 2022
+</a>
+<div>
+<div class=ananke-socials>
+<a href=https://twitter.com/RoundTableLaw target=_blank class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel=noopener aria-label="follow on Twitter——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</span></a>
+</div></div>
+</div>
+</footer>
+</body>
+</html>

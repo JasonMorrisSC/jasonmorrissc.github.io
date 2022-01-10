@@ -1,0 +1,254 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title>Progress on Explanations | Jason Morris</title>
+<meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=description content="So this week I have been working on automatically generating explanations for answers generated from Ergo Lite queries. I decided on a…">
+<meta name=generator content="Hugo 0.91.2">
+<meta name=ROBOTS content="NOINDEX, NOFOLLOW">
+<link rel=stylesheet href=/ananke/css/main.min.css>
+<meta property="og:title" content="Progress on Explanations">
+<meta property="og:description" content="So this week I have been working on automatically generating explanations for answers generated from Ergo Lite queries. I decided on a…">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://JasonMorrisSC.github.io/post/roundtablelaw/computational-law-diary-progress-on-explanations-2ad8e37e30ad/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2020-10-27T22:28:18+00:00">
+<meta property="article:modified_time" content="2020-10-27T22:28:18+00:00">
+<meta itemprop=name content="Progress on Explanations">
+<meta itemprop=description content="So this week I have been working on automatically generating explanations for answers generated from Ergo Lite queries. I decided on a…"><meta itemprop=datePublished content="2020-10-27T22:28:18+00:00">
+<meta itemprop=dateModified content="2020-10-27T22:28:18+00:00">
+<meta itemprop=wordCount content="1114">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Progress on Explanations">
+<meta name=twitter:description content="So this week I have been working on automatically generating explanations for answers generated from Ergo Lite queries. I decided on a…">
+</head>
+<body class="ma0 avenir bg-near-white">
+<header>
+<div class=bg-black>
+<nav class="pv3 ph3 ph4-ns" role=navigation>
+<div class="flex-l justify-between items-center center">
+<a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
+Jason Morris
+</a>
+<div class="flex-l items-center">
+<ul class="pl0 mr3">
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/about/ title="About Jason page">
+About Jason
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/project/ title="Projects page">
+Projects
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/post/ title="Rules as Code Diary page">
+Rules as Code Diary
+</a>
+</li>
+</ul>
+<div class=ananke-socials>
+<a href=https://twitter.com/RoundTableLaw target=_blank class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel=noopener aria-label="follow on Twitter——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</span></a>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main class=pb7 role=main>
+<article class="flex-l flex-wrap justify-between mw8 center ph3">
+<header class="mt4 w-100">
+<aside class="instapaper_ignoref b helvetica tracked">
+RULES AS CODE DIARY
+</aside>
+<div id=sharing class="mt3 ananke-socials">
+<a href="https://twitter.com/share?url=https://JasonMorrisSC.github.io/post/roundtablelaw/computational-law-diary-progress-on-explanations-2ad8e37e30ad/&text=Progress%20on%20Explanations" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
+</span>
+</a>
+</div>
+<h1 class="f1 athelas mt3 mb1">Progress on Explanations</h1>
+<time class="f6 mv4 dib tracked" datetime=2020-10-27T22:28:18Z>October 27, 2020</time>
+</header>
+<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><img src=/1__Js2Ojutpj__hpWnft1Mkwpg.png alt></p>
+<p>So this week I have been working on automatically generating explanations for answers generated from Ergo Lite queries. I decided on a working title for the explanation module of “xf2”, for “eXplainable Flora-2.”</p>
+<p>My working repo is <a href=https://github.com/Gauntlet173/xf2>here</a>, if you’re interested in looking at the code.</p>
+<p>So far, what we’ve got is explanations generated in a tree structure, using rule descriptions provided by the user, for variable-free queries that were answered using rules, conjunction (and), disjunction (or), negation (not), and user-specified facts.</p>
+<p>That’s a sort of low-level list of things that Ergo Lite can do, but it’s a good start to prove the concept.</p>
+<h4 id=the-addams-family-example>The Addams Family Example</h4>
+<p>The idea here is that you should be able to take any Ergo Lite code and use XF2 to generate explanations for answers that were based on that code. So for our example code, we will describe the Addams family, and then create a rule for what qualifies as a sibling.</p>
+<p>First, we will say that a Person can have a child, which is also a Person.</p>
+<p>Person[|child=>Person|].</p>
+<p>Then, we will explain that Morticia, Gomez, Wednesday, and Pugsley are people.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog>{Morticia,Gomez,Wednesday,Pugsley}<span style=color:#e6db74>:</span>Person.
+</code></pre></div><p>Then we will explain that Wednesday and Pugsley are children of both Morticia and Gomez.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog>{Morticia,Gomez}[<span style=color:#e6db74>child-&gt;</span>{Wednesday,Pugsley}].
+</code></pre></div><p>Now we just need to provide the rule. We are going to add a name and a “description” as meta-data to the rule. The rule itself will say one person is the sibling of another, if they are both people, and all the parents of the first are also parents of the second.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#e6db74>@</span>!{Siblings_Share_Parents[  
+    <span style=color:#e6db74>description-&gt;</span><span style=color:#e6db74>&#34;two people are siblings if ...&#34;</span><span style=color:#e6db74>^^\string</span>]}  
+<span style=color:#e6db74>?</span>X[<span style=color:#e6db74>sibling-&gt;?</span>Y] :-  
+  <span style=color:#e6db74>?</span>X<span style=color:#e6db74>:</span>Person,  
+  <span style=color:#e6db74>?</span>Y<span style=color:#e6db74>:</span>Person,  
+  <span style=color:#a6e22e>forall</span>(<span style=color:#e6db74>?parents</span>)<span style=color:#e6db74>^</span>(<span style=color:#e6db74>?</span>parents:Person[<span style=color:#e6db74>child-&gt;?</span>X] <span style=color:#e6db74>~~&gt;</span> <span style=color:#e6db74>?parents</span>[<span style=color:#e6db74>child-&gt;?</span>Y]).
+</code></pre></div><p>The only thing that is specific to XF2 in this code is the way the description is attached to the rule. And that is optional.</p>
+<p>Now if we ask whether Pugsley is Wednesday’s sibling, we get the answer “yes.”</p>
+<pre tabindex=0><code>flora2 ?- Wednesday[sibling-&gt;Pugsley].
+
+Times (in seconds): elapsed = 0.007; pure CPU = 0.000
+
+Yes
+</code></pre><p>So that’s the code that can answer questions. Now we add XF2 to the mix and see if we can get explanations for them.</p>
+<h4 id=using-xf2>Using XF2</h4>
+<p>XF2 gives the Ergo Lite user a type of object called an xf2Explanation. To use XF2, you just create an object of that type, and tell it what the query is that you would like explained. The query is called the “goal.”</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog>e:<span style=color:#e6db74>xf2Explanation</span>[<span style=color:#e6db74>goal-&gt;</span><span style=color:#960050;background-color:#1e0010>$</span>{Wednesday[<span style=color:#e6db74>sibling-&gt;</span>Pugsley]}].
+</code></pre></div><p>Then, you ask the explanation object to display itself, and you get the explanation.</p>
+<pre tabindex=0><code>flora2 ?- e[display].
+
+Goal: ${Wednesday[sibling-&gt;Pugsley][@main](http://twitter.com/main &quot;Twitter profile for @main&quot;)} is satisfied.  
+There is a rule: two people are siblings if all of the parents of the first person are also parents of the second person  
+ Goal: (${Wednesday:Person@main}, (${Pugsley:Person@main}, (\naf ((?A[child-&gt;Wednesday][@main](http://twitter.com/main &quot;Twitter profile for @main&quot;), ?A:Person@main), (\naf ?A[child-&gt;Pugsley][@main](http://twitter.com/main &quot;Twitter profile for @main&quot;)))))) is not satisfied.  
+ Conjunction.  
+  Goal: (${Pugsley:Person@main}, (\naf ((?A[child-&gt;Wednesday][@main](http://twitter.com/main &quot;Twitter profile for @main&quot;), ?A:Person@main), (\naf ?A[child-&gt;Pugsley][@main](http://twitter.com/main &quot;Twitter profile for @main&quot;))))) is not satisfied.  
+  Conjunction.  
+   Goal: (\naf ((?A[child-&gt;Wednesday][@main](http://twitter.com/main &quot;Twitter profile for @main&quot;), ?A:Person@main), (\naf ?A[child-&gt;Pugsley][@main](http://twitter.com/main &quot;Twitter profile for @main&quot;)))) is not satisfied.  
+   Negation.  
+    Goal: ((${Gomez[child-&gt;Wednesday][@main](http://twitter.com/main &quot;Twitter profile for @main&quot;)}, ${Gomez:Person@main}), (\naf Gomez[child-&gt;Pugsley][@main](http://twitter.com/main &quot;Twitter profile for @main&quot;))) is not satisfied.  
+    Conjunction.  
+     Goal: (\naf Gomez[child-&gt;Pugsley][@main](http://twitter.com/main &quot;Twitter profile for @main&quot;)) is not satisfied.  
+     Negation.  
+      Goal: ${Gomez[child-&gt;Pugsley][@main](http://twitter.com/main &quot;Twitter profile for @main&quot;)} is satisfied.  
+      Answer was provided by user.  
+     Goal: (${Gomez[child-&gt;Wednesday][@main](http://twitter.com/main &quot;Twitter profile for @main&quot;)}, ${Gomez:Person@main}) is satisfied.  
+     Conjunction.  
+      Goal: ${Gomez:Person@main} is satisfied.  
+      Answer was provided by user.  
+      Goal: ${Gomez[child-&gt;Wednesday][@main](http://twitter.com/main &quot;Twitter profile for @main&quot;)} is satisfied.  
+      Answer was provided by user.  
+   Goal: ${Pugsley:Person@main} is satisfied.  
+   Answer was provided by user.  
+  Goal: ${Wednesday:Person@main} is satisfied.  
+  Answer was provided by user.
+
+Times (in seconds): elapsed = 4.828; pure CPU = 4.265
+
+Yes  - undefined
+</code></pre><h4 id=take-aways>Take-aways</h4>
+<p>It’s only a start, but I’m very pleased with it for a few reasons. First, it is not a printout of a trace. It is a recursive printout of a tree-structured xf2Explanation object. Because of that, it could easily be exported to allow it to be displayed as a collapsible tree explanation in a web interface, for example.</p>
+<p>I did a similar explanation interface with my ABA Innovation Fellowship project <a href=https://github.com/Gauntlet173/docassemble-openlcbr>docassemble-openlcbr</a>, which you can <a href=https://medium.com/@jason_90344/legal-expert-systems-just-got-smarter-e7e12b75e872>read about here</a>.</p>
+<p>Second, it is taking meta-data that the user provided in their rules and using that to build the explanation. So we know we can improve the output to be as readable as the user would like, and we can include links to source materials for rules to enhance the transparency of the encoding.</p>
+<p>Easily generating explanations, with references to authoritative source materials, is just one of the major advantages of using declarative logic programming methods for Rules as Code. And a big one. But telling people that is never as effective as showing it to them, so I’m glad we are on our way to being able to demonstrate it.</p>
+<h4 id=next-steps>Next Steps</h4>
+<p>There’s obviously still a lot to do. We need to add more sorts of statements that can be explained, with a priority on mathematical operators and aggregate functions, probably. We need to clean up the reification and module text that Ergo Lite uses: <code>${this}@module</code> should be displayed as <code>this</code>. That turns out to be a <em>little</em> complicated because Flora-2 does not come with string replacement libraries.</p>
+<p>We need to address the way that <code>a and b and c</code> gets explained as if it were <code>a and (b and c)</code>. That’s unintuitive. We need to see if there is a way to make the explanation of a universal <code>forall</code> statement more intuitive.</p>
+<p>And then we need to see if there is a way that we can add meta-data for non-rule statements, so that <code>Wednesday:Person</code> can be displayed as <code>Wednesday is a Person</code>.</p>
+<p>What I will probably do going forward is re-implement our encoding of SAFE in Ergo Lite, and use that encoding as a motivating example to be able to generate explanations for various outcomes.</p>
+<h3 id=quick-notes>Quick Notes</h3>
+<ul>
+<li>Oct 29 (This Thursday): Stanford CodeX lunch webinar on <a href=https://www.blawx.com/>Blawx</a> (free to join, if you’re interested)</li>
+<li>Nov 4: Cyberjustice Laboratory (University of Montreal) webinar on <a href=https://www.blawx.com/>Blawx</a></li>
+<li>Nov 17: European Commission Rules as Code <a href=https://www.blawx.com/>Blawx</a> demo in conjunction with the OECD’s “<a href=https://gov-after-shock.oecd-opsi.org/>Government After Shock</a>” event.</li>
+<li>Nov 17&18: Guest lecturing for Megan Ma’s course at Sciences Po.</li>
+<li>Nov 24: Rules as Code session with Canada School of Public Service</li>
+</ul>
+<p><em>I am a lawyer at Round Table Law, I teach “Coding the Law” at the University of Alberta Faculty of Law, and I’m a senior researcher at the Singapore Management University Centre for Computational Law. Computational Law Diary is a series of posts on what I’m thinking about in the computational law world. They are my own opinion, and do not reflect the opinions of the Centre, the Research Programme, SMU, U of A, or anyone else.</em></p>
+<ul class=pa0>
+</ul>
+<div class="mt6 instapaper_ignoref">
+</div>
+</div>
+<aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">What's in this post</p>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href=#the-addams-family-example>The Addams Family Example</a></li>
+<li><a href=#using-xf2>Using XF2</a></li>
+<li><a href=#take-aways>Take-aways</a></li>
+<li><a href=#next-steps>Next Steps</a></li>
+</ul>
+</li>
+<li><a href=#quick-notes>Quick Notes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">Related</p>
+<ul class="pa0 list">
+<li class=mb2>
+<a href=/post/roundtablelaw/computational-law-diary-adding-explanations-to-blawx-bdbd3e27e366/>Adding Explanations to Blawx</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/computational-law-diary-encoding-for-greater-clarity-provisions-698a83f4612c/>Encoding “For Greater Clarity” Provisions</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/playing-along-with-rules-as-code-6c837b42a33e/>Playing Along with Rules as Code</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/live-demo-integrating-docassemble-and-ergo-lite-for-logic-coding-f35e9f25f311/>Live Demo: Integrating Docassemble and Ergo Lite for Logic Coding</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/a-computer-takes-the-lsat-conclusion-86dc7467b14d/>A Computer Takes the LSAT: Conclusion</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/a-computer-takes-the-lsat-resources-77e5d07d7e3a/>A Computer Takes the LSAT: Resources</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/a-computer-takes-the-lsat-generating-fact-scenarios-3a52fd6fe908/>A Computer Takes the LSAT: Generating Fact Scenarios</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/a-computer-takes-the-lsat-question-6-884c47d55b2b/>A Computer Takes the LSAT: Question 6</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/a-computer-takes-the-lsat-question-7-aa98d14d3217/>A Computer Takes the LSAT: Question 7</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/a-computer-takes-the-lsat-question-8-bf39194443da/>A Computer Takes the LSAT: Question 8</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/a-computer-takes-the-lsat-question-9-f33d7200f48f/>A Computer Takes the LSAT: Question 9</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/a-computer-takes-the-lsat-question-10-2172137fdc57/>A Computer Takes the LSAT: Question 10</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/a-computer-takes-the-lsat-the-preamble-8b25c994ef7c/>A Computer Takes the LSAT: The Preamble</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/a-computer-takes-the-lsat-introduction-3a65fd8b982/>A Computer Takes the LSAT: Introduction</a>
+</li>
+</ul>
+</div>
+</aside>
+</article>
+</main>
+<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+<div class="flex justify-between">
+<a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://JasonMorrisSC.github.io>
+&copy; Jason Morris 2022
+</a>
+<div>
+<div class=ananke-socials>
+<a href=https://twitter.com/RoundTableLaw target=_blank class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel=noopener aria-label="follow on Twitter——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</span></a>
+</div></div>
+</div>
+</footer>
+</body>
+</html>

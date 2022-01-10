@@ -1,0 +1,319 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title>Avoiding the Clause Order Hassle in s(CASP) | Jason Morris</title>
+<meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=description content="The Clause Order Hassle Learning to use s(CASP) to encode legislation over the course of the last year or so has been at times frustrating. The reason for that is that I would often find myself with code that did not work as expected, and I could not understand why. Then, I would make changes, usually by changing the order of the lines of code, or by changing the number of predicates I was using, and the code would start to work.">
+<meta name=generator content="Hugo 0.91.2">
+<meta name=ROBOTS content="NOINDEX, NOFOLLOW">
+<link rel=stylesheet href=/ananke/css/main.min.css>
+<meta property="og:title" content="Avoiding the Clause Order Hassle in s(CASP)">
+<meta property="og:description" content="The Clause Order Hassle Learning to use s(CASP) to encode legislation over the course of the last year or so has been at times frustrating. The reason for that is that I would often find myself with code that did not work as expected, and I could not understand why. Then, I would make changes, usually by changing the order of the lines of code, or by changing the number of predicates I was using, and the code would start to work.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://JasonMorrisSC.github.io/post/2022-01-09_scasp_trick/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2022-01-09T21:50:38-07:00">
+<meta property="article:modified_time" content="2022-01-09T21:50:38-07:00">
+<meta itemprop=name content="Avoiding the Clause Order Hassle in s(CASP)">
+<meta itemprop=description content="The Clause Order Hassle Learning to use s(CASP) to encode legislation over the course of the last year or so has been at times frustrating. The reason for that is that I would often find myself with code that did not work as expected, and I could not understand why. Then, I would make changes, usually by changing the order of the lines of code, or by changing the number of predicates I was using, and the code would start to work."><meta itemprop=datePublished content="2022-01-09T21:50:38-07:00">
+<meta itemprop=dateModified content="2022-01-09T21:50:38-07:00">
+<meta itemprop=wordCount content="1251">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Avoiding the Clause Order Hassle in s(CASP)">
+<meta name=twitter:description content="The Clause Order Hassle Learning to use s(CASP) to encode legislation over the course of the last year or so has been at times frustrating. The reason for that is that I would often find myself with code that did not work as expected, and I could not understand why. Then, I would make changes, usually by changing the order of the lines of code, or by changing the number of predicates I was using, and the code would start to work.">
+</head>
+<body class="ma0 avenir bg-near-white">
+<header>
+<div class=bg-black>
+<nav class="pv3 ph3 ph4-ns" role=navigation>
+<div class="flex-l justify-between items-center center">
+<a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
+Jason Morris
+</a>
+<div class="flex-l items-center">
+<ul class="pl0 mr3">
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/about/ title="About Jason page">
+About Jason
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/project/ title="Projects page">
+Projects
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/post/ title="Rules as Code Diary page">
+Rules as Code Diary
+</a>
+</li>
+</ul>
+<div class=ananke-socials>
+<a href=https://twitter.com/RoundTableLaw target=_blank class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel=noopener aria-label="follow on Twitter——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</span></a>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main class=pb7 role=main>
+<article class="flex-l flex-wrap justify-between mw8 center ph3">
+<header class="mt4 w-100">
+<aside class="instapaper_ignoref b helvetica tracked">
+RULES AS CODE DIARY
+</aside>
+<div id=sharing class="mt3 ananke-socials">
+<a href="https://twitter.com/share?url=https://JasonMorrisSC.github.io/post/2022-01-09_scasp_trick/&text=Avoiding%20the%20Clause%20Order%20Hassle%20in%20s%28CASP%29" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
+</span>
+</a>
+</div>
+<h1 class="f1 athelas mt3 mb1">Avoiding the Clause Order Hassle in s(CASP)</h1>
+<time class="f6 mv4 dib tracked" datetime=2022-01-09T21:50:38-07:00>January 9, 2022</time>
+</header>
+<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id=the-clause-order-hassle>The Clause Order Hassle</h2>
+<p>Learning to use s(CASP) to encode legislation over the course of the last year
+or so has been at times frustrating. The reason for that is that I would often
+find myself with code that did not work as expected, and I could not understand
+why. Then, I would make changes, usually by changing the order of the lines
+of code, or by changing the number of predicates I was using, and the code would start to work. But, I would
+continue to not understand why. So I would continue to make the same mistakes over and
+over, and need to spend time randomly trying things until the code worked.</p>
+<p>In my head, this was the &ldquo;clause order hassle.&rdquo;</p>
+<p>Recently Eric <a href=https://medium.com/@eric64978338/hi-i-am-also-a-fans-of-logic-programming-7bcbba452d03>pointed out a problem</a> in some example code I had posted earlier
+(thanks Eric!) that was a perfect example of the clause order hassle. The rule, defining the winner of a game of Rock, Paper, Scissors; would fail if
+one line was first, or second, or fifth through ninth. But the code worked
+if the clause was third or forth.</p>
+<p>I asked the experts about it, and they gave me a little context
+about why it was expected behaviour, if completely unhelpful. So I
+decided to use that insight to finally actually figure out what was going on.</p>
+<p>I <em>think</em> I managed it.</p>
+<h2 id=you-cant-be-your-own-sister>You Can&rsquo;t Be Your Own Sister</h2>
+<p>There&rsquo;s a stereotypical example in writing logical code of the definition
+of &ldquo;sibling.&rdquo; The new coder forgets to include things that seem intuitive
+to a person, but which, because of the way Prolog searches, are necessary
+to make explicit.</p>
+<p>This code seems correct at first glance.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#a6e22e>siblings</span>(X,Y) :-
+  <span style=color:#a6e22e>parent</span>(X,Z),
+  <span style=color:#a6e22e>parent</span>(Y,Z).
+</code></pre></div><p>Basically, &ldquo;two things are siblings if they have the same parent.&rdquo; But in prolog, just because you named one variable X and the other variable Y doesn&rsquo;t
+meant that they can&rsquo;t both refer to the same thing. Unless you want to say
+that someone is their own sister, you need to add an extra line.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#a6e22e>sibling</span>(X,Y) :-
+  <span style=color:#a6e22e>parent</span>(X,Z),
+  <span style=color:#a6e22e>parent</span>(Y,Z),
+  X <span style=color:#e6db74>\=</span> Y.
+</code></pre></div><p>That&rsquo;s a simple example of how you have to understand the operational
+semantics of the langauge you are using in order to know how to correctly
+model things. The problem I was having with s(CASP) is the same sort. It
+turns out that the problem I had arises in this code, too.</p>
+<h2 id=scasps-shortcut>s(CASP)&rsquo;s shortcut</h2>
+<p>One of the features of s(CASP) is that it has default negation, and it automatically generates programs, called &ldquo;duals&rdquo; that describe when the default negation applies. All of which just means that when something is
+not true, s(CASP) can explain why.</p>
+<p>What follows is an simplification, but here&rsquo;s the sort of code that s(CASP) would
+generate in the background for <code>sibling/2</code> above.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#f92672>not</span> <span style=color:#a6e22e>sibling</span>(X,Y) :-
+  <span style=color:#f92672>not</span> <span style=color:#a6e22e>parent</span>(X,Z).
+<span style=color:#f92672>not</span> <span style=color:#a6e22e>sibling</span>(X,Y) :-
+  <span style=color:#a6e22e>parent</span>(X,Z),
+  <span style=color:#f92672>not</span> <span style=color:#a6e22e>parent</span>(Y,Z).
+<span style=color:#f92672>not</span> <span style=color:#a6e22e>sibling</span>(X,Y) :-
+  <span style=color:#a6e22e>parent</span>(X,Z),
+  <span style=color:#a6e22e>parent</span>(Y,Z),
+  X <span style=color:#f92672>=</span> Y.
+</code></pre></div><p>The first one means &ldquo;X doesn&rsquo;t have a parent.&rdquo; The second one means &ldquo;X has a parent, but X and Y
+do not have the same parent.&rdquo; The third one means &ldquo;X and Y have the same parent, but X and Y are the same thing.&rdquo; Because s(CASP) has helpfully
+generated this code for you, if you ask why two people are not
+siblings, s(CASP) can give you a reason based on one (and helpfully, <em>only</em> one) of those three rules.</p>
+<p>That&rsquo;s a very nice thing to have when encoding laws.
+If I tell someone that they qualify for
+a benefit, they are likely to say &ldquo;great!&rdquo; It&rsquo;s when I tell them that they
+<em>don&rsquo;t</em> qualify that they are likely to way &ldquo;why?&rdquo; Being able to answer that
+question with the minimum amount of hassle possible is exceptionally valuable.</p>
+<p>So we want to work <em>with</em> this feature of s(CASP).</p>
+<h2 id=the-problem>The Problem</h2>
+<p>The issue is that there are circumstances in which the code that s(CASP)
+writes for the dual
+program allows for conclusions that are incorrect. For instance, if
+we changed the code above by just changing the conclusion to <code>has_sibling</code>
+we get this&mldr;</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#a6e22e>has_sibling</span>(X) :-
+  <span style=color:#a6e22e>parent</span>(X,Z),
+  <span style=color:#a6e22e>parent</span>(Y,Z),
+  X <span style=color:#e6db74>\=</span> Y.
+</code></pre></div><p>Now the duals are going to be exactly the same,
+but with the conclusion <code>not has_sibling(X)</code> instead of
+<code>not sibling(X,Y)</code>.</p>
+<p>The third dual will be</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#f92672>not</span> <span style=color:#a6e22e>has_sibling</span>(X) :-
+  <span style=color:#a6e22e>parent</span>(X,Z),
+  <span style=color:#a6e22e>parent</span>(Y,Z),
+  X <span style=color:#f92672>=</span> Y.
+</code></pre></div><p>In English, that&rsquo;s still &ldquo;X and Y have the same parent, but X and Y are the same
+thing&rdquo;. When we are trying to prove that X and Y are not siblings, that&rsquo;s a good rule to follow. But if we are trying to figure out if X has any siblings at all, it&rsquo;s not.</p>
+<p>This code will report that a person both has and does not have a
+sibling at the same time. That&rsquo;s obviously no good.</p>
+<p>This is the source of the clause order hassle problems that I didn&rsquo;t
+understand before. But now that we know the source, we can avoid it.</p>
+<h2 id=the-rule-of-thumb>The Rule of Thumb</h2>
+<p>I have come up with what I think is the simplest
+rule of thumb to follow that should help avoid the clause order hassle
+in future. Maybe we&rsquo;ll call it &ldquo;Morris' First Law of s(CASP)&mldr;&rdquo;</p>
+<blockquote>
+<p>Don&rsquo;t include conditions where the opposite condition is not sufficient
+proof of the opposite conclusion.</p>
+</blockquote>
+<p>The problem with <code>has_sibling/1</code> above is the requirement that the
+two people are not the same person. While it is required for the predicate to
+hold, is not sufficient to prove the opposite when reversed.
+That is to say, just because two people with the same parent are the same
+person doesn&rsquo;t mean the person doesn&rsquo;t
+have a sibling. So including the disequaility <code>X \= Y</code> violates the rule of
+thumb.</p>
+<h2 id=how-to-follow-the-rule-of-thumb>How to Follow the Rule of Thumb</h2>
+<p>If you run into a situation where you have a clause that is a necessary
+condition of &ldquo;yes&rdquo;, but not a sufficient condition of &ldquo;no&rdquo;, you have two options:</p>
+<ul>
+<li>change the conclusion (e.g. from <code>has_sibling/1</code> to <code>siblings/2</code>), or</li>
+<li>replace the offending clause with an intermediary predicate, of which it
+<strong>is</strong> sufficient proof of falsehood when negated, and make it
+a condition of that new predicate.</li>
+</ul>
+<p>For an example of the second option, here is what I ended up doing in my Rock, Paper, Scissors code.
+This code:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#a6e22e>winner</span>(Game,Player) :-
+  <span style=color:#a6e22e>game</span>(Game),
+  <span style=color:#a6e22e>player</span>(Player),
+  <span style=color:#a6e22e>player</span>(OtherPlayer),
+  <span style=color:#a6e22e>participate_in</span>(Game,Player),
+  <span style=color:#a6e22e>not_same_player</span>(Player,OtherPlayer),
+  <span style=color:#a6e22e>throw</span>(Player,Sign), 
+  <span style=color:#a6e22e>participate_in</span>(Game,OtherPlayer),
+  <span style=color:#a6e22e>throw</span>(OtherPlayer,OtherSign),
+  <span style=color:#a6e22e>beat</span>(Sign,OtherSign).
+</code></pre></div><p>turned into this code:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#a6e22e>game_has_two_different_players</span>(Game,Player,OtherPlayer) :-
+    <span style=color:#a6e22e>game</span>(Game),
+    <span style=color:#a6e22e>player</span>(Player),
+    <span style=color:#a6e22e>not_same_player</span>(Player,OtherPlayer),
+    <span style=color:#a6e22e>player</span>(OtherPlayer),
+    <span style=color:#a6e22e>participate_in</span>(Game,Player),
+    <span style=color:#a6e22e>participate_in</span>(Game,OtherPlayer).
+
+<span style=color:#a6e22e>winner</span>(Game,Player) :-
+  <span style=color:#a6e22e>game_has_two_different_players</span>(Game,Player,OtherPlayer),
+  <span style=color:#a6e22e>throw</span>(Player,Sign),
+  <span style=color:#a6e22e>throw</span>(OtherPlayer,OtherSign),
+  <span style=color:#a6e22e>beat</span>(Sign,OtherSign).
+</code></pre></div><p>In the first version, <code>not_same_player</code> violated the rule of thumb. In the
+second version, I have added a new predicate, <code>game_has_two_players</code>, where
+<code>not_same_player</code> is both a necessary condition of true, and its opposite is
+a sufficient condition for false. Then I have used that predicate instead in
+the definition of <code>winner</code>.</p>
+<h2 id=caveats>Caveats</h2>
+<p>This is a rule of thumb. It is not the only, or in some cases even the best
+way of avoiding this problem with dual programs. It just seems like the rule
+that will be easiest to remember and follow, so I&rsquo;m going to try it.</p>
+<p>Also, using this rule unfortunately does not eliminate all of the circumstances
+in which the order of the clauses matters. There are other rules of thumb
+that need to be followed, too, for best results.</p>
+<p>But I&rsquo;m hoping it will save me some time and effort later this year when I start
+comparing s(CASP) code to code written in other languages. And I hope that sharing it saves at least one person the many hours I spent changing the order of clauses in s(CASP) for no reason.</p>
+<ul class=pa0>
+</ul>
+<div class="mt6 instapaper_ignoref">
+</div>
+</div>
+<aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">What's in this post</p>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#the-clause-order-hassle>The Clause Order Hassle</a></li>
+<li><a href=#you-cant-be-your-own-sister>You Can&rsquo;t Be Your Own Sister</a></li>
+<li><a href=#scasps-shortcut>s(CASP)&rsquo;s shortcut</a></li>
+<li><a href=#the-problem>The Problem</a></li>
+<li><a href=#the-rule-of-thumb>The Rule of Thumb</a></li>
+<li><a href=#how-to-follow-the-rule-of-thumb>How to Follow the Rule of Thumb</a></li>
+<li><a href=#caveats>Caveats</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">Related</p>
+<ul class="pa0 list">
+<li class=mb2>
+<a href=/post/constraint_dates_scasp/>Constraining Dates in s(CASP)</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/computational-law-diary-2020-2021-in-review-51b66f3253b4/>Rules as Code Diary 2020–2021 in Review</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/s-casp-swi-prolog-ccf8e53c951a/>s(CASP) + SWI-Prolog = 🔥</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/rules-as-code-extended-abstract-to-appear-in-icail-21-proceedings-7fc5dedbf8b8/>“Rules as Code” Extended Abstract to appear in ICAIL ’21 Proceedings</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/need-legal-tech-hire-an-architect-1a031673654a/>Need Legal Tech? Hire an Architect.</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/how-rules-as-code-makes-laws-better-115ab62ab6c4/>How Rules as Code Makes Laws Better</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/open-source-legal-expert-systems-video-3m-b57bcde7f490/>Open Source Legal Expert Systems Video (3m)</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/introducing-l4-docassemble-69ce4b1fb1e7/>Introducing L4-Docassemble</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/legal-drafting-to-avoid-computational-complexity-115a55818493/>Legal Drafting to Avoid Computational Complexity</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/modelling-the-world-the-law-and-the-question-e24ea763120e/>Modelling the World, the Law, and the Question</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/and-why-it-matters-for-rules-as-code-8610e49511c8/>… and why it matters for Rules as Code</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/what-is-justified-stable-model-constraint-query-driven-answer-set-programming-c895955bf68c/>What is Justified Stable Model Constraint Query-Driven Answer Set Programming?</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/s-casp-as-a-rules-as-code-tool-97ec3435975c/>s(CASP) as a Rules as Code Tool</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/computational-law-diary-encoding-covid-19-rules-using-basic-event-calculus-in-s-casp-32a55b789eeb/>Encoding Covid-19 rules using Basic Event Calculus in s(CASP)</a>
+</li>
+<li class=mb2>
+<a href=/post/roundtablelaw/computational-law-diary-explainable-legal-ai-in-s-casp-19da0a5d956/>Explainable Legal AI in s(CASP)</a>
+</li>
+</ul>
+</div>
+</aside>
+</article>
+</main>
+<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+<div class="flex justify-between">
+<a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://JasonMorrisSC.github.io>
+&copy; Jason Morris 2022
+</a>
+<div>
+<div class=ananke-socials>
+<a href=https://twitter.com/RoundTableLaw target=_blank class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel=noopener aria-label="follow on Twitter——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</span></a>
+</div></div>
+</div>
+</footer>
+</body>
+</html>

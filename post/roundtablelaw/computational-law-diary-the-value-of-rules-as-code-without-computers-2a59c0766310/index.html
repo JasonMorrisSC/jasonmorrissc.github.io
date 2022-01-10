@@ -1,0 +1,150 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title>The Value of Rules as Code Without Computers | Jason Morris</title>
+<meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=description content="I’ve been preparing a presentation for the Canadian Institute for the Administration of Justice’s Legislative Drafting Conference on Rules…">
+<meta name=generator content="Hugo 0.91.2">
+<meta name=ROBOTS content="NOINDEX, NOFOLLOW">
+<link rel=stylesheet href=/ananke/css/main.min.css>
+<meta property="og:title" content="The Value of Rules as Code Without Computers">
+<meta property="og:description" content="I’ve been preparing a presentation for the Canadian Institute for the Administration of Justice’s Legislative Drafting Conference on Rules…">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://JasonMorrisSC.github.io/post/roundtablelaw/computational-law-diary-the-value-of-rules-as-code-without-computers-2a59c0766310/"><meta property="article:section" content="post">
+<meta property="article:published_time" content="2020-08-14T16:36:05+00:00">
+<meta property="article:modified_time" content="2020-08-14T16:36:05+00:00">
+<meta itemprop=name content="The Value of Rules as Code Without Computers">
+<meta itemprop=description content="I’ve been preparing a presentation for the Canadian Institute for the Administration of Justice’s Legislative Drafting Conference on Rules…"><meta itemprop=datePublished content="2020-08-14T16:36:05+00:00">
+<meta itemprop=dateModified content="2020-08-14T16:36:05+00:00">
+<meta itemprop=wordCount content="920">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="The Value of Rules as Code Without Computers">
+<meta name=twitter:description content="I’ve been preparing a presentation for the Canadian Institute for the Administration of Justice’s Legislative Drafting Conference on Rules…">
+</head>
+<body class="ma0 avenir bg-near-white">
+<header>
+<div class=bg-black>
+<nav class="pv3 ph3 ph4-ns" role=navigation>
+<div class="flex-l justify-between items-center center">
+<a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
+Jason Morris
+</a>
+<div class="flex-l items-center">
+<ul class="pl0 mr3">
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/about/ title="About Jason page">
+About Jason
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/project/ title="Projects page">
+Projects
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/post/ title="Rules as Code Diary page">
+Rules as Code Diary
+</a>
+</li>
+</ul>
+<div class=ananke-socials>
+<a href=https://twitter.com/RoundTableLaw target=_blank class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel=noopener aria-label="follow on Twitter——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</span></a>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main class=pb7 role=main>
+<article class="flex-l flex-wrap justify-between mw8 center ph3">
+<header class="mt4 w-100">
+<aside class="instapaper_ignoref b helvetica tracked">
+RULES AS CODE DIARY
+</aside>
+<div id=sharing class="mt3 ananke-socials">
+<a href="https://twitter.com/share?url=https://JasonMorrisSC.github.io/post/roundtablelaw/computational-law-diary-the-value-of-rules-as-code-without-computers-2a59c0766310/&text=The%20Value%20of%20Rules%20as%20Code%20Without%20Computers" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
+</span>
+</a>
+</div>
+<h1 class="f1 athelas mt3 mb1">The Value of Rules as Code Without Computers</h1>
+<time class="f6 mv4 dib tracked" datetime=2020-08-14T16:36:05Z>August 14, 2020</time>
+</header>
+<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><img src=/1__STEUmNEjEfyAlQPB71u48w.jpeg alt></p>
+<p>I’ve been preparing a presentation for the <a href=https://ciaj-icaj.ca/en/upcoming-programs/2020-legislative-drafting/>Canadian Institute for the Administration of Justice’s Legislative Drafting Conference</a> on Rules as Code. In the process of trying to figure out how to introduce the topic of Rules as Code to legislative drafters, I’ve been thinking about the different meanings the term “Rules as Code” has been given.</p>
+<p>Some people use “Rules as Code” to refer to the larger public service delivery methodology, which includes a method of legislative drafting, where you write the legislation in natural languages and computer languages at the same time. Some people, I think more intuitively, use “Rules as Code” to refer to the product-a piece of legislation written in a programming language.</p>
+<p>They aren’t the same thing, and the naming has been a source of some minor controversy among proponents. But what interests me is not what you call them. What interests me is what happens when you combine them, and what happens when you don’t.</p>
+<p>You can do both at the same time, clearly. You can use the Rules as Code methodology, and through that process produce Rules as Code products.</p>
+<p>And you can also produce Rules as Code products without using the drafting and public service delivery methodology. That type of “Rules as Code” is more or less just how legal application software would be developed now, <em>if</em> developers compartmentalize out the legal reasoning. (I think if you don’t have the legal rules separate from the rest of the code, you’re talking about “Rules in the Code, there, somewhere”, which is different.)</p>
+<p>But surprisingly, there are also benefits to the legislative drafting methodology by itself, even if you never actually deploy any code.</p>
+<blockquote>
+<p>If you want to understand something, teach it.</p>
+</blockquote>
+<p>Why is this true? Because the process of attempting to communicate something you know to a person who does not already know it forces you to engage with the difference in contexts. It’s a similar idea to the “curse of expertise”, where the expert forgets what it is like to be a person who does not already understand.</p>
+<p>Overcoming the curse of expertise requires you to put yourself in the shoes of a person who knows less, and rebuild your own understanding from that new starting point.</p>
+<p>Similarly, when you are trying to understand a piece of legislation, a computer takes the role of the person who knows less. And the syntax and semantics of the programming language give you the entire context of what the computer already knows.</p>
+<p>So attempting to put your legislation in code-even if you do it with pen and paper— forces you to understand it from a position of less context, and you learn it better. You catch mistakes you didn’t know you were making.</p>
+<p>It is, in that sense, just an advanced technique of legislative drafting.</p>
+<p>For me personally, this is not a mere hypothesis. I have consistently experienced this effect. Every time I sit down to encode a ruleset, I end up with a deeper understanding of how those rules work long before I have asked the computer to do anything with the code.</p>
+<p>Most recently I have been encoding a set of rules regarding Covid-19 in Alberta. I read them a few times and saw nothing wrong with them. Then, I tried to put them in code, and realized that there is a scenario in which a person who is known not to have the disease can nevertheless be forced to continue to isolate.</p>
+<p>Professor Scott Brewer at Harvard Law has a similar argument, which relies not on programming languages but on formal logic. He asserts that lawyers should learn to analyze, for example, appellate court decisions by making formal logic representations of the arguments made by the court, and analysing them using the methods of formal logic. Doing so reveals things that a less disciplined analysis doesn’t.</p>
+<p>The programming languages with which I am most enthusiastic about for use in Rules as Code are built on a foundation of formal logic. Perhaps at some point something along the lines of <a href=https://www.blawx.com>Blawx</a> will be used in law schools to teach legal analysis.</p>
+<p>Wouldn’t that be something?</p>
+<p>Speaking of Blawx, <a href=https://law.mit.edu/pub/blawxrulesascodedemonstration/release/1>my paper on Rules as Code and Blawx</a> <em>just</em> went live as a part of <a href=https://law.mit.edu>release 1.2 of MIT’s Computational Law Report</a>. I’d love your feedback.</p>
+<h3 id=computational-law-job-opportunity>Computational Law Job Opportunity</h3>
+<ul>
+<li>I just heard about <a href=https://www.uu.nl/en/organisation/working-at-utrecht-university/jobs/phd-position-in-hybrid-intelligence-explaining-data-driven-decisions-with-legal-ethical-or-social>a wonderful opportunity</a> for a 4-year PhD with Dr. Prakken at Ultrecht University, as part of a project to generate explanations for the conclusions of “black box” artificial intelligence algorithms. Dr. Prakken is a leading expert on modelling legal arguments, and an excellent teacher.</li>
+</ul>
+<h3 id=coming-up>Coming Up…</h3>
+<ul>
+<li>A piece I wrote for <a href=https://www.slaw.ca/>Slaw.ca</a> about the SMU Centre for Computational Law will be coming out in late August.</li>
+<li>I will also be participating in a Rules as Code panel on the first day (September 10) of the 2020 Legislative Drafting conference held (virtually) by the Canadian Institute for the Administration of Justice. Check <a href=https://ciaj-icaj.ca/en/upcoming-programs/2020-legislative-drafting/>their website</a> for registration details. There are sponsored tickets available for students, I understand.</li>
+</ul>
+<p><em>I am a lawyer at Round Table Law, I teach “Coding the Law” at the University of Alberta Faculty of Law, and I’m a senior researcher at the Singapore Management University Centre for Computational Law. Computational Law Diary is a series of posts on what I’m thinking about in the computational law world. They are my own opinion, and do not reflect the opinions of the Centre, the Research Programme, SMU, U of A, or anyone else.</em></p>
+<ul class=pa0>
+</ul>
+<div class="mt6 instapaper_ignoref">
+</div>
+</div>
+<aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">What's in this post</p>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href=#computational-law-job-opportunity>Computational Law Job Opportunity</a></li>
+<li><a href=#coming-up>Coming Up…</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</aside>
+</article>
+</main>
+<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+<div class="flex justify-between">
+<a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://JasonMorrisSC.github.io>
+&copy; Jason Morris 2022
+</a>
+<div>
+<div class=ananke-socials>
+<a href=https://twitter.com/RoundTableLaw target=_blank class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel=noopener aria-label="follow on Twitter——Opens in a new window">
+<span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
+</span>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</span></a>
+</div></div>
+</div>
+</footer>
+</body>
+</html>
