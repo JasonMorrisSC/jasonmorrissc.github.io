@@ -6,7 +6,7 @@ toc: true
 keywords: [scasp, "morris' laws"]
 ---
 
-## The Clause Order Hassle Check
+## The Clause Order Hassle
 
 Learning to use s(CASP) to encode legislation over the course of the last year
 or so has been at times frustrating. The reason for that is that I would often
