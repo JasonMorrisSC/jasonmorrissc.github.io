@@ -7,7 +7,7 @@ keywords: [scasp, "morris' laws"]
 ---
 
 ## The Clause Order Hassle
- 
+
 Learning to use s(CASP) to encode legislation over the course of the last year
 or so has been at times frustrating. The reason for that is that I would often
 find myself with code that did not work as expected, and I could not understand
