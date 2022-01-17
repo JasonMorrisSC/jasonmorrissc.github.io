@@ -73,6 +73,8 @@ addition of defaults.
 L Thorne McCarty talked about his Language for Legal Discourse (LLD), an intuitionistic
 logic programming language for law.
 
+Thorne has posted his [slides](https://www.researchgate.net/publication/357885649_Slides2022pdf) and his [notes](https://www.researchgate.net/publication/357885463_Notes2022pdf) online, and will be hosing a Q&A on Friday the 28th, as part of the Virtual Workshop of POPL.
+
 His talk was a recap of his previous work on LLD going back to the 1990s.
 Unfortunately, it was extremely technical, and content rich, and the time available
 did not make it possible to get a clear understanding. The examples of code that
