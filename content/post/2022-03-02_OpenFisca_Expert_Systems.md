@@ -9,8 +9,6 @@ keywords: ['cls2022','openfisca','expert systems']
 ## Using OpenFisca to Power Expert Systems in the Canadian Public Service: Lessons Learned
 
 This is a draft of a paper being prepared for the Singapore Management University Centre for Computational Law's [Computational Legal Studies Conference 2022]().
-As an accepted paper at CLS2022, it is also under consideration for publication in the [MIT Computational Law Review]().  Whether or not to publish a final version prior to that
-event or prior to publication in the MIT CLR will depend on the opinions of those two organizations.
  
 ## Abstract
 
@@ -288,18 +286,52 @@ It may be a tax rate, an entitlement amount, or the age of majority.
 As an example, let's assume that there is a law that defines a minor as someone under the age of 18. You want to build an application that
 can accept a birth date, and calculate whether the person is a minor.
 
-The first step is to set out the relevant entities. In this case, the only entity type we are concerned with is "Individual."
+The first step is to set out the relevant entities. In this case, the only entity type we are concerned with is "Person."
 
 ```python
 # This is the code for building a person entity
+
+Person = build_entity(
+    key = "person",
+    plural = "persons",
+    label = "An individual. The minimal legal entity on which a legislation might be applied.",
+    doc = """
+    ...
+    """,
+    is_person = True,
+    )
+
 ```
 
 Now that we have defined the entity, we need to define three variables: `birth_date` will hold information about what day the person was born,
-`age` will hold information about their current age, and `is_minor` will hold information about whether they are legally a minor. Here is how those
+`age` will hold information about their current age, and `is_minor` will hold information about whether they are legally a minor. Here is how `age` and `birth_date`
 variables would be defined.
 
 ```python
-age
+class birth_date(Variable):
+    value_type = date
+    entity = Person
+    label = "Birth date"
+    definition_period = ETERNITY  # This variable cannot change over time.
+
+class age(Variable):
+    value_type = int
+    entity = Person
+    definition_period = DAY
+    label = "Person's age (in years)"
+
+    def formula(person, period, _parameters):
+        """
+        ...
+        """
+        birth = person("birth_date", period)
+        birth_year = birth.astype("datetime64[Y]").astype(int) + 1970
+        birth_month = birth.astype("datetime64[M]").astype(int) % 12 + 1
+        birth_day = (birth - birth.astype("datetime64[M]") + 1).astype(int)
+
+        is_birthday_past = (birth_month < period.start.month) + (birth_month == period.start.month) * (birth_day <= period.start.day)
+
+        return (period.start.year - birth_year) - where(is_birthday_past, 0, 1)
 ```
 Note that the encoding of `age` specifies that the relevant time period is "DAY", whereas the encoding of `birth_date` says that the relevant time
 period is "ETERNITY".  This is how you explain to OpenFisca that a person has only one `birth_date`, and it never changes, but their `age` might
@@ -308,48 +340,108 @@ to day. The definition of `birth_date` has no formula, which means that for Open
 need to be provided by the user.  On the other had `age` has a formula which can be used to calculate the person's age based on their `birth_date`.
 
 ```python
-minor
+class is_minor(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = DAY
+    label = "Whether the person is a minor"
+
+    def formula(person, period, parameters):
+      age = person('age',period)
+      age_of_majority = parameters(period).age_of_majority
+      of_age = age_of_majority <= age
+      return where(of_age, False, True)
 ```
+
+This example is written to demonstrate how OpenFisca code differs from standard Python.
+We  use the NumPy function `where` rather than the conditional `if` because the variables
+`age`, `age_of_majority`, and `of_age` are all vectors, being calculated on the basis of other
+vectors. Had we used `return not of_age`, the formula would always return `False`, because
+`not` does not reverse the values inside a vector, it just uses the vector to generate a
+single truth value and reverses it.
+
 In our formula for calculating whether or not the person is a minor, we make reference to a parameter, the `age_of_majority`.  That parameter
 is defined elsewhere, in a YAML file, as follows.
-```python
-age_of_majority
+```yaml
+# The Age of Majority
+description: Age of Majority (in years). 
+metadata:
+  unit: year
+values:
+  1971-07-01:
+    value: 18
 ```
 With these encodings, we can deploy our code to an API. OpenFisca greatly simplifies the task of generating an API
 capable of handling these queries. Once the encoding is complete, a web server with the relevant end points can
-be started by executing the following commands:
-```bash
-how to start the API server
-```
-Once the API server is running, any user can send a POST query to the `/calculate` end point with a query in the
+be started by executing the `openfisca serve` command. Once the API server is running, 
+any user can send a POST query to the `/calculate` end point with a query in the
 following format.
 ```json
-query
+{
+  "persons": {
+    "person1": {
+      "birth_date": {
+        "ETERNITY": "2000-04-01"
+      },
+      "age": {
+        "2022-02-17": null
+      }
+    }
+  }
+}
 ```
-Facts that are known are specified, including the date for which they are known. Queries are expressed by including
-facts and setting their value to `null`.
+Facts that are known are specified, including the period for which they are known. Queries are expressed by including
+facts and the date for which you would like to derive them, and setting their value to `null`.
 
 If the user sends the above query to the OpenFisca API `/calculate` endpoint, they receive the following response.
 ```json
-response
+{
+  "persons": {
+    "person1": {
+      "birth_date": {
+        "ETERNITY": "2000-04-01"
+      },
+      "age": {
+        "2022-02-17": 21
+      }
+    }
+  }
+}
 ```
 
-If we sent an under-specified query, with no age and no birth date, like this:
+If we sent an under-specified query, asking for age and not providing birth date, like this:
 ```json
-no info
+{
+  "persons": {
+    "person1": {
+      "age": {
+        "2022-02-17": null
+      }
+    }
+  }
+}
 ```
 we receive this as a response:
 ```json
-no answer
+{
+  "persons": {
+    "person1": {
+      "age": {
+        "2022-02-17": 52
+      }
+    }
+  }
+}
 ```
 
-This shows an important feature of OpenFisca for expert system development. If a value is not provided for a variable,
+This shows an important feature of OpenFisca for expert system development. If a value is not provided for a variable (in this case 'birth_date')
 and that value cannot be calculated, OpenFisca treats that value as though it's numerical representation were
 zero. If the value is boolean, OpenFisca will presume it is false. If the value is a date, OpenFisca will
 presume the date is January 1, 1970. If it is a number, OpenFisca will presume it is zero, and if it is a string,
 OpenFisca will presume it is an empty string.
 
-This makes it difficult to represent the concept of an "unknown" value when dealing with normal OpenFisca code.
+Here, OpenFisca has treated no information for the user's birth date as "January 1, 1970", and calculated
+that the person is 52 years of age.
 
 ## Using OpenFisca to Power Expert Systems
 
@@ -407,9 +499,19 @@ You
 may also need to create variables to represent unnamed sub-sections of a named section of law when
 knowing whether and how those unnamed sub-sections applied is relevant to the user.
 
-By way of example, the OAS Act includes provisions which can be satisfied in
-one way for residents, and in another way for non-residents. The rules for both appear inside a single numbered paragraph. Which set of rules applies, and whether it was satisfied, and why, may be important information for
-the user to have. As such, some variables in this approach also represent unnamed sub-parts of legislative clauses.
+Consider this example from the Old Age Security Act, section 3(1)(b)(iii):
+
+>3 (1) Subject to this Act and the regulations, a full monthly pension may be paid to ...  
+> (b) every person who ...  
+> (iii) has resided in Canada for the ten years immediately preceding the day on which that person’s application is approved or, if that person has not so resided, has, after attaining eighteen years of age, been present in Canada prior to those ten years for an aggregate period at least equal to three times the aggregate periods of absence from Canada during those ten years, and has resided in Canada for at least one year immediately preceding the day on which that person’s application is approved; and
+
+Inside OAS 3(1)(b)(iii) there is a way of qualifiying if the person has resided in Canada, and there
+is a way of qualifying if the person has not. Encoding only whether section 3(1)(b)(iii) was satisfied 
+may not provide adequate information about why a person did or did not qualify, and what they can
+do to change the result, if anything.
+
+So in addition to encoding numbered sections of legislation, it is also sometimes necessary to encode
+unnamed sub-parts of legislative clauses as separate variables.
 
 ### Encoding Confidence
 
@@ -435,7 +537,26 @@ Likewise for whether age is below the age of majority. That is known if we know 
 it is a parameter. The person's age is known if their birth date is known, and their birth date is known only if the user says so, so it does not
 have a formula.
 ```python
-#Example of formulas
+class is_minor(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = DAY
+    label = "Whether the person is a minor"
+
+    def formula(person, period, parameters):
+      age = person('age',period)
+      age_of_majority = parameters(period).age_of_majority
+      of_age = age_of_majority <= age
+      return where(of_age, False, True)
+
+class is_minor_known(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = DAY
+    label = "Whether it is known if the person is a minor"
+
+    def formula(person, period, parameters):
+      return person('age_known',period)
 ```
 
 This structure gives the user the ability to say what the birth date is, and whether or not they are confident of that information. If they are not
@@ -444,9 +565,23 @@ is carried forward to other variables that depend on it.
 
 Writing these formulas for the "known" variables takes some careful consideration.  Frequently, a variable will be calculated on a conjunction, or a disjunction, or a combination of the two. Take for example a situation where a person is entitled to a benefit if they are a minor, and a citizen. When is `entitled_to_a_benefit` "known?" It is known
 as soon as any of the conjoined elements is both known and false, because at that point, the conjunction is also known to be false. It is also known if both values are
-known, regardless whether they are true or false. This leads to formulas like the following in "known" variables.
+known, regardless whether they are true or false. This leads to formulas like the following, which is
+taken from the encoding of the OAS Act:
+
 ```python
-known if either_false or both_known
+class allowance_age_requirement_satisfied_known(Variable):
+  value_type = bool
+  entity = Person
+  definition_period = DAY
+  label = "Whether it is known if the age requirement is satisfied for Allowance eligibility"
+
+  def formula(person, period, parameters):
+    # A conjunction is known if all the elements are known or any element in known false.
+    min_false = person("allowance_age_requirement_minimum_satisfied_known", period) * not_(person("allowance_age_requirement_minimum_satisfied", period))
+    cap_false = person("allowance_age_requirement_cap_satisfied_known", period) * not_(person("allowance_age_requirement_cap_satisfied", period))
+    any_false = min_false + cap_false
+    all_known = person("allowance_age_requirement_minimum_satisfied_known", period) * person("allowance_age_requirement_cap_satisfied_known", period)
+    return any_false + 
 ```
 
 Similarly disjunctions are known if any of the disjunctive elements are known true, or if all of the elements are known. The complexity of these "known" formulas
@@ -499,14 +634,166 @@ answer provided in the explanation is contingent on the relevant inputs' assumed
 ### Old Age Security Act Example
 
 The approach described above was used to encode portions of the Old Age Security Act. That encoding
-is available at [https://github.com/JasonMorrisSC/openfisca-canada](https://github.com/JasonMorrisSC/openfisca-canada). At the time of writing, that code is also deployed publicly at [https://offnet.etc.etc..com](https://offnet.etc.etc..com).
+is available at [https://github.com/JasonMorrisSC/openfisca-canada](https://github.com/JasonMorrisSC/openfisca-canada). At the time of writing, a demo server running that code is available at [http://offnet.canadacentral.cloudapp.azure.com](http://offnet.canadacentral.cloudapp.azure.com).
 
-An example of a middle-layer server that uses the above encoding and post-processes the trace results
-to provide explanations, relevance and contingent responses, is implemented in [a Google Colab notebook
-available online]().  A video demonstrating the conversation that might happen between a user-facing
-application and that middle-layer service appears here.
+Below is an excerpt from that code, showing the formula for calculating whether the
+age requirement for old age security is satisfied:
+
+```python
+class oas_eligible_age_requirement_satisfied(Variable):
+  value_type = bool
+  entity = Person
+  definition_period = DAY
+  label = "Whether the age requirement for OAS is satisfied"
+
+  def formula(person, period, parameters):
+    satisfied = person('oas_eligible__age_above_eligibility', period)
+    return satisfied
+
+class oas_eligible_age_requirement_satisfied_known(Variable):
+  value_type = bool
+  entity = Person
+  definition_period = DAY
+  label = "Whether we know if the age requirement for OAS is satisfied"
+
+  def formula(person, period, parameters):
+    known = person('oas_eligible__age_above_eligibility_known', period)
+    return known
+```
+
+Note the verbosity of the above code, which for practical purposes, expresses only the concept
+"a person satisfies the age requirement if their age is at or above the minimum." The boilerplate
+code required is significant.
+
+Code that uses the `/trace` endpoint of the OpenFisca serverand then performs the graph analysis
+described above is available as a [Google Colab notebook](https://colab.research.google.com/drive/1MTSzJN-_vGt9py2rd4t6kWZZbyS-0vsV#scrollTo=5znmuALOCTco) and as a [GitHub Gist](https://gist.github.com/JasonMorrisSC/f044233b2641fd2dca991f6edefe89ef). Running that code inside Google Colab will
+start a temporary server which acts as the middle layer between OpenFisca and a user-facing
+application. The code announces an ngrok.io address over which it can be accessed. Note that this code is
+also written to mimic - to the degree possible - the output being provided by the existing 
+implementation of the Eligibility Estimator. The portion of the code that performs the graph
+analysis described above is included here:
+
+```python
+# Post-Process the Results
+
+  dependency_graph = nx.DiGraph()
+  for (K,V) in response['trace'].items():
+      if "_known<" not in K: # Exlclude _known variables, as they will be used to annotate
+          dependency_graph.add_node(K.split('<')[0], value=V['value'])
+          for target in V['dependencies']:
+              dependency_graph.add_edge(K.split('<')[0],target.split('<')[0])
+  for (K,V) in response['trace'].items():
+      if "_known<" in K:
+          related_node = K.split('_known')[0]
+          dependency_graph.nodes[related_node]['known'] = V['value']
+
+  incorrect_nodes = []
+  for N in dependency_graph:
+      # Not sure why this test is necessary, but duplicate nodes
+      # with no value show up for root elements in the graph
+      if 'value' in dependency_graph.nodes[N]:
+        values = dependency_graph.nodes[N]['value']
+        if 'known' in dependency_graph.nodes[N]:
+          knowns = dependency_graph.nodes[N]['known']
+        else: # Some output variables do not have associated "known" variables.
+          knowns = [True] * len(values)
+          dependency_graph.nodes[N]['known'] = knowns
+        display = []
+        for (value, known) in zip(values,knowns):
+            display.append(value if known else "unknown, potentially " + str(value))
+        dependency_graph.nodes[N]['display'] = display
+      else:
+        # Checking to see if this solves problems later for
+        # incorrectly duplicated nodes.
+        incorrect_nodes.append(N)
+
+  for i in incorrect_nodes:
+    dependency_graph.remove_node(i)
+  
+  # print(str(nx.readwrite.json_graph.adjacency_data(dependency_graph)))
+
+  def generate_explanation(goal,entity):
+      expl = {}
+      if len(dependency_graph.adj[goal]):
+        expl['reasons'] = []
+      expl[goal] = dependency_graph.nodes[goal]['display'][entity]
+      for neighbour in dependency_graph.adj[goal]:
+          expl['reasons'].append(generate_explanation(neighbour,entity))
+      return expl
+
+  output = {}
+  for benefit in ['OAS','GIS','Allowance','AFS']:
+    output[benefit] = {}
+
+
+  # This loop adds information to the output from the graph
+  # It makes a number of assumptions, such as there is only ever one entity being
+  # asked about.
+  for goal in list(set([r.split('<')[0] for r in response['requestedCalculations']])):
+    if "_known" not in goal:
+        i = 0
+        while i < len(dependency_graph.nodes[goal]['value']):
+            relevant = []
+
+            for node in descendants(dependency_graph,goal):
+                if not descendants(dependency_graph,node): # Only leaf nodes
+                    if not dependency_graph.nodes[node]['known'][i]:
+                      known_parent = False
+                      for path in all_simple_paths(dependency_graph,goal,node):
+                        for parent in path:
+                            if dependency_graph.nodes[parent]['known'][i] == True:
+                                known_parent = True
+                                break
+                        if not known_parent:
+                            relevant.append(node)
+            
+            # dependency_graph.nodes[goal]['relevant'] = list(set(relevant))
+            
+            
+
+            unaskable = ['eligible_under_social_agreement']
+            relevant_and_askable = False
+            values = dependency_graph.nodes[goal]['value']
+            conditionals = [False] * len(values)
+            dependency_graph.nodes[goal]['conditional'] = conditionals
+            if relevant:
+              for q in relevant:
+                if q not in unaskable:
+                    relevant_and_askable = True
+              if not relevant_and_askable and dependency_graph.nodes[goal]['known'][i] == False:
+                dependency_graph.nodes[goal]['conditional'][i] = True
+                
+            explanation = generate_explanation(goal,i)
+```
+
+The explanations generated are not used in the front end directly,
+but are used to generate short explanations that are displayed to the user, in an effort to duplicate
+the behaviour of the existing implementation.
+
+A thin example of a front-end application accessing that middle layer is also available as a [Google
+Colab Notebook](https://colab.research.google.com/drive/1FAwqjLRq2Ax7Y7-QextVNDeJkD01OV_W#scrollTo=L1JPR0sur8bn) and [GitHub Gist](https://gist.github.com/JasonMorrisSC/11883ddbb36c0b0b9981a903c644179e). Providing that code with the announced ngrok.io
+address for the middleware will allow you to make queries against middle layer, and display
+the results received. A video illustrating how a conversation
+might proceed between the front end of the application and the OpenFisca reasoner, is available on
+YouTube, and included here.
 
 TODO: YouTube Video
+
+If you provide only the age of 65, the server responds, with regard to OAS Eligibility, 
+"More Information Required", and provides a list of relevant inputs including whether the person is
+eligible under a social agreement with a different country, and where the person lives.
+
+If you then add information about the person's place of residence being Canada, and rerun the query,
+the answer remains
+unknown, but agreements with different countries are no longer relevant.
+
+If you provide a legal
+status of "Canadian Citizen", income of 10000, and duration of residence in Canada of 20, the
+response is that the person is eligible.
+
+If you then change the place of residence to Greece,
+the person is reported as "conditionally eligible", depending on the one remaining relevant input of
+whether they qualify under the agreement with Greece.
 
 ## Analysis of Using OpenFisca for Expert System Development
 
@@ -520,73 +807,66 @@ but understandable annoyance. I anticipate these things would fade into the back
 working with OpenFisca code. Those are also problems that exist before applying the approach described
 above.
 
-My impression of having used OpenFisca to power a legal expert system was disappointing.
-It satisfied the requirements of
+Overall, my impression of having used OpenFisca to power a legal expert system was disappointing.
+While the approach described above satisfied the requirements of
 the experiment, but my impression was that the above approach resulted in code that
-was long, repetitive, riskier and less useful than code written in other approaches.
+was long, repetitive, riskier and less useful than code written in other approaches. Expert
+systems is not what OpenFisca is for, and putting it to that use causes unnecessary friction.
 
 ### Rules as Code v Application Development
 
 Recall that application development and Rules as Code
 are not the same thing. Analyzing whether or not OpenFisca, or any particular approach to the
 use of OpenFisca, is an appropriate tool for Rules as Code generally is a very different question
-from deciding whether or not it is a good idea with regard to a given application.
+from whether it is a good approach to expert systems.
 
+In fact, analyzing Rules as Code in the context of any single application is counter-productive.
 Encoding an entire piece of legislation so that it can be used both by your application
 and arbitrary others is, in economic terms, a public good. The benefits received by the other
 users of your encoded law is a positive externality that imposes costs on the current
-development project that are impossible to recoup. Rules as Code is therefore almost
-never going to be a good idea when viewed from the context of the development of a single application.
+development project that are impossible to recoup. And the work involved in writing code that
+can do many things is necessarily higher than the work involved in writing code that can do
+only the thing you currently need.
 
-But that is not the right context. Rules as Code is public administration infrastructure.
-Tools and techniques for Rules as Code need to be evaluated in that context. The question that this
-paper seeks to address is not whether or not we should "do" Rules as Code. Rather, if we have
-decided to do it, and we have decided that we want it to be explainable, justified by reference to
+So if you are approaching it from the perspective of a person who needs to get a single product
+out the door as effectively and efficiently as possible, Rules as Code is always going to appear
+to make things harder, not easier.
+
+That is not the right context from which to approach Rules as Code generally.
+Rules as Code is public administration infrastructure.
+Tools and techniques for Rules as Code need to be evaluated in that larger context.
+
+Therefore, the question that this
+paper seeks to address is not whether or not we should "do" Rules as Code, or whether we
+should use OpenFisca to do it.
+
+Rather, the question this paper seeks to address is assuming that we have
+decided to use a Rules as Code approach to expert system development; and that we
+want the resulting system to be explainable, justified by reference to
 the source legislation, capable of understanding incomplete facts, and advising as to relevance;
-what are the advantages and disadvantages of the above approach to using
-OpenFisca as compared other alternatives, available or anticipated?
+how does OpenFisca compare to the alternatives.
 
-### Declarative Alternatives We Need Don't Yet Exist
+### OpenFisca Exists
 
-I will talk below about the comparison between the experience of using OpenFisca and using declarative
-logic programming for generating expert systems. It's important to say up front that in this context, declarative
-logic solutions for rules as code are "anticipated", and not "available."
+The main advantage that OpenFisca provides is that it is real. The alternatives, at least with regard
+to open source technologies,
+are not yet deployable. They are works in progress, or they do not have the documentation and tooling and community
+that has built around OpenFisca, or they are hampered in their growth because they require the
+adoption of a declarative or functional programming paradigm that is unfamiliar to most software
+developers.
 
-I base the arguments below on my experiences using declarative logic encodings for Rules as Code as
-part of my work at SMU Centre for Computational Law, in the development of Blawx, and during my LLM
-thesis work at the University of Alberta. In future papers I would like to do an apples-to-apples
-comparison between imperative and declarative approaches applied to precisely the same computational
-task. This is not that paper.
+Closed source technologies are undesireable in the Rules as Code realm because of the
+requirements for transparency and accountability arising in admininstrative law, and the move
+of public sectors away from proprietary software solutions.
 
-That said, even if I am to be believed about the benefits of declarative encodings, there are currently 
-no open source tools based on declarative logic that have high quality documentation, 
-allow for easy deployment of code to web APIs, and have all of the explainability and reasoning features described
-above. As might be expected, the most feature-rich offerings are commercial software. Public sector
-software procurement practices are moving away from commercial software offerings in favour of open
-source technology. Open source technology provides a degree of transparency as to the encodings
-that is not available with commercial products, and which is critical for trustworthiness in the public
-sphere.
+But good open source alternatives to OpenFisca for expert system development 
+can nevertheless be anticipated. Work on tools like L4, Blawx,
+and Catala continues, and is very promising. 
+An apples-to-apples comparison of OpenFisca and some
+of these alternatives applied to the same computational law
+task would be worthwhile, but remains future work.
 
-None of the current open source offerings for declarative logic programming 
-offer the ease of use and documentation and support that
-would be required to make them feasible for mission-critical deployment in the public sector.
-
-As part of my work with the Canada School of Public Service I'm actively working on a revised version of 
-Blawx with many of the needed features. That software is currently in version 1.0.6-alpha.
-Work on L4 at Singapore Management University Centre for Computational
-Law continues, and there may be others.
-
-Other non-logical declarative approaches, such as the Catala language, which is based in
-functional programming, may eventually fill this need in the open source space. But as of today,
-there is nothing that fits the bill, and is ready-to-deploy.
-
-My comments here are therefore not to suggest that people working in Rules as Code should use something
-particular instead of OpenFisca. Indeed, even if such tools existed, they might be ill-suited to
-the task of microsimulation.
-Rather, my comments are intended to advocate for expanding our toolkit of Rules as Code technologies to include things that are specifically aimed at expert system
-development.
-
-### Code Length
+### OpenFisca Requires Verbose Code
 
 Comparing the encoding of the knowledge in an entire law with the encoding of the knowledge in a law
 required for answering a specific type of question is an "apples and oranges" affair.  That said,
@@ -621,37 +901,44 @@ described above as opposed to a declarative encoding.
 Even if you could automatically generate the confidence code, it is still more than
 a two-fold increase.
 
-In the langauge of "return on investment" the length of the code is an investment. To know whether
-OpenFisca is better than other alternatives, we also need to measure the return.
-Unfortunately, the only place I can find
-where using the OpenFisca method gives a greater return that alternatives is in processing speed
-with large data inputs, which is not usually a marginal factor in expert system development.
-Meanwhile, several capabilities available in other methods still don't exist in this approach to OpenFisca.
+### OpenFisca Is Efficient When Dealing with Large Data Sets, and Variables Over Time
 
-### Imperative vs. Declarative Logic
+It must be mentioned that OpenFisca excels at solving the problems that it was specifically designed
+to solve. If you need to deal with variables and legislative parameters that vary over time,
+and if you need to be able to process the same conclusions with regard to a large number
+of entities at the same time, OpenFisca provides excellent support for those capabilities.
 
-One of the things that you lose by virtue of using an imperative programming language instead of a declarative
-language is the ability to reverse the reasoning. 
+I understand that OpenFisca also has capabilities with regard to generating representative
+population data, which it was not necessary to explore in my work, but I anticipate those
+are equally effective.
 
-Imperative functions for calculating
-variables go in only one direction, from inputs to outputs, and cannot be automatically reversed.
+### OpenFisca Lacks the Reasoning Capabilities of Declarative Methods
+
+OpenFisca is based on Python, which is imperative. Variables are calculated using formulas,
+which are imperative functions. Imperative functions go in only one direction, from inputs to outputs, and cannot be automatically reversed.
 
 Declarative logic programming, by contrast, allows you to specify relationships, and then use them
 in both directions.
 
-An equivalent declarative logic programming encoding of the OAS rules might allow for asking
+By way of illustration, an equivalent declarative logic programming encoding of the OAS rules might allow for asking
 abstract reasoning questions, like "are there any circumstances in which a person qualifies for GIS and
 lives outside of Canada?" The logic required to answer that question starts at the conclusion - whether the person qualifies for GIS - and works backward to the inputs that can lead to that conclusion.
 
-With the approach described above, the only way to get an answer to that question would be to
-randomly generate a large population, and test it to see whether or not that situation arises.
-And even then, you don't know that it is impossible, you just know you didn't find any examples of it.
+With the OpenFisca approach described above, the only way to get an answer to that question would be to
+randomly generate a large population (which OpenFisca can help with), run the queries against all the
+entities in that population, and test the results to see whether or not the described situation arises.
+But even then, you don't know that it is impossible, you just know you didn't find any examples of it.
+
+A declarative logic encoding might be capable of saying categorically that such a scenario is impossible,
+or determining that it is possible, and providing an example, without having to generate any data or
+analyse the output of any queries.
 
 So while OpenFisca code can be written in such a way as to get some of the features of declarative code
-alternatives, it is still not capable of everything that the much shorter declarative
-encoding would have been able to do.
+alternatives, and the above method demonstrates that possibility, that method still does not get you
+all the capabilities of a declarative encoding of the same rules, which encoding would likely be
+dramatically shorter.
 
-### Don't Repeat Yourself
+### This Approach Is Error Prone
 
 In addition to the cost of additional lines of code, there is a negative consequence for 
 software reliability. Every line of code is an opportunity for another bug. Given the complexity
@@ -661,44 +948,42 @@ whether or not they are known are simple, and we multiply the number of variable
 or we leave ourselves with more complicated variable definitions and significantly increase the risk
 of errors in how the "known" variables are being calculated.
 
-This is particularly frustrating when all of the information that is required
-to generate the formulas for the known variables was available when we wrote the original variable's formula. With limited exceptions, it could be done automatically.
-
-## Conclusion: OpenFisca Alone Is Not Enough
+## Conclusion
 
 Open Fisca clearly belongs in Rules as Code toolbox. If you need microsimulation,
 it is an excellent option. If you need microsimulation, and you don't need things like explanations, legal
 justification, relevance, and dealing with incomplete facts, it is also a reasonable way to build simple web apps.
 
-But my experience using it suggests that if you do need those extra things, or if you are trying to build a generalized encoding
-for people who might, OpenFisca is suboptimal. It can be forced to behave sort of like
-an expert system engine, but the effort and risk involved is needlessly high.
-
-If you don't need microsimulation or temporal reasoning features at all, OpenFisca is probably not the best alternative.
-Using it is slightly more difficult because of the temporal and vectorial features.
+My experience also suggests that if you do need those additional features, or if you are trying to build a generalized encoding
+for people who might, OpenFisca is suboptimal. It can be made to behave sort of like
+an expert system, but the effort and risk involved is high.
 
 This paper does not address the alternative
-of attempting to make declarative code behave like a microsimulator, but my instinct is that it would be similarly
-difficult, if it is even feasible. Declarative logic programming
-languages are famous for their expressiveness, not their computational efficiency. Declarative
-functional languages like Catala would likely be better suited to that task, but exploring Catala
-for use in expert systems remains future work.
+of attempting to make declarative expert system code behave like a microsimulator. My instinct
+is that these would be result in relatively inefficient code if done with
+declarative logic approaches. Functional approaches seem well-suited to the microsimulation task,
+but I have no direct experience with them, and it is not clear whether they 
+share all the advantages of logical code.
 
-What seems obvious to me from the experience of having used both OpenFisca and declarative methods is that
-microsimulation and declarative logic reasoning are things that are more powerful in combination than either is alone.
+What seems obvious to me from the experience of having used both OpenFisca and declarative methods to generate explainable legal expert systems is that
+microsimulation and declarative logic tools are more powerful in combination than either is alone.
 
 With both, you could use the declarative encoding with subject matter experts to verify it matches their expectations.
-That is arguably easier to do with declarative code, because declarative code matches the structure of the source rules much better. Then,
+That is arguably easier to do with declarative code, because declarative code matches the structure of the source rules much better than imperative approaches. Then,
 the declarative encoding could be used to generate tests for microsimulation projects. If the microsimulation
-code passes all the of the tests generated by the declarative code, then it is consistent with the declarative code,
+code passes all the of the tests generated by the declarative code, then we can have confidence it is consistent with the declarative code,
 which in turn is consistent with the experts' expectations. If a test fails, the declarative code can be used to
 generate an explanation for why the result that was generated was not correct, and why the result that was expected is
-correct. That would be a boon to quality assurance in developing legal applications generally.
-In terms of microsimulation code, it would allow us to better demonstrate legal accuracy without making any sacrifice of efficiency.
+correct.
 
-Rather than cram microsimulator-shaped pegs into expert-system-shaped holes, the Rules as Code movement
-would be better served to invest in declarative expert system tools designed specifically for
-legal reasoning tasks.
+This multi-layered approach would be a boon to legal software quality assurance, allowing you do add legal verifiability
+to the list of features provided by whatever other technology you are using. Microsimulations would
+remain as efficient as you like, but we could also have greater confidence that they were legally accurate.
+
+Ultimately, the lesson from this experiment is to choose tools on the basis of whether the problem
+you are trying to solve is the problem they were designed to address. We ought not cram microsimulator-shaped pegs into expert-system-shaped holes. OpenFisca should be used for what it is
+good at, which is microsimulation. We should continue and wherever possible invest in the 
+work on developing and improving open source tools for the problem of expert systems.
 
 ## Acknowledgements
 
