@@ -1,7 +1,7 @@
 ---
 title: "Progress on Blawx, SMU Conference, Beeck Centre Rules as Code Paper"
 date: 2022-02-24T11:52:35-07:00
-draft: true
+draft: false
 toc: true
 keywords: ['blawx','akoma ntoso','smucclaw','CLSC2022','Django','Beeck Center']
 ---
