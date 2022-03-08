@@ -2,11 +2,10 @@
 <head>
 <meta charset=utf-8>
 <meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<title>Using OpenFisca to Power Expert Systems in the Canadian Public Service: Lessons Learned | Jason Morris</title>
-<meta name=viewport content="width=device-width,minimum-scale=1">
+<title>Using OpenFisca to Power Expert Systems in the Canadian Public Service: Lessons Learned | Jason Morris</title><meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="Using OpenFisca to Power Expert Systems in the Canadian Public Service: Lessons Learned This is a draft of a paper being prepared for the Singapore Management University Centre for Computational Law&rsquo;s Computational Legal Studies Conference 2022.
 Abstract The paper demonstrates an approach to encoding legislation in OpenFisca, and an approach to using the OpenFisca API, which in combination can be used to obtain many of the features required for legal expert system development.">
-<meta name=generator content="Hugo 0.92.2">
+<meta name=generator content="Hugo 0.93.2">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/css/main.min.css>
 <meta property="og:title" content="Using OpenFisca to Power Expert Systems in the Canadian Public Service: Lessons Learned">
@@ -25,8 +24,7 @@ Abstract The paper demonstrates an approach to encoding legislation in OpenFisca
 <meta name=twitter:title content="Using OpenFisca to Power Expert Systems in the Canadian Public Service: Lessons Learned">
 <meta name=twitter:description content="Using OpenFisca to Power Expert Systems in the Canadian Public Service: Lessons Learned This is a draft of a paper being prepared for the Singapore Management University Centre for Computational Law&rsquo;s Computational Legal Studies Conference 2022.
 Abstract The paper demonstrates an approach to encoding legislation in OpenFisca, and an approach to using the OpenFisca API, which in combination can be used to obtain many of the features required for legal expert system development.">
-</head>
-<body class="ma0 avenir bg-near-white">
+</head><body class="ma0 avenir bg-near-white">
 <header>
 <div class=bg-black>
 <nav class="pv3 ph3 ph4-ns" role=navigation>
@@ -40,695 +38,511 @@ Jason Morris
 <a class="hover-white no-underline white-90" href=/about/ title="About Jason page">
 About Jason
 </a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
+</li><li class="list f5 f4-ns fw4 dib pr3">
 <a class="hover-white no-underline white-90" href=/project/ title="Projects page">
 Projects
 </a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
+</li><li class="list f5 f4-ns fw4 dib pr3">
 <a class="hover-white no-underline white-90" href=/post/ title="Rules as Code Diary page">
 Rules as Code Diary
 </a>
-</li>
-</ul>
-<div class=ananke-socials>
+</li></ul><div class=ananke-socials>
 <a href=https://twitter.com/RoundTableLaw target=_blank class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel=noopener aria-label="follow on Twitter——Opens in a new window">
 <span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
 </span>
 <span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
 </span></a>
-</div>
-</div>
-</div>
-</nav>
-</div>
-</header>
-<main class=pb7 role=main>
+</div></div></div></nav></div></header><main class=pb7 role=main>
 <article class="flex-l flex-wrap justify-between mw8 center ph3">
 <header class="mt4 w-100">
 <aside class="instapaper_ignoref b helvetica tracked">
 RULES AS CODE DIARY
-</aside>
-<div id=sharing class="mt3 ananke-socials">
+</aside><div id=sharing class="mt3 ananke-socials">
 <a href="https://twitter.com/share?url=https://JasonMorrisSC.github.io/post/2022-03-02_openfisca_expert_systems/&text=Using%20OpenFisca%20to%20Power%20Expert%20Systems%20in%20the%20Canadian%20Public%20Service:%20Lessons%20Learned" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
 <span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
 </span>
 </a>
-</div>
-<h1 class="f1 athelas mt3 mb1">Using OpenFisca to Power Expert Systems in the Canadian Public Service: Lessons Learned</h1>
-<time class="f6 mv4 dib tracked" datetime=2022-02-16T00:00:00Z>February 16, 2022</time>
-</header>
-<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id=using-openfisca-to-power-expert-systems-in-the-canadian-public-service-lessons-learned>Using OpenFisca to Power Expert Systems in the Canadian Public Service: Lessons Learned</h2>
-<p>This is a draft of a paper being prepared for the Singapore Management University Centre for Computational Law&rsquo;s <a href>Computational Legal Studies Conference 2022</a>.</p>
-<h2 id=abstract>Abstract</h2>
-<p>The paper demonstrates an approach to encoding legislation in <a href>OpenFisca</a>, and an approach to using the
+</div><h1 class="f1 athelas mt3 mb1">Using OpenFisca to Power Expert Systems in the Canadian Public Service: Lessons Learned</h1><time class="f6 mv4 dib tracked" datetime=2022-02-16T00:00:00Z>February 16, 2022</time>
+</header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id=using-openfisca-to-power-expert-systems-in-the-canadian-public-service-lessons-learned>Using OpenFisca to Power Expert Systems in the Canadian Public Service: Lessons Learned</h2><p>This is a draft of a paper being prepared for the Singapore Management University Centre for Computational Law&rsquo;s <a href>Computational Legal Studies Conference 2022</a>.</p><h2 id=abstract>Abstract</h2><p>The paper demonstrates an approach to encoding legislation in <a href>OpenFisca</a>, and an approach to using the
 OpenFisca API, which in combination can be used to obtain many of the features required for legal expert system development. Those requirements
 include explanations that can be tied to legislative justifications, the ability to deal with incomplete inputs, and the ability to calculate
-the relevance of inputs to a given conclusion given incomplete information.</p>
-<p>The approach set out involves
+the relevance of inputs to a given conclusion given incomplete information.</p><p>The approach set out involves
 treating sections of legislation as &ldquo;variables&rdquo; in the OpenFisca encoding, and then duplicating the encoded logic to represent a separate confidence conclusion
 for each variable. These two encodings are queried at the same time, and the results combined into a directed graph. The graph can then
-be analysed to generate information about relevance, certainty, and to generate legislatively-justified explanations.</p>
-<p>The paper briefly contrasts this approach with standard OpenFisca code, typical imperative code,
+be analysed to generate information about relevance, certainty, and to generate legislatively-justified explanations.</p><p>The paper briefly contrasts this approach with standard OpenFisca code, typical imperative code,
 and declarative logic
 encodings. The paper concludes that the additional effort
 required to obtain these benefits inside OpenFisca, and
 the increased risk to software quality, make the approach
 ill-advised in most cases. The paper then argues for the development of open source Rules as Code technologies aimed
-specifically at expert system development.</p>
-<h2 id=introduction>Introduction</h2>
-<h3 id=background>Background</h3>
-<p>Under contract with Canada&rsquo;s Ministry of Employment and Social Development (ESDC), I work full-time as
+specifically at expert system development.</p><h2 id=introduction>Introduction</h2><h3 id=background>Background</h3><p>Under contract with Canada&rsquo;s Ministry of Employment and Social Development (ESDC), I work full-time as
 &ldquo;Director of Rules as Code&rdquo; inside
 the Benefit Delivery Modernization (BDM) Programme of Service Canada. <a href>Service Canada</a> is the subdivision of ESDC responsible for the delivery
-of many services to Canadians, both in person and online, including a number of important social benefit programs. One such benefit is Old Age Security.</p>
-<p>The BDM programme is an effort inside Service Canada to modernize and digitize the delivery of benefits services to Canadians.
+of many services to Canadians, both in person and online, including a number of important social benefit programs. One such benefit is Old Age Security.</p><p>The BDM programme is an effort inside Service Canada to modernize and digitize the delivery of benefits services to Canadians.
 It takes an agile and user-research-focussed approach to redeveloping how services are delivered online. My role
 in that programme is to find, learn, experiment with, and build open source technologies for Rules as Code to explore its potential as
-a foundational technology for the future of digital public service delivery.</p>
-<p>As part of that task, I have used an open source Rules as Code tool, <a href=https://openfisca.org>OpenFisca</a>, to encode provisions of the <a href>Old Age Security Act</a>,
+a foundational technology for the future of digital public service delivery.</p><p>As part of that task, I have used an open source Rules as Code tool, <a href=https://openfisca.org>OpenFisca</a>, to encode provisions of the <a href>Old Age Security Act</a>,
 in order to test the feasibility of using that code as a legal reasoning resource for a user-facing expert system. This paper discusses the
 requirements of that project, and the experience of satisfying those requirements using OpenFisca, which is not designed for powering
-expert systems.</p>
-<h3 id=rules-as-code>Rules as Code</h3>
-<p>Briefly, &ldquo;Rules as Code&rdquo; is a proposed public sector methodology that is intended to improve
+expert systems.</p><h3 id=rules-as-code>Rules as Code</h3><p>Briefly, &ldquo;Rules as Code&rdquo; is a proposed public sector methodology that is intended to improve
 the policy development process, the legislative drafting process, service provision, and
 to simplify compliance. It calls for the digitization of the semantic meaning of legislation
 and regulation as early as possible in its lifespan, in an interdisciplinary way that includes
-legal, subject matter, and computing experts.</p>
-<p>It emerged from work that was undertaken in New Zealand, and has seen increasing interest,
+legal, subject matter, and computing experts.</p><p>It emerged from work that was undertaken in New Zealand, and has seen increasing interest,
 particularly in commonwealth countries, over the course of the last few years. Recently, the
 Organization for Economic Cooperation and Developemnt&rsquo;s Observatory for Public Sector Innovation
 released a report on Rules as Code entitled &ldquo;Cracking the Code.&rdquo;
 <a href>The executive summary of that report</a> is a convenient resource for people interested in learning more. There is also an open forum for people interested in Rules as Code available at
-<a href=https://talk.rulesascode.com>talk.rulesascode.com</a>.</p>
-<p>Technologically, Rules as Code can be distinguished from existing practices because it focuses
+<a href=https://talk.rulesascode.com>talk.rulesascode.com</a>.</p><p>Technologically, Rules as Code can be distinguished from existing practices because it focuses
 on isolating the knowledge contained in the legal rules in a way that is re-usable and application
 independent. The same encoding of the rules is ideally able to answer any question to which
 the rules apply. It is the re-usability of this single encoding across policy development,
 legislative drafting, service delivery, and compliance tasks that makes it an attractive
-tool for the public sector.</p>
-<p>Because the primary thing being modeled is the legislation itself, there is also the opportunity
+tool for the public sector.</p><p>Because the primary thing being modeled is the legislation itself, there is also the opportunity
 to encode that legislation in ways that makes the software capable of generating justifications
 for its conclusions. Those justifications can refer to the source legal material on which
-the code was based, enhancing the transparency and trustworthiness of the resulting systems.</p>
-<h3 id=expert-systems>Expert Systems</h3>
-<p>The term &ldquo;expert system&rdquo; is one that has changed in usage over time. During the rule-based artificial intelligence wave of the 1980s, an
-&ldquo;expert system&rdquo; referred to a tool that encoded the knowledge of an expert, and had two primary capabilities:</p>
-<ul>
-<li>if it had the required facts, it could calculate an answer to a query based on the encoded knowledge, and</li>
-<li>if it did not have the required facts, it could determine what facts were relevant, based on the same encoding.</li>
-</ul>
-<p>These systems were used to build applications, typically written in declarative logic languages, that asked the user one question at a time, and provided the
+the code was based, enhancing the transparency and trustworthiness of the resulting systems.</p><h3 id=expert-systems>Expert Systems</h3><p>The term &ldquo;expert system&rdquo; is one that has changed in usage over time. During the rule-based artificial intelligence wave of the 1980s, an
+&ldquo;expert system&rdquo; referred to a tool that encoded the knowledge of an expert, and had two primary capabilities:</p><ul>
+<li>if it had the required facts, it could calculate an answer to a query based on the encoded knowledge, and</li><li>if it did not have the required facts, it could determine what facts were relevant, based on the same encoding.</li></ul><p>These systems were used to build applications, typically written in declarative logic languages, that asked the user one question at a time, and provided the
 user with an answer when enough information was known. Many also had the ability to justify how the system had reached
 the conclusions using the same encoded knowledge. Because many expert systems encoded knowledge that was heuristic,
 or used to guide the interview process, the justifications were not viewed as terribly useful to end-users, and were
-used primarily as tools for debugging the applications.</p>
-<p>That &ldquo;ask questions, give answers&rdquo; interface has unfortunately been conflated with the technology that enabled it.
+used primarily as tools for debugging the applications.</p><p>That &ldquo;ask questions, give answers&rdquo; interface has unfortunately been conflated with the technology that enabled it.
 As such, the phrase &ldquo;expert system&rdquo; now commonly refers to things that have similar interfaces. It
 is frequently used to describe any system that collects relevant information from an end-user,
 particularly in a form, or an interview, and answers
 a question based on the provided facts and an encoding of expert knowledge, regardless of whether
 the same encoding was used to determine relevance as to calculate the answer, or whether relevance
-was calculated at all.</p>
-<p>I find this change in usage unhelpful. By this revised definition, the difference between a function and an expert system is
-that a function is not typically end-user facing.</p>
-<p>In this paper, &ldquo;expert system&rdquo; is used to refer not to a user-facing application, but
+was calculated at all.</p><p>I find this change in usage unhelpful. By this revised definition, the difference between a function and an expert system is
+that a function is not typically end-user facing.</p><p>In this paper, &ldquo;expert system&rdquo; is used to refer not to a user-facing application, but
 to a back-end service that is capable of answering questions, justifying those answers, and
 answering questions about what inputs are relevant to legal questions, all on the basis of
-the same encoding.</p>
-<p>While expert systems of the past were typically created
+the same encoding.</p><p>While expert systems of the past were typically created
 using declarative logic programming approaches, the
 underlying technology can be abstracted away from the capabilities of the resulting tool. From the perspective of a
 user sending a legal query to a web API endpoint, the language being used by the server to calculate the response is
 irrelevant. The definition of &ldquo;expert system&rdquo; used in this paper therefore does not require declarative logic programming. Whether
-declarative logic programming is an advisable approach to building legal expert systems is addressed addressed below.</p>
-<h3 id=the-eligibility-estimator-prototype-requirements>The Eligibility Estimator Prototype Requirements</h3>
-<p>The Eligibility Estimator is a prototype web application under development in BDM. It is a web application that collects relevant
+declarative logic programming is an advisable approach to building legal expert systems is addressed addressed below.</p><h3 id=the-eligibility-estimator-prototype-requirements>The Eligibility Estimator Prototype Requirements</h3><p>The Eligibility Estimator is a prototype web application under development in BDM. It is a web application that collects relevant
 information from a user, and provides information about whether a user qualifies for four benefits implemented under
 the Old Age Security Act, why or why not, and if so, in what amount. The team developing this app are using
 industry standard approaches to encoding the legislative requirements in order to provide those capabilities.
-My task was to parallel that approach by encoding the relevant provisions of the Old Age Security Act in a &ldquo;Rules as Code&rdquo; way, to examine whether that would work as a feasible alternative reasoning tool for this particular application.</p>
-<p>The objectives of my alternative encoding were as follows:</p>
-<ul>
-<li>A single encoding that answers all the relevant questions,</li>
-<li>available over a simple Web API,</li>
-<li>capable of explaining its answers,</li>
-<li>capable of responding to queries with inadequate facts, and advise which additional facts are relevant,</li>
-<li>capable of answering questions with uncertain facts that it is not possible to collect, to be able to advise clients
-that the answer to their question is contingent on those additional pieces of information,</li>
-<li>capable of answering questions as to the eligibility (whether or not the user qualifies) and entitlement (how much
-the user qualifies for) with regard to the four benefits outlined in the OAS Act, and</li>
-<li>uses a minimal set of inputs, defined by the application developers.</li>
-</ul>
-<p>While that would be sufficient to demonstrate the usability of the encoding from the perspective of the app
+My task was to parallel that approach by encoding the relevant provisions of the Old Age Security Act in a &ldquo;Rules as Code&rdquo; way, to examine whether that would work as a feasible alternative reasoning tool for this particular application.</p><p>The objectives of my alternative encoding were as follows:</p><ul>
+<li>A single encoding that answers all the relevant questions,</li><li>available over a simple Web API,</li><li>capable of explaining its answers,</li><li>capable of responding to queries with inadequate facts, and advise which additional facts are relevant,</li><li>capable of answering questions with uncertain facts that it is not possible to collect, to be able to advise clients
+that the answer to their question is contingent on those additional pieces of information,</li><li>capable of answering questions as to the eligibility (whether or not the user qualifies) and entitlement (how much
+the user qualifies for) with regard to the four benefits outlined in the OAS Act, and</li><li>uses a minimal set of inputs, defined by the application developers.</li></ul><p>While that would be sufficient to demonstrate the usability of the encoding from the perspective of the app
 developers, the purpose of the experiment was to examine the viability of using Rules as Code for that purpose.
 Rules as Code calls for the encoding of legislation directly, so as to allow for legally-justified explanations
-for the conclusions of the system, and for re-use.</p>
-<p>In order to test whether the resulting encoding was capable of achieving those objectives also, I
-set the following additional objectives for the experiment:</p>
-<ul>
-<li>Explanations should make reference to the legislative authority, and</li>
-<li>all of the answers (conclusions, additional relevant questions, etc.) should be generated from the same knowledge
-representation of the law.</li>
-</ul>
-<p>Note that we might have aimed at encoding the entire OAS Act, as a demonstration that an encoding of the legislation
+for the conclusions of the system, and for re-use.</p><p>In order to test whether the resulting encoding was capable of achieving those objectives also, I
+set the following additional objectives for the experiment:</p><ul>
+<li>Explanations should make reference to the legislative authority, and</li><li>all of the answers (conclusions, additional relevant questions, etc.) should be generated from the same knowledge
+representation of the law.</li></ul><p>Note that we might have aimed at encoding the entire OAS Act, as a demonstration that an encoding of the legislation
 generally was suitable for the application&rsquo;s specific needs. But this would have made for a considerably larger project. As such, only portions of the OAS Act directly relevant to the eligibility and entitlement questions dealt with
-by the app were included in the encoding.</p>
-<h2 id=openfisca>OpenFisca</h2>
-<p>In order to understand what OpenFisca is, and how it works, it&rsquo;s necessary to take a step back and describe the
-problem that it is designed to solve, which is microsimulation.</p>
-<h3 id=microsimulation>Microsimulation</h3>
-<p>Simulations are often done in government to predict the possible future states of the economy. Consider, for example, the need
+by the app were included in the encoding.</p><h2 id=openfisca>OpenFisca</h2><p>In order to understand what OpenFisca is, and how it works, it&rsquo;s necessary to take a step back and describe the
+problem that it is designed to solve, which is microsimulation.</p><h3 id=microsimulation>Microsimulation</h3><p>Simulations are often done in government to predict the possible future states of the economy. Consider, for example, the need
 for government to analyse how its tax revenues will change in the face of the looming retirement of a large percentage
 of their population. Understanding the scale of the problem, and when it is likely to arrive, is something that
-can be aided by simulating the economy.</p>
-<p>These simulations can be broken down into two categories, macrosimulation, or microsimulation. In macrosimulation,
+can be aided by simulating the economy.</p><p>These simulations can be broken down into two categories, macrosimulation, or microsimulation. In macrosimulation,
 the things that are represented in the model are abstract macroeconomic indicators, such as inflation rates or gross
 domestic product. Rules are applied for how these macroeconomic indicators relate to one another, and how they are
-expected to change, and the simulation is run to see what outcomes the model will predict.</p>
-<p>Microsimulation, by contrast, models the economy by simulating smaller parts such as individuals, families, households, and firms.
+expected to change, and the simulation is run to see what outcomes the model will predict.</p><p>Microsimulation, by contrast, models the economy by simulating smaller parts such as individuals, families, households, and firms.
 Again, rules are set out that describe how these facts are anticipated to change over time, and how the various
 facts relate to one another. The simulation is then run, and the future state of the simulated population is
-analysed to learn what might happen.</p>
-<p>Microsimulation is used to analyse the effect of tax and benefit rules, and the effects of proposed changes to those
+analysed to learn what might happen.</p><p>Microsimulation is used to analyse the effect of tax and benefit rules, and the effects of proposed changes to those
 rules. Information about the population and how it is expected to change is included, as are rules about the taxes
 and benefits that apply to that population. The microsimulation can then
 be run with various rule encodings to see what the effect of those policies might be on individuals, or
-in aggregate.</p>
-<p>In some jurisdictions, this sort of analysis is a legal prerequisite for the adoption of tax and benefit legislation.
+in aggregate.</p><p>In some jurisdictions, this sort of analysis is a legal prerequisite for the adoption of tax and benefit legislation.
 Microsimulation provides a convenient way to meet those legal prerequisites. There are also some legal requirements,
 such as maximum marginal tax rates, that are difficult to calculate across
 a wide variety of fact scenarios. Using a microsimulation with randomly generated populations of sufficient size
-can provide comfort that a proposed legislative change does not violate those sorts of legal constraints.</p>
-<p>Microsimulation poses some particular technological challenges:</p>
-<ul>
-<li>it requires a large number of calculations to be applied to a large number of entities, repeatedly;</li>
-<li>the more calculations you can perform, and the faster you can do it, the more accurate your simulation may be;</li>
-<li>it needs to be able to deal with how populations and rules change over time; and</li>
-<li>it needs to be able to compare the results of different versions of the same rules.</li>
-</ul>
-<p>The target users of microsimulations are usually data scientists. However, any system that is capable of calculating
+can provide comfort that a proposed legislative change does not violate those sorts of legal constraints.</p><p>Microsimulation poses some particular technological challenges:</p><ul>
+<li>it requires a large number of calculations to be applied to a large number of entities, repeatedly;</li><li>the more calculations you can perform, and the faster you can do it, the more accurate your simulation may be;</li><li>it needs to be able to deal with how populations and rules change over time; and</li><li>it needs to be able to compare the results of different versions of the same rules.</li></ul><p>The target users of microsimulations are usually data scientists. However, any system that is capable of calculating
 the effect of a tax or benefit policy change on tens of thousands of people is also capable of calculating the effect
 with regard to one person. Code generated for microsimulation is therefore also re-usable to generate
-user-facing applications that help people understand the effects of existing and proposed rules.</p>
-<h3 id=open-source-microsimulation-in-openfisca>Open Source Microsimulation in OpenFisca</h3>
-<p>OpenFisca is an open source platform, built in the Python programming language, for generating microsimulations of
+user-facing applications that help people understand the effects of existing and proposed rules.</p><h3 id=open-source-microsimulation-in-openfisca>Open Source Microsimulation in OpenFisca</h3><p>OpenFisca is an open source platform, built in the Python programming language, for generating microsimulations of
 national tax and benefit systems. It has a number of features that are designed to solve some of the technical
 challenges associated with microsimulation, and to do so in an open source context so as to promote
-transparency and accountability.</p>
-<p>In order to ensure that OpenFisca encodings are capable of processing large quantities of data as quickly as
+transparency and accountability.</p><p>In order to ensure that OpenFisca encodings are capable of processing large quantities of data as quickly as
 possible, OpenFisca uses vectorial computing. All variables are presumed to be an arbitrarily long list of
 values, and operations are performed against these vectors, not against the values individually. All values in
 OpenFisca are also presumed to change over the additional dimension of time. Rules are implemented by describing
 the periods of time to which they apply, and all values are calculated as per a given point in time or period of
 time. This makes it easier to specify how rules have changed over time, and to ask questions about dates in
-the past and dates in the future.</p>
-<p>For the most part, vector computation and temporal logic are hidden from the user, making it easier to describe
+the past and dates in the future.</p><p>For the most part, vector computation and temporal logic are hidden from the user, making it easier to describe
 how values are calculated as if you were calculating for a specific entity at a specific point in time. OpenFisca then does the work
 of extrapolating how to calculate that same value at any given point in time, and for a large number of entities,
-automatically.</p>
-<p>OpenFisca also has features that allow the developer to parameterize rules, and to specify changes to those parameters
+automatically.</p><p>OpenFisca also has features that allow the developer to parameterize rules, and to specify changes to those parameters
 separately from the rules themselves. This is useful for expressing, for example, how tax rates and brackets have
 changed over time. Beyond that, OpenFisca also allows the user to describe alternative versions of the rules that
 go deeper than just parameters, called &ldquo;reforms&rdquo;. A query can then be run with or without any proposed reform
-included in the rules, to see how the proposal changes the results.</p>
-<p>OpenFisca comes with a number of tools to facilitate the development of these encodings, including testing tools,
+included in the rules, to see how the proposal changes the results.</p><p>OpenFisca comes with a number of tools to facilitate the development of these encodings, including testing tools,
 and a system of automatically deploying an OpenFisca encoding as a RESTful Web API. The API provides two primary
 endpoints, <code>/calculate</code> and <code>/trace</code>, where the latter is used for debugging the results of a calculation. There
 is also a legislation explorer that can be used to automatically generate a web interface for making requests
 against an OpenFisca API, as well as tools for automatically generating Swagger documentation for the encoded
-systems.</p>
-<p>OpenFisca has also been extended by other projects. Noteworthy is the Legislation Explorer, which
+systems.</p><p>OpenFisca has also been extended by other projects. Noteworthy is the Legislation Explorer, which
 creates a generic web interface allowing people to change inputs and parameters and make calculations, and the Policy Engine project, which looks to build more user-friendly interfaces
-for the same thing on the basis of OpenFisca encodings.</p>
-<p>OpenFisca has been used to power tools such as Mes Aides and LexImpact in France, Les meves adjudes in Barcelona, Rapu Ture in New Zealand.</p>
-<p>OpenFisca organizes its code by country, and open source country packages with varying levels
+for the same thing on the basis of OpenFisca encodings.</p><p>OpenFisca has been used to power tools such as Mes Aides and LexImpact in France, Les meves adjudes in Barcelona, Rapu Ture in New Zealand.</p><p>OpenFisca organizes its code by country, and open source country packages with varying levels
 of quality and coverage have been created for France, Italy, Mali, Aotearoa New Zealand, Senegal,
 Tunisia, the United Kingdom, and Uruguay, and sub-national areas like Barcelona and New South
-Wales. Work is underway by the developers of Policy Engine on a United States package, also.</p>
-<h3 id=why-use-openfisca>Why Use OpenFisca?</h3>
-<p>OpenFisca was selected for use inside BDM in a number of projects that pre-date my involvement.
+Wales. Work is underway by the developers of Policy Engine on a United States package, also.</p><h3 id=why-use-openfisca>Why Use OpenFisca?</h3><p>OpenFisca was selected for use inside BDM in a number of projects that pre-date my involvement.
 ESDC and the Canada School of Public Service have collaborated over the last few years on Rules as Code
 discovery projects that used OpenFisca with departments including Fisheries and Oceans, and Labour. That important
-work continues, and we continue to contribute to it as part of my role within BDM.</p>
-<p>The motivations of selecting OpenFisca for the Eligibility Estimator demonstration include:</p>
-<ul>
-<li>a desire to build on that existing knowledge and experience,</li>
-<li>a desire to use a mature tool that has been successfully deployed elsewhere in similar circumstances,</li>
-<li>the desire to use open source technologies in accordance with the direction of the Government of Canada,</li>
-<li>the desire to use open source technologies because of the implications for algorithmic accountability in Rules as Code in particular,</li>
-<li>the need for a tool specific to the encoding of benefits legislation,</li>
-<li>good documentation, and</li>
-<li>the availability of support from the helpful and growing OpenFisca community online.</li>
-</ul>
-<p>At the time of writing, I am aware of no preferable alternatives given these objectives.</p>
-<p>Had there been viable alternatives, red tape would have been a significant factor.
+work continues, and we continue to contribute to it as part of my role within BDM.</p><p>The motivations of selecting OpenFisca for the Eligibility Estimator demonstration include:</p><ul>
+<li>a desire to build on that existing knowledge and experience,</li><li>a desire to use a mature tool that has been successfully deployed elsewhere in similar circumstances,</li><li>the desire to use open source technologies in accordance with the direction of the Government of Canada,</li><li>the desire to use open source technologies because of the implications for algorithmic accountability in Rules as Code in particular,</li><li>the need for a tool specific to the encoding of benefits legislation,</li><li>good documentation, and</li><li>the availability of support from the helpful and growing OpenFisca community online.</li></ul><p>At the time of writing, I am aware of no preferable alternatives given these objectives.</p><p>Had there been viable alternatives, red tape would have been a significant factor.
 Obtaining approval to use new software technologies in ESDC is a time-consuming, complicated, and unpredictable process that moves
-at what used to be called a &ldquo;glacial&rdquo; pace, but given the realities of climate change is probably better now described as &ldquo;tectonic.&rdquo;</p>
-<p>OpenFisca, as a tool that had already seen considerable use in the department, and as a library for
+at what used to be called a &ldquo;glacial&rdquo; pace, but given the realities of climate change is probably better now described as &ldquo;tectonic.&rdquo;</p><p>OpenFisca, as a tool that had already seen considerable use in the department, and as a library for
 an already-approved interpreted programming language (i.e. Python), would have had an almost insurmountable advantage over any tools
-without those features in the context of any short-term project.</p>
-<h2 id=typical-openfisca-code>Typical OpenFisca Code</h2>
-<p>In this section I will briefly introduce a toy example of how a simple rule might be encoded in OpenFisca, and then give an explanation
-of why this style of encoding is not, in and of itself, sufficient for powering expert systems.</p>
-<h3 id=entities-variables-and-parameters>Entities, Variables, and Parameters</h3>
-<p>The basic structure of an OpenFisca encoding is divided between entities, variables, and parameters.</p>
-<p>An entity is a type of object that will be simulated, such as an individual, a household, a family, or a firm. Typically, the number of entities
-required is relatively small. Many encodings can be done creating only an &ldquo;individual&rdquo; entity.</p>
-<p>A variable is a thing that you can either specify or derive about an entity. OpenFisca doesn&rsquo;t distinguish between the two. If you specify
+without those features in the context of any short-term project.</p><h2 id=typical-openfisca-code>Typical OpenFisca Code</h2><p>In this section I will briefly introduce a toy example of how a simple rule might be encoded in OpenFisca, and then give an explanation
+of why this style of encoding is not, in and of itself, sufficient for powering expert systems.</p><h3 id=entities-variables-and-parameters>Entities, Variables, and Parameters</h3><p>The basic structure of an OpenFisca encoding is divided between entities, variables, and parameters.</p><p>An entity is a type of object that will be simulated, such as an individual, a household, a family, or a firm. Typically, the number of entities
+required is relatively small. Many encodings can be done creating only an &ldquo;individual&rdquo; entity.</p><p>A variable is a thing that you can either specify or derive about an entity. OpenFisca doesn&rsquo;t distinguish between the two. If you specify
 a value, OpenFisca will use it. If you do not, and you have described how the variable can be calculated, it will attempt to calculate the value
 for you if required. A variable has zero or more formulas, each of which is used to calculate that variable for a given period of time. If you
-are not concerned with time, you can define one variable that defines the variable at all points in time.</p>
-<p>A parameter is a scalar value set out in the relevant rules that might change over time without there being changes to the rest of the rules.
-It may be a tax rate, an entitlement amount, or the age of majority.</p>
-<h3 id=age-birth-date-minor>Age, Birth Date, Minor</h3>
-<p>As an example, let&rsquo;s assume that there is a law that defines a minor as someone under the age of 18. You want to build an application that
-can accept a birth date, and calculate whether the person is a minor.</p>
-<p>The first step is to set out the relevant entities. In this case, the only entity type we are concerned with is &ldquo;Person.&rdquo;</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-python data-lang=python><span style=color:#75715e># This is the code for building a person entity</span>
-
-Person <span style=color:#f92672>=</span> build_entity(
-    key <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;person&#34;</span>,
-    plural <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;persons&#34;</span>,
-    label <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;An individual. The minimal legal entity on which a legislation might be applied.&#34;</span>,
-    doc <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;&#34;
-</span><span style=color:#e6db74>    ...
-</span><span style=color:#e6db74>    &#34;&#34;&#34;</span>,
-    is_person <span style=color:#f92672>=</span> <span style=color:#66d9ef>True</span>,
-    )
-
-</code></pre></div><p>Now that we have defined the entity, we need to define three variables: <code>birth_date</code> will hold information about what day the person was born,
+are not concerned with time, you can define one variable that defines the variable at all points in time.</p><p>A parameter is a scalar value set out in the relevant rules that might change over time without there being changes to the rest of the rules.
+It may be a tax rate, an entitlement amount, or the age of majority.</p><h3 id=age-birth-date-minor>Age, Birth Date, Minor</h3><p>As an example, let&rsquo;s assume that there is a law that defines a minor as someone under the age of 18. You want to build an application that
+can accept a birth date, and calculate whether the person is a minor.</p><p>The first step is to set out the relevant entities. In this case, the only entity type we are concerned with is &ldquo;Person.&rdquo;</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># This is the code for building a person entity</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>Person <span style=color:#f92672>=</span> build_entity(
+</span></span><span style=display:flex><span>    key <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;person&#34;</span>,
+</span></span><span style=display:flex><span>    plural <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;persons&#34;</span>,
+</span></span><span style=display:flex><span>    label <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;An individual. The minimal legal entity on which a legislation might be applied.&#34;</span>,
+</span></span><span style=display:flex><span>    doc <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    ...
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>    &#34;&#34;&#34;</span>,
+</span></span><span style=display:flex><span>    is_person <span style=color:#f92672>=</span> <span style=color:#66d9ef>True</span>,
+</span></span><span style=display:flex><span>    )
+</span></span></code></pre></div><p>Now that we have defined the entity, we need to define three variables: <code>birth_date</code> will hold information about what day the person was born,
 <code>age</code> will hold information about their current age, and <code>is_minor</code> will hold information about whether they are legally a minor. Here is how <code>age</code> and <code>birth_date</code>
-variables would be defined.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-python data-lang=python><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>birth_date</span>(Variable):
-    value_type <span style=color:#f92672>=</span> date
-    entity <span style=color:#f92672>=</span> Person
-    label <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Birth date&#34;</span>
-    definition_period <span style=color:#f92672>=</span> ETERNITY  <span style=color:#75715e># This variable cannot change over time.</span>
-
-<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>age</span>(Variable):
-    value_type <span style=color:#f92672>=</span> int
-    entity <span style=color:#f92672>=</span> Person
-    definition_period <span style=color:#f92672>=</span> DAY
-    label <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Person&#39;s age (in years)&#34;</span>
-
-    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>formula</span>(person, period, _parameters):
-        <span style=color:#e6db74>&#34;&#34;&#34;
-</span><span style=color:#e6db74>        ...
-</span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
-        birth <span style=color:#f92672>=</span> person(<span style=color:#e6db74>&#34;birth_date&#34;</span>, period)
-        birth_year <span style=color:#f92672>=</span> birth<span style=color:#f92672>.</span>astype(<span style=color:#e6db74>&#34;datetime64[Y]&#34;</span>)<span style=color:#f92672>.</span>astype(int) <span style=color:#f92672>+</span> <span style=color:#ae81ff>1970</span>
-        birth_month <span style=color:#f92672>=</span> birth<span style=color:#f92672>.</span>astype(<span style=color:#e6db74>&#34;datetime64[M]&#34;</span>)<span style=color:#f92672>.</span>astype(int) <span style=color:#f92672>%</span> <span style=color:#ae81ff>12</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
-        birth_day <span style=color:#f92672>=</span> (birth <span style=color:#f92672>-</span> birth<span style=color:#f92672>.</span>astype(<span style=color:#e6db74>&#34;datetime64[M]&#34;</span>) <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>)<span style=color:#f92672>.</span>astype(int)
-
-        is_birthday_past <span style=color:#f92672>=</span> (birth_month <span style=color:#f92672>&lt;</span> period<span style=color:#f92672>.</span>start<span style=color:#f92672>.</span>month) <span style=color:#f92672>+</span> (birth_month <span style=color:#f92672>==</span> period<span style=color:#f92672>.</span>start<span style=color:#f92672>.</span>month) <span style=color:#f92672>*</span> (birth_day <span style=color:#f92672>&lt;=</span> period<span style=color:#f92672>.</span>start<span style=color:#f92672>.</span>day)
-
-        <span style=color:#66d9ef>return</span> (period<span style=color:#f92672>.</span>start<span style=color:#f92672>.</span>year <span style=color:#f92672>-</span> birth_year) <span style=color:#f92672>-</span> where(is_birthday_past, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>)
-</code></pre></div><p>Note that the encoding of <code>age</code> specifies that the relevant time period is &ldquo;DAY&rdquo;, whereas the encoding of <code>birth_date</code> says that the relevant time
+variables would be defined.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>birth_date</span>(Variable):
+</span></span><span style=display:flex><span>    value_type <span style=color:#f92672>=</span> date
+</span></span><span style=display:flex><span>    entity <span style=color:#f92672>=</span> Person
+</span></span><span style=display:flex><span>    label <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Birth date&#34;</span>
+</span></span><span style=display:flex><span>    definition_period <span style=color:#f92672>=</span> ETERNITY  <span style=color:#75715e># This variable cannot change over time.</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>age</span>(Variable):
+</span></span><span style=display:flex><span>    value_type <span style=color:#f92672>=</span> int
+</span></span><span style=display:flex><span>    entity <span style=color:#f92672>=</span> Person
+</span></span><span style=display:flex><span>    definition_period <span style=color:#f92672>=</span> DAY
+</span></span><span style=display:flex><span>    label <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Person&#39;s age (in years)&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>formula</span>(person, period, _parameters):
+</span></span><span style=display:flex><span>        <span style=color:#e6db74>&#34;&#34;&#34;
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        ...
+</span></span></span><span style=display:flex><span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
+</span></span><span style=display:flex><span>        birth <span style=color:#f92672>=</span> person(<span style=color:#e6db74>&#34;birth_date&#34;</span>, period)
+</span></span><span style=display:flex><span>        birth_year <span style=color:#f92672>=</span> birth<span style=color:#f92672>.</span>astype(<span style=color:#e6db74>&#34;datetime64[Y]&#34;</span>)<span style=color:#f92672>.</span>astype(int) <span style=color:#f92672>+</span> <span style=color:#ae81ff>1970</span>
+</span></span><span style=display:flex><span>        birth_month <span style=color:#f92672>=</span> birth<span style=color:#f92672>.</span>astype(<span style=color:#e6db74>&#34;datetime64[M]&#34;</span>)<span style=color:#f92672>.</span>astype(int) <span style=color:#f92672>%</span> <span style=color:#ae81ff>12</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>        birth_day <span style=color:#f92672>=</span> (birth <span style=color:#f92672>-</span> birth<span style=color:#f92672>.</span>astype(<span style=color:#e6db74>&#34;datetime64[M]&#34;</span>) <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>)<span style=color:#f92672>.</span>astype(int)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        is_birthday_past <span style=color:#f92672>=</span> (birth_month <span style=color:#f92672>&lt;</span> period<span style=color:#f92672>.</span>start<span style=color:#f92672>.</span>month) <span style=color:#f92672>+</span> (birth_month <span style=color:#f92672>==</span> period<span style=color:#f92672>.</span>start<span style=color:#f92672>.</span>month) <span style=color:#f92672>*</span> (birth_day <span style=color:#f92672>&lt;=</span> period<span style=color:#f92672>.</span>start<span style=color:#f92672>.</span>day)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> (period<span style=color:#f92672>.</span>start<span style=color:#f92672>.</span>year <span style=color:#f92672>-</span> birth_year) <span style=color:#f92672>-</span> where(is_birthday_past, <span style=color:#ae81ff>0</span>, <span style=color:#ae81ff>1</span>)
+</span></span></code></pre></div><p>Note that the encoding of <code>age</code> specifies that the relevant time period is &ldquo;DAY&rdquo;, whereas the encoding of <code>birth_date</code> says that the relevant time
 period is &ldquo;ETERNITY&rdquo;. This is how you explain to OpenFisca that a person has only one <code>birth_date</code>, and it never changes, but their <code>age</code> might
 be different on one day from the day previous. Similarly, whether or not they are a minor depends on their age, so it can also change from day
-to day. The definition of <code>birth_date</code> has no formula, which means that for OpenFisca to know anything about a persons' <code>birth_date</code> it will
-need to be provided by the user. On the other had <code>age</code> has a formula which can be used to calculate the person&rsquo;s age based on their <code>birth_date</code>.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-python data-lang=python><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>is_minor</span>(Variable):
-    value_type <span style=color:#f92672>=</span> bool
-    entity <span style=color:#f92672>=</span> Person
-    definition_period <span style=color:#f92672>=</span> DAY
-    label <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Whether the person is a minor&#34;</span>
-
-    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>formula</span>(person, period, parameters):
-      age <span style=color:#f92672>=</span> person(<span style=color:#e6db74>&#39;age&#39;</span>,period)
-      age_of_majority <span style=color:#f92672>=</span> parameters(period)<span style=color:#f92672>.</span>age_of_majority
-      of_age <span style=color:#f92672>=</span> age_of_majority <span style=color:#f92672>&lt;=</span> age
-      <span style=color:#66d9ef>return</span> where(of_age, <span style=color:#66d9ef>False</span>, <span style=color:#66d9ef>True</span>)
-</code></pre></div><p>This example is written to demonstrate how OpenFisca code differs from standard Python.
+to day. The definition of <code>birth_date</code> has no formula, which means that for OpenFisca to know anything about a persons&rsquo; <code>birth_date</code> it will
+need to be provided by the user. On the other had <code>age</code> has a formula which can be used to calculate the person&rsquo;s age based on their <code>birth_date</code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>is_minor</span>(Variable):
+</span></span><span style=display:flex><span>    value_type <span style=color:#f92672>=</span> bool
+</span></span><span style=display:flex><span>    entity <span style=color:#f92672>=</span> Person
+</span></span><span style=display:flex><span>    definition_period <span style=color:#f92672>=</span> DAY
+</span></span><span style=display:flex><span>    label <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Whether the person is a minor&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>formula</span>(person, period, parameters):
+</span></span><span style=display:flex><span>      age <span style=color:#f92672>=</span> person(<span style=color:#e6db74>&#39;age&#39;</span>,period)
+</span></span><span style=display:flex><span>      age_of_majority <span style=color:#f92672>=</span> parameters(period)<span style=color:#f92672>.</span>age_of_majority
+</span></span><span style=display:flex><span>      of_age <span style=color:#f92672>=</span> age_of_majority <span style=color:#f92672>&lt;=</span> age
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>return</span> where(of_age, <span style=color:#66d9ef>False</span>, <span style=color:#66d9ef>True</span>)
+</span></span></code></pre></div><p>This example is written to demonstrate how OpenFisca code differs from standard Python.
 We use the NumPy function <code>where</code> rather than the conditional <code>if</code> because the variables
 <code>age</code>, <code>age_of_majority</code>, and <code>of_age</code> are all vectors, being calculated on the basis of other
 vectors. Had we used <code>return not of_age</code>, the formula would always return <code>False</code>, because
 <code>not</code> does not reverse the values inside a vector, it just uses the vector to generate a
-single truth value and reverses it.</p>
-<p>In our formula for calculating whether or not the person is a minor, we make reference to a parameter, the <code>age_of_majority</code>. That parameter
-is defined elsewhere, in a YAML file, as follows.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-yaml data-lang=yaml><span style=color:#75715e># The Age of Majority</span>
-<span style=color:#f92672>description</span>: <span style=color:#ae81ff>Age of Majority (in years). </span>
-<span style=color:#f92672>metadata</span>:
-  <span style=color:#f92672>unit</span>: <span style=color:#ae81ff>year</span>
-<span style=color:#f92672>values</span>:
-  <span style=color:#f92672>1971-07-01</span>:
-    <span style=color:#f92672>value</span>: <span style=color:#ae81ff>18</span>
-</code></pre></div><p>With these encodings, we can deploy our code to an API. OpenFisca greatly simplifies the task of generating an API
+single truth value and reverses it.</p><p>In our formula for calculating whether or not the person is a minor, we make reference to a parameter, the <code>age_of_majority</code>. That parameter
+is defined elsewhere, in a YAML file, as follows.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-yaml data-lang=yaml><span style=display:flex><span><span style=color:#75715e># The Age of Majority</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>description</span>: <span style=color:#ae81ff>Age of Majority (in years). </span>
+</span></span><span style=display:flex><span><span style=color:#f92672>metadata</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>unit</span>: <span style=color:#ae81ff>year</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>values</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>1971-07-01</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>value</span>: <span style=color:#ae81ff>18</span>
+</span></span></code></pre></div><p>With these encodings, we can deploy our code to an API. OpenFisca greatly simplifies the task of generating an API
 capable of handling these queries. Once the encoding is complete, a web server with the relevant end points can
 be started by executing the <code>openfisca serve</code> command. Once the API server is running,
 any user can send a POST query to the <code>/calculate</code> end point with a query in the
-following format.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json>{
-  <span style=color:#f92672>&#34;persons&#34;</span>: {
-    <span style=color:#f92672>&#34;person1&#34;</span>: {
-      <span style=color:#f92672>&#34;birth_date&#34;</span>: {
-        <span style=color:#f92672>&#34;ETERNITY&#34;</span>: <span style=color:#e6db74>&#34;2000-04-01&#34;</span>
-      },
-      <span style=color:#f92672>&#34;age&#34;</span>: {
-        <span style=color:#f92672>&#34;2022-02-17&#34;</span>: <span style=color:#66d9ef>null</span>
-      }
-    }
-  }
-}
-</code></pre></div><p>Facts that are known are specified, including the period for which they are known. Queries are expressed by including
-facts and the date for which you would like to derive them, and setting their value to <code>null</code>.</p>
-<p>If the user sends the above query to the OpenFisca API <code>/calculate</code> endpoint, they receive the following response.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json>{
-  <span style=color:#f92672>&#34;persons&#34;</span>: {
-    <span style=color:#f92672>&#34;person1&#34;</span>: {
-      <span style=color:#f92672>&#34;birth_date&#34;</span>: {
-        <span style=color:#f92672>&#34;ETERNITY&#34;</span>: <span style=color:#e6db74>&#34;2000-04-01&#34;</span>
-      },
-      <span style=color:#f92672>&#34;age&#34;</span>: {
-        <span style=color:#f92672>&#34;2022-02-17&#34;</span>: <span style=color:#ae81ff>21</span>
-      }
-    }
-  }
-}
-</code></pre></div><p>If we sent an under-specified query, asking for age and not providing birth date, like this:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json>{
-  <span style=color:#f92672>&#34;persons&#34;</span>: {
-    <span style=color:#f92672>&#34;person1&#34;</span>: {
-      <span style=color:#f92672>&#34;age&#34;</span>: {
-        <span style=color:#f92672>&#34;2022-02-17&#34;</span>: <span style=color:#66d9ef>null</span>
-      }
-    }
-  }
-}
-</code></pre></div><p>we receive this as a response:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json>{
-  <span style=color:#f92672>&#34;persons&#34;</span>: {
-    <span style=color:#f92672>&#34;person1&#34;</span>: {
-      <span style=color:#f92672>&#34;age&#34;</span>: {
-        <span style=color:#f92672>&#34;2022-02-17&#34;</span>: <span style=color:#ae81ff>52</span>
-      }
-    }
-  }
-}
-</code></pre></div><p>This shows an important feature of OpenFisca for expert system development. If a value is not provided for a variable (in this case &lsquo;birth_date&rsquo;)
+following format.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;persons&#34;</span>: {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;person1&#34;</span>: {
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&#34;birth_date&#34;</span>: {
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;ETERNITY&#34;</span>: <span style=color:#e6db74>&#34;2000-04-01&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&#34;age&#34;</span>: {
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;2022-02-17&#34;</span>: <span style=color:#66d9ef>null</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>Facts that are known are specified, including the period for which they are known. Queries are expressed by including
+facts and the date for which you would like to derive them, and setting their value to <code>null</code>.</p><p>If the user sends the above query to the OpenFisca API <code>/calculate</code> endpoint, they receive the following response.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;persons&#34;</span>: {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;person1&#34;</span>: {
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&#34;birth_date&#34;</span>: {
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;ETERNITY&#34;</span>: <span style=color:#e6db74>&#34;2000-04-01&#34;</span>
+</span></span><span style=display:flex><span>      },
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&#34;age&#34;</span>: {
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;2022-02-17&#34;</span>: <span style=color:#ae81ff>21</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>If we sent an under-specified query, asking for age and not providing birth date, like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;persons&#34;</span>: {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;person1&#34;</span>: {
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&#34;age&#34;</span>: {
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;2022-02-17&#34;</span>: <span style=color:#66d9ef>null</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>we receive this as a response:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json><span style=display:flex><span>{
+</span></span><span style=display:flex><span>  <span style=color:#f92672>&#34;persons&#34;</span>: {
+</span></span><span style=display:flex><span>    <span style=color:#f92672>&#34;person1&#34;</span>: {
+</span></span><span style=display:flex><span>      <span style=color:#f92672>&#34;age&#34;</span>: {
+</span></span><span style=display:flex><span>        <span style=color:#f92672>&#34;2022-02-17&#34;</span>: <span style=color:#ae81ff>52</span>
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>This shows an important feature of OpenFisca for expert system development. If a value is not provided for a variable (in this case &lsquo;birth_date&rsquo;)
 and that value cannot be calculated, OpenFisca treats that value as though it&rsquo;s numerical representation were
 zero. If the value is boolean, OpenFisca will presume it is false. If the value is a date, OpenFisca will
 presume the date is January 1, 1970. If it is a number, OpenFisca will presume it is zero, and if it is a string,
-OpenFisca will presume it is an empty string.</p>
-<p>Here, OpenFisca has treated no information for the user&rsquo;s birth date as &ldquo;January 1, 1970&rdquo;, and calculated
-that the person is 52 years of age.</p>
-<h2 id=using-openfisca-to-power-expert-systems>Using OpenFisca to Power Expert Systems</h2>
-<p>OpenFisca provides users with a way to calculate the answers to multiple questions, and to expose legislative encodings over an API.
+OpenFisca will presume it is an empty string.</p><p>Here, OpenFisca has treated no information for the user&rsquo;s birth date as &ldquo;January 1, 1970&rdquo;, and calculated
+that the person is 52 years of age.</p><h2 id=using-openfisca-to-power-expert-systems>Using OpenFisca to Power Expert Systems</h2><p>OpenFisca provides users with a way to calculate the answers to multiple questions, and to expose legislative encodings over an API.
 It does not explain its answers, or link the explanations to legislative source material for the encoding.
 It also doesn&rsquo;t have anyway to distinguish between &ldquo;zero,&rdquo; and &ldquo;unknown.&rdquo; That in turn means that it can&rsquo;t even tell when it
 hasn&rsquo;t been provided with all the relevant information, what other information might be relevant, or what facts a conclusion is
-contingent on.</p>
-<p>All of those features can be obtained in the following way.</p>
-<h3 id=using-trace-results>Using <code>/trace</code> Results</h3>
-<p>OpenFisca provides an alternative endpoint called <code>/trace</code>, which is intended for use in debugging.</p>
-<p>Trace output includes the same answers as provided by <code>/calculate</code>, but with additional information as
+contingent on.</p><p>All of those features can be obtained in the following way.</p><h3 id=using-trace-results>Using <code>/trace</code> Results</h3><p>OpenFisca provides an alternative endpoint called <code>/trace</code>, which is intended for use in debugging.</p><p>Trace output includes the same answers as provided by <code>/calculate</code>, but with additional information as
 to all of the variables that were calculated, and for each variable, the other variables and parameters
 on which that calculation was dependent. This information is provided as a dictionary of variables, with
-their dependencies and calculated values listed for each entity in the query.</p>
-<p>The approach we use is to change our OpenFisca encoding so as to get the required information into the trace
-output, and then to post-process the trace output in order to retrieve it.</p>
-<h3 id=legislative-parts-sub-parts-conditions-and-conclusions-are-all-variables>Legislative Parts, Sub-Parts, Conditions, and Conclusions are all &ldquo;Variables&rdquo;</h3>
-<p>In order to generate explanations that are linked to legislative source material, we need the source material
+their dependencies and calculated values listed for each entity in the query.</p><p>The approach we use is to change our OpenFisca encoding so as to get the required information into the trace
+output, and then to post-process the trace output in order to retrieve it.</p><h3 id=legislative-parts-sub-parts-conditions-and-conclusions-are-all-variables>Legislative Parts, Sub-Parts, Conditions, and Conclusions are all &ldquo;Variables&rdquo;</h3><p>In order to generate explanations that are linked to legislative source material, we need the source material
 to be represented in the trace output. That requires implementing the parts of the legislation as OpenFisca
-variables.</p>
-<p>In our example, a simple depedency tree explaining how <code>is_minor</code> is calculated would look like this:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-text data-lang=text>is_minor
- - age
-</code></pre></div><p>There are two problems with this tree. The first is that it doesn&rsquo;t make any reference to legislative materials.
+variables.</p><p>In our example, a simple depedency tree explaining how <code>is_minor</code> is calculated would look like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-text data-lang=text><span style=display:flex><span>is_minor
+</span></span><span style=display:flex><span> - age
+</span></span></code></pre></div><p>There are two problems with this tree. The first is that it doesn&rsquo;t make any reference to legislative materials.
 That can be resolved by renaming <code>is_minor</code> to something like <code>is_minor_according_to_majority_act_s_1</code>. But if
 we did that, we would know that the variable <code>age</code> mattered in some way to making that determination, but we
-would have no idea how. We can solve that problem by adding another variable between them that explains how the elements were being used.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-text data-lang=text>is_minor_according_to_majority_act_s_1
-  - age_is_below_age_of_majority
-    - age
-</code></pre></div><p>Note that in our example, there is only
+would have no idea how. We can solve that problem by adding another variable between them that explains how the elements were being used.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-text data-lang=text><span style=display:flex><span>is_minor_according_to_majority_act_s_1
+</span></span><span style=display:flex><span>  - age_is_below_age_of_majority
+</span></span><span style=display:flex><span>    - age
+</span></span></code></pre></div><p>Note that in our example, there is only
 one statutory explanation possible for why a person is a minor. Often, that will not be the case, and adding legislative elements will also
 require the addition of additional layers of variables. For instance, if being a minor could be legally inferred either due to the majority
 act or a second piece of legislation, we would need variables for <code>is_minor</code>, <code>is_minor_according_to_majority_act_s1</code>, <code>is_minor_according_to_other_act_s1</code>,
-<code>age_is_below_age_of_majority</code>, and <code>age</code>, along with whatever other variables are used by the other act.</p>
-<p>The generalized strategy is that sections of legislation, their sub-sections, their logical conditions, and their conclusions (when the conclusions are not identical to the legislative section), are all implemented as variables
-in the OpenFisca encoding.</p>
-<p>You
+<code>age_is_below_age_of_majority</code>, and <code>age</code>, along with whatever other variables are used by the other act.</p><p>The generalized strategy is that sections of legislation, their sub-sections, their logical conditions, and their conclusions (when the conclusions are not identical to the legislative section), are all implemented as variables
+in the OpenFisca encoding.</p><p>You
 may also need to create variables to represent unnamed sub-sections of a named section of law when
-knowing whether and how those unnamed sub-sections applied is relevant to the user.</p>
-<p>Consider this example from the Old Age Security Act, section 3(1)(b)(iii):</p>
-<blockquote>
+knowing whether and how those unnamed sub-sections applied is relevant to the user.</p><p>Consider this example from the Old Age Security Act, section 3(1)(b)(iii):</p><blockquote>
 <p>3 (1) Subject to this Act and the regulations, a full monthly pension may be paid to &mldr;<br>
 (b) every person who &mldr;<br>
-(iii) has resided in Canada for the ten years immediately preceding the day on which that person’s application is approved or, if that person has not so resided, has, after attaining eighteen years of age, been present in Canada prior to those ten years for an aggregate period at least equal to three times the aggregate periods of absence from Canada during those ten years, and has resided in Canada for at least one year immediately preceding the day on which that person’s application is approved; and</p>
-</blockquote>
-<p>Inside OAS 3(1)(b)(iii) there is a way of qualifiying if the person has resided in Canada, and there
+(iii) has resided in Canada for the ten years immediately preceding the day on which that person’s application is approved or, if that person has not so resided, has, after attaining eighteen years of age, been present in Canada prior to those ten years for an aggregate period at least equal to three times the aggregate periods of absence from Canada during those ten years, and has resided in Canada for at least one year immediately preceding the day on which that person’s application is approved; and</p></blockquote><p>Inside OAS 3(1)(b)(iii) there is a way of qualifiying if the person has resided in Canada, and there
 is a way of qualifying if the person has not. Encoding only whether section 3(1)(b)(iii) was satisfied
 may not provide adequate information about why a person did or did not qualify, and what they can
-do to change the result, if anything.</p>
-<p>So in addition to encoding numbered sections of legislation, it is also sometimes necessary to encode
-unnamed sub-parts of legislative clauses as separate variables.</p>
-<h3 id=encoding-confidence>Encoding Confidence</h3>
-<p>Once we have reformulated our encoding to add variables for all of the legislative parts, sub-parts, conditions, and conclusions, we are left with
-the problem that OpenFisca doesn&rsquo;t actually know what it knows, because it does not know what it has been told, and what it is simply assuming.</p>
-<p>The solution to that problem is to take our list of variables, and duplicate each variable with another variable with the word &ldquo;_known&rdquo; at the end of
-its name. This &ldquo;known&rdquo; variable will track information about what the system has been told, and what the system has confidently derived.</p>
-<p>In our <code>is_minor</code> example, we would now have the following list of variables:</p>
-<ul>
-<li>is_minor_according_to_majority_act_s1</li>
-<li>is_minor_according_to_majority_act_s1_known</li>
-<li>age_is_below_age_of_majority</li>
-<li>age_is_below_age_of_majority_known</li>
-<li>age</li>
-<li>age_known</li>
-<li>birth_date</li>
-<li>birth_date_known</li>
-</ul>
-<p>Each &ldquo;known&rdquo; variable is then given a formula for determining when we can be confident about the answer that OpenFisca has generated. In this case,
+do to change the result, if anything.</p><p>So in addition to encoding numbered sections of legislation, it is also sometimes necessary to encode
+unnamed sub-parts of legislative clauses as separate variables.</p><h3 id=encoding-confidence>Encoding Confidence</h3><p>Once we have reformulated our encoding to add variables for all of the legislative parts, sub-parts, conditions, and conclusions, we are left with
+the problem that OpenFisca doesn&rsquo;t actually know what it knows, because it does not know what it has been told, and what it is simply assuming.</p><p>The solution to that problem is to take our list of variables, and duplicate each variable with another variable with the word &ldquo;_known&rdquo; at the end of
+its name. This &ldquo;known&rdquo; variable will track information about what the system has been told, and what the system has confidently derived.</p><p>In our <code>is_minor</code> example, we would now have the following list of variables:</p><ul>
+<li>is_minor_according_to_majority_act_s1</li><li>is_minor_according_to_majority_act_s1_known</li><li>age_is_below_age_of_majority</li><li>age_is_below_age_of_majority_known</li><li>age</li><li>age_known</li><li>birth_date</li><li>birth_date_known</li></ul><p>Each &ldquo;known&rdquo; variable is then given a formula for determining when we can be confident about the answer that OpenFisca has generated. In this case,
 the formula is not complicated. Whether the person is a minor according to the majority act is known if the only factor it depends on is also known.
 Likewise for whether age is below the age of majority. That is known if we know the age, and we can presume that we know the age of majority because
 it is a parameter. The person&rsquo;s age is known if their birth date is known, and their birth date is known only if the user says so, so it does not
-have a formula.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-python data-lang=python><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>is_minor</span>(Variable):
-    value_type <span style=color:#f92672>=</span> bool
-    entity <span style=color:#f92672>=</span> Person
-    definition_period <span style=color:#f92672>=</span> DAY
-    label <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Whether the person is a minor&#34;</span>
-
-    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>formula</span>(person, period, parameters):
-      age <span style=color:#f92672>=</span> person(<span style=color:#e6db74>&#39;age&#39;</span>,period)
-      age_of_majority <span style=color:#f92672>=</span> parameters(period)<span style=color:#f92672>.</span>age_of_majority
-      of_age <span style=color:#f92672>=</span> age_of_majority <span style=color:#f92672>&lt;=</span> age
-      <span style=color:#66d9ef>return</span> where(of_age, <span style=color:#66d9ef>False</span>, <span style=color:#66d9ef>True</span>)
-
-<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>is_minor_known</span>(Variable):
-    value_type <span style=color:#f92672>=</span> bool
-    entity <span style=color:#f92672>=</span> Person
-    definition_period <span style=color:#f92672>=</span> DAY
-    label <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Whether it is known if the person is a minor&#34;</span>
-
-    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>formula</span>(person, period, parameters):
-      <span style=color:#66d9ef>return</span> person(<span style=color:#e6db74>&#39;age_known&#39;</span>,period)
-</code></pre></div><p>This structure gives the user the ability to say what the birth date is, and whether or not they are confident of that information. If they are not
+have a formula.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>is_minor</span>(Variable):
+</span></span><span style=display:flex><span>    value_type <span style=color:#f92672>=</span> bool
+</span></span><span style=display:flex><span>    entity <span style=color:#f92672>=</span> Person
+</span></span><span style=display:flex><span>    definition_period <span style=color:#f92672>=</span> DAY
+</span></span><span style=display:flex><span>    label <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Whether the person is a minor&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>formula</span>(person, period, parameters):
+</span></span><span style=display:flex><span>      age <span style=color:#f92672>=</span> person(<span style=color:#e6db74>&#39;age&#39;</span>,period)
+</span></span><span style=display:flex><span>      age_of_majority <span style=color:#f92672>=</span> parameters(period)<span style=color:#f92672>.</span>age_of_majority
+</span></span><span style=display:flex><span>      of_age <span style=color:#f92672>=</span> age_of_majority <span style=color:#f92672>&lt;=</span> age
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>return</span> where(of_age, <span style=color:#66d9ef>False</span>, <span style=color:#66d9ef>True</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>is_minor_known</span>(Variable):
+</span></span><span style=display:flex><span>    value_type <span style=color:#f92672>=</span> bool
+</span></span><span style=display:flex><span>    entity <span style=color:#f92672>=</span> Person
+</span></span><span style=display:flex><span>    definition_period <span style=color:#f92672>=</span> DAY
+</span></span><span style=display:flex><span>    label <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Whether it is known if the person is a minor&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>formula</span>(person, period, parameters):
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>return</span> person(<span style=color:#e6db74>&#39;age_known&#39;</span>,period)
+</span></span></code></pre></div><p>This structure gives the user the ability to say what the birth date is, and whether or not they are confident of that information. If they are not
 confident in that information, whether they are a minor will be calculated in the usual way, that lack of confidence
-is carried forward to other variables that depend on it.</p>
-<p>Writing these formulas for the &ldquo;known&rdquo; variables takes some careful consideration. Frequently, a variable will be calculated on a conjunction, or a disjunction, or a combination of the two. Take for example a situation where a person is entitled to a benefit if they are a minor, and a citizen. When is <code>entitled_to_a_benefit</code> &ldquo;known?&rdquo; It is known
+is carried forward to other variables that depend on it.</p><p>Writing these formulas for the &ldquo;known&rdquo; variables takes some careful consideration. Frequently, a variable will be calculated on a conjunction, or a disjunction, or a combination of the two. Take for example a situation where a person is entitled to a benefit if they are a minor, and a citizen. When is <code>entitled_to_a_benefit</code> &ldquo;known?&rdquo; It is known
 as soon as any of the conjoined elements is both known and false, because at that point, the conjunction is also known to be false. It is also known if both values are
 known, regardless whether they are true or false. This leads to formulas like the following, which is
-taken from the encoding of the OAS Act:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-python data-lang=python><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>allowance_age_requirement_satisfied_known</span>(Variable):
-  value_type <span style=color:#f92672>=</span> bool
-  entity <span style=color:#f92672>=</span> Person
-  definition_period <span style=color:#f92672>=</span> DAY
-  label <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Whether it is known if the age requirement is satisfied for Allowance eligibility&#34;</span>
-
-  <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>formula</span>(person, period, parameters):
-    <span style=color:#75715e># A conjunction is known if all the elements are known or any element in known false.</span>
-    min_false <span style=color:#f92672>=</span> person(<span style=color:#e6db74>&#34;allowance_age_requirement_minimum_satisfied_known&#34;</span>, period) <span style=color:#f92672>*</span> not_(person(<span style=color:#e6db74>&#34;allowance_age_requirement_minimum_satisfied&#34;</span>, period))
-    cap_false <span style=color:#f92672>=</span> person(<span style=color:#e6db74>&#34;allowance_age_requirement_cap_satisfied_known&#34;</span>, period) <span style=color:#f92672>*</span> not_(person(<span style=color:#e6db74>&#34;allowance_age_requirement_cap_satisfied&#34;</span>, period))
-    any_false <span style=color:#f92672>=</span> min_false <span style=color:#f92672>+</span> cap_false
-    all_known <span style=color:#f92672>=</span> person(<span style=color:#e6db74>&#34;allowance_age_requirement_minimum_satisfied_known&#34;</span>, period) <span style=color:#f92672>*</span> person(<span style=color:#e6db74>&#34;allowance_age_requirement_cap_satisfied_known&#34;</span>, period)
-    <span style=color:#66d9ef>return</span> any_false <span style=color:#f92672>+</span> 
-</code></pre></div><p>Similarly disjunctions are known if any of the disjunctive elements are known true, or if all of the elements are known. The complexity of these &ldquo;known&rdquo; formulas
+taken from the encoding of the OAS Act:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>allowance_age_requirement_satisfied_known</span>(Variable):
+</span></span><span style=display:flex><span>  value_type <span style=color:#f92672>=</span> bool
+</span></span><span style=display:flex><span>  entity <span style=color:#f92672>=</span> Person
+</span></span><span style=display:flex><span>  definition_period <span style=color:#f92672>=</span> DAY
+</span></span><span style=display:flex><span>  label <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Whether it is known if the age requirement is satisfied for Allowance eligibility&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>formula</span>(person, period, parameters):
+</span></span><span style=display:flex><span>    <span style=color:#75715e># A conjunction is known if all the elements are known or any element in known false.</span>
+</span></span><span style=display:flex><span>    min_false <span style=color:#f92672>=</span> person(<span style=color:#e6db74>&#34;allowance_age_requirement_minimum_satisfied_known&#34;</span>, period) <span style=color:#f92672>*</span> not_(person(<span style=color:#e6db74>&#34;allowance_age_requirement_minimum_satisfied&#34;</span>, period))
+</span></span><span style=display:flex><span>    cap_false <span style=color:#f92672>=</span> person(<span style=color:#e6db74>&#34;allowance_age_requirement_cap_satisfied_known&#34;</span>, period) <span style=color:#f92672>*</span> not_(person(<span style=color:#e6db74>&#34;allowance_age_requirement_cap_satisfied&#34;</span>, period))
+</span></span><span style=display:flex><span>    any_false <span style=color:#f92672>=</span> min_false <span style=color:#f92672>+</span> cap_false
+</span></span><span style=display:flex><span>    all_known <span style=color:#f92672>=</span> person(<span style=color:#e6db74>&#34;allowance_age_requirement_minimum_satisfied_known&#34;</span>, period) <span style=color:#f92672>*</span> person(<span style=color:#e6db74>&#34;allowance_age_requirement_cap_satisfied_known&#34;</span>, period)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> any_false <span style=color:#f92672>+</span> 
+</span></span></code></pre></div><p>Similarly disjunctions are known if any of the disjunctive elements are known true, or if all of the elements are known. The complexity of these &ldquo;known&rdquo; formulas
 seems to grow exponentially with the number of variables referred to in the substantive variable, which acts as another motivator to break complicated variables
-into simpler ones.</p>
-<h3 id=post-processing-the-results-of-openfisca-queries>Post-Processing the Results of OpenFisca Queries</h3>
-<p>Once we have made these changes to our encoding, we can send a request to the API with the relevant inputs and &ldquo;known&rdquo; variables. If something is presumed,
+into simpler ones.</p><h3 id=post-processing-the-results-of-openfisca-queries>Post-Processing the Results of OpenFisca Queries</h3><p>Once we have made these changes to our encoding, we can send a request to the API with the relevant inputs and &ldquo;known&rdquo; variables. If something is presumed,
 we set it to its presumed value, and set &ldquo;known&rdquo; to false. We query the substantive conclusion we are interested in, and the &ldquo;known&rdquo; equivalent for it, and
-we send the request to the <code>/trace</code> endpoint, so that we will get the information from which we can build the explanation tree.</p>
-<p>We then use the following algorithm to build a single dependency graph from the information in the response to both the substantive variable and the associated known variable.</p>
-<ol>
-<li>Create a directed graph.</li>
-<li>For each variable included in the response, add a node to the directed graph, with the value calculated.</li>
-<li>For each variable referred to as a factor in calculating a variable in the response, create an edge from the conclusion to the factor.</li>
-<li>For each variable in the graph, find the corresponding &ldquo;known&rdquo; variable for each node in the graph, and annotate the node with the value of the &ldquo;known&rdquo; variable.</li>
-</ol>
-<p>The result is a graph of variables with names, calculated values, and true-or-false &ldquo;known&rdquo; values, linked by
-their dependency relationships.</p>
-<p>This graph can now be used to generate explanations, determine relevant inputs, and calculate whether answers are contingently true, in the following ways.</p>
-<h4 id=generate-an-explanation>Generate An Explanation</h4>
-<p>To generate an explanation, generate a tree from the graph using the variable you are interested in as the root node. For each element in the tree,
-include the substantive explanation and whether it is known, and display it to the user.</p>
-<p>Because OpenFisca&rsquo;s <code>\trace</code> includes information about which
-were the query variables (variables that were set to <code>null</code> in the request), generating explanations can be done automatically for all query variables that are not &ldquo;known&rdquo; variables.</p>
-<h4 id=determine-relevant-inputs>Determine Relevant Inputs</h4>
-<p>To determine what inputs are relevant, first, generate the explanation for the variable you are interested in. If the root variable is &ldquo;known&rdquo;, there are no other relevant inputs.
+we send the request to the <code>/trace</code> endpoint, so that we will get the information from which we can build the explanation tree.</p><p>We then use the following algorithm to build a single dependency graph from the information in the response to both the substantive variable and the associated known variable.</p><ol>
+<li>Create a directed graph.</li><li>For each variable included in the response, add a node to the directed graph, with the value calculated.</li><li>For each variable referred to as a factor in calculating a variable in the response, create an edge from the conclusion to the factor.</li><li>For each variable in the graph, find the corresponding &ldquo;known&rdquo; variable for each node in the graph, and annotate the node with the value of the &ldquo;known&rdquo; variable.</li></ol><p>The result is a graph of variables with names, calculated values, and true-or-false &ldquo;known&rdquo; values, linked by
+their dependency relationships.</p><p>This graph can now be used to generate explanations, determine relevant inputs, and calculate whether answers are contingently true, in the following ways.</p><h4 id=generate-an-explanation>Generate An Explanation</h4><p>To generate an explanation, generate a tree from the graph using the variable you are interested in as the root node. For each element in the tree,
+include the substantive explanation and whether it is known, and display it to the user.</p><p>Because OpenFisca&rsquo;s <code>\trace</code> includes information about which
+were the query variables (variables that were set to <code>null</code> in the request), generating explanations can be done automatically for all query variables that are not &ldquo;known&rdquo; variables.</p><h4 id=determine-relevant-inputs>Determine Relevant Inputs</h4><p>To determine what inputs are relevant, first, generate the explanation for the variable you are interested in. If the root variable is &ldquo;known&rdquo;, there are no other relevant inputs.
 If the root variable is not &ldquo;known&rdquo;, find all leaf nodes that do not have a &ldquo;known&rdquo; ancestor. Those are the relevant inputs. Note that this method assumes that only
 leaf nodes are being collected from the user. In a situation where you are happy to ask, for example, either the person&rsquo;s age, or their birth date, then the &ldquo;relevant&rdquo; inputs
-are all the nodes with no known ancestor.</p>
-<p>This provides the application with a list of relevant nodes, but doesn&rsquo;t advise the application on how to prioritize
-displaying them to the user.</p>
-<h4 id=answer-contingent-questions>Answer Contingent Questions</h4>
-<p>To answer a contingent questions subject to assumptions, first, determine the relevant inputs for the target query. Then get the list of variables that your application can collect from the user.
+are all the nodes with no known ancestor.</p><p>This provides the application with a list of relevant nodes, but doesn&rsquo;t advise the application on how to prioritize
+displaying them to the user.</p><h4 id=answer-contingent-questions>Answer Contingent Questions</h4><p>To answer a contingent questions subject to assumptions, first, determine the relevant inputs for the target query. Then get the list of variables that your application can collect from the user.
 If none of the relevant inputs are inputs that your application can collect, the
-answer provided in the explanation is contingent on the relevant inputs' assumed values being correct.</p>
-<h3 id=old-age-security-act-example>Old Age Security Act Example</h3>
-<p>The approach described above was used to encode portions of the Old Age Security Act. That encoding
-is available at <a href=https://github.com/JasonMorrisSC/openfisca-canada>https://github.com/JasonMorrisSC/openfisca-canada</a>. At the time of writing, a demo server running that code is available at <a href=http://offnet.canadacentral.cloudapp.azure.com>http://offnet.canadacentral.cloudapp.azure.com</a>.</p>
-<p>Below is an excerpt from that code, showing the formula for calculating whether the
-age requirement for old age security is satisfied:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-python data-lang=python><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>oas_eligible_age_requirement_satisfied</span>(Variable):
-  value_type <span style=color:#f92672>=</span> bool
-  entity <span style=color:#f92672>=</span> Person
-  definition_period <span style=color:#f92672>=</span> DAY
-  label <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Whether the age requirement for OAS is satisfied&#34;</span>
-
-  <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>formula</span>(person, period, parameters):
-    satisfied <span style=color:#f92672>=</span> person(<span style=color:#e6db74>&#39;oas_eligible__age_above_eligibility&#39;</span>, period)
-    <span style=color:#66d9ef>return</span> satisfied
-
-<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>oas_eligible_age_requirement_satisfied_known</span>(Variable):
-  value_type <span style=color:#f92672>=</span> bool
-  entity <span style=color:#f92672>=</span> Person
-  definition_period <span style=color:#f92672>=</span> DAY
-  label <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Whether we know if the age requirement for OAS is satisfied&#34;</span>
-
-  <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>formula</span>(person, period, parameters):
-    known <span style=color:#f92672>=</span> person(<span style=color:#e6db74>&#39;oas_eligible__age_above_eligibility_known&#39;</span>, period)
-    <span style=color:#66d9ef>return</span> known
-</code></pre></div><p>Note the verbosity of the above code, which for practical purposes, expresses only the concept
+answer provided in the explanation is contingent on the relevant inputs&rsquo; assumed values being correct.</p><h3 id=old-age-security-act-example>Old Age Security Act Example</h3><p>The approach described above was used to encode portions of the Old Age Security Act. That encoding
+is available at <a href=https://github.com/JasonMorrisSC/openfisca-canada>https://github.com/JasonMorrisSC/openfisca-canada</a>. At the time of writing, a demo server running that code is available at <a href=http://offnet.canadacentral.cloudapp.azure.com>http://offnet.canadacentral.cloudapp.azure.com</a>.</p><p>Below is an excerpt from that code, showing the formula for calculating whether the
+age requirement for old age security is satisfied:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>oas_eligible_age_requirement_satisfied</span>(Variable):
+</span></span><span style=display:flex><span>  value_type <span style=color:#f92672>=</span> bool
+</span></span><span style=display:flex><span>  entity <span style=color:#f92672>=</span> Person
+</span></span><span style=display:flex><span>  definition_period <span style=color:#f92672>=</span> DAY
+</span></span><span style=display:flex><span>  label <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Whether the age requirement for OAS is satisfied&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>formula</span>(person, period, parameters):
+</span></span><span style=display:flex><span>    satisfied <span style=color:#f92672>=</span> person(<span style=color:#e6db74>&#39;oas_eligible__age_above_eligibility&#39;</span>, period)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> satisfied
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>oas_eligible_age_requirement_satisfied_known</span>(Variable):
+</span></span><span style=display:flex><span>  value_type <span style=color:#f92672>=</span> bool
+</span></span><span style=display:flex><span>  entity <span style=color:#f92672>=</span> Person
+</span></span><span style=display:flex><span>  definition_period <span style=color:#f92672>=</span> DAY
+</span></span><span style=display:flex><span>  label <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Whether we know if the age requirement for OAS is satisfied&#34;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>formula</span>(person, period, parameters):
+</span></span><span style=display:flex><span>    known <span style=color:#f92672>=</span> person(<span style=color:#e6db74>&#39;oas_eligible__age_above_eligibility_known&#39;</span>, period)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> known
+</span></span></code></pre></div><p>Note the verbosity of the above code, which for practical purposes, expresses only the concept
 &ldquo;a person satisfies the age requirement if their age is at or above the minimum.&rdquo; The boilerplate
-code required is significant.</p>
-<p>Code that uses the <code>/trace</code> endpoint of the OpenFisca serverand then performs the graph analysis
+code required is significant.</p><p>Code that uses the <code>/trace</code> endpoint of the OpenFisca serverand then performs the graph analysis
 described above is available as a <a href="https://colab.research.google.com/drive/1MTSzJN-_vGt9py2rd4t6kWZZbyS-0vsV#scrollTo=5znmuALOCTco">Google Colab notebook</a> and as a <a href=https://gist.github.com/JasonMorrisSC/f044233b2641fd2dca991f6edefe89ef>GitHub Gist</a>. Running that code inside Google Colab will
 start a temporary server which acts as the middle layer between OpenFisca and a user-facing
 application. The code announces an ngrok.io address over which it can be accessed. Note that this code is
 also written to mimic - to the degree possible - the output being provided by the existing
 implementation of the Eligibility Estimator. The portion of the code that performs the graph
-analysis described above is included here:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-python data-lang=python><span style=color:#75715e># Post-Process the Results</span>
-
-  dependency_graph <span style=color:#f92672>=</span> nx<span style=color:#f92672>.</span>DiGraph()
-  <span style=color:#66d9ef>for</span> (K,V) <span style=color:#f92672>in</span> response[<span style=color:#e6db74>&#39;trace&#39;</span>]<span style=color:#f92672>.</span>items():
-      <span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#34;_known&lt;&#34;</span> <span style=color:#f92672>not</span> <span style=color:#f92672>in</span> K: <span style=color:#75715e># Exlclude _known variables, as they will be used to annotate</span>
-          dependency_graph<span style=color:#f92672>.</span>add_node(K<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#39;&lt;&#39;</span>)[<span style=color:#ae81ff>0</span>], value<span style=color:#f92672>=</span>V[<span style=color:#e6db74>&#39;value&#39;</span>])
-          <span style=color:#66d9ef>for</span> target <span style=color:#f92672>in</span> V[<span style=color:#e6db74>&#39;dependencies&#39;</span>]:
-              dependency_graph<span style=color:#f92672>.</span>add_edge(K<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#39;&lt;&#39;</span>)[<span style=color:#ae81ff>0</span>],target<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#39;&lt;&#39;</span>)[<span style=color:#ae81ff>0</span>])
-  <span style=color:#66d9ef>for</span> (K,V) <span style=color:#f92672>in</span> response[<span style=color:#e6db74>&#39;trace&#39;</span>]<span style=color:#f92672>.</span>items():
-      <span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#34;_known&lt;&#34;</span> <span style=color:#f92672>in</span> K:
-          related_node <span style=color:#f92672>=</span> K<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#39;_known&#39;</span>)[<span style=color:#ae81ff>0</span>]
-          dependency_graph<span style=color:#f92672>.</span>nodes[related_node][<span style=color:#e6db74>&#39;known&#39;</span>] <span style=color:#f92672>=</span> V[<span style=color:#e6db74>&#39;value&#39;</span>]
-
-  incorrect_nodes <span style=color:#f92672>=</span> []
-  <span style=color:#66d9ef>for</span> N <span style=color:#f92672>in</span> dependency_graph:
-      <span style=color:#75715e># Not sure why this test is necessary, but duplicate nodes</span>
-      <span style=color:#75715e># with no value show up for root elements in the graph</span>
-      <span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#39;value&#39;</span> <span style=color:#f92672>in</span> dependency_graph<span style=color:#f92672>.</span>nodes[N]:
-        values <span style=color:#f92672>=</span> dependency_graph<span style=color:#f92672>.</span>nodes[N][<span style=color:#e6db74>&#39;value&#39;</span>]
-        <span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#39;known&#39;</span> <span style=color:#f92672>in</span> dependency_graph<span style=color:#f92672>.</span>nodes[N]:
-          knowns <span style=color:#f92672>=</span> dependency_graph<span style=color:#f92672>.</span>nodes[N][<span style=color:#e6db74>&#39;known&#39;</span>]
-        <span style=color:#66d9ef>else</span>: <span style=color:#75715e># Some output variables do not have associated &#34;known&#34; variables.</span>
-          knowns <span style=color:#f92672>=</span> [<span style=color:#66d9ef>True</span>] <span style=color:#f92672>*</span> len(values)
-          dependency_graph<span style=color:#f92672>.</span>nodes[N][<span style=color:#e6db74>&#39;known&#39;</span>] <span style=color:#f92672>=</span> knowns
-        display <span style=color:#f92672>=</span> []
-        <span style=color:#66d9ef>for</span> (value, known) <span style=color:#f92672>in</span> zip(values,knowns):
-            display<span style=color:#f92672>.</span>append(value <span style=color:#66d9ef>if</span> known <span style=color:#66d9ef>else</span> <span style=color:#e6db74>&#34;unknown, potentially &#34;</span> <span style=color:#f92672>+</span> str(value))
-        dependency_graph<span style=color:#f92672>.</span>nodes[N][<span style=color:#e6db74>&#39;display&#39;</span>] <span style=color:#f92672>=</span> display
-      <span style=color:#66d9ef>else</span>:
-        <span style=color:#75715e># Checking to see if this solves problems later for</span>
-        <span style=color:#75715e># incorrectly duplicated nodes.</span>
-        incorrect_nodes<span style=color:#f92672>.</span>append(N)
-
-  <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> incorrect_nodes:
-    dependency_graph<span style=color:#f92672>.</span>remove_node(i)
-  
-  <span style=color:#75715e># print(str(nx.readwrite.json_graph.adjacency_data(dependency_graph)))</span>
-
-  <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>generate_explanation</span>(goal,entity):
-      expl <span style=color:#f92672>=</span> {}
-      <span style=color:#66d9ef>if</span> len(dependency_graph<span style=color:#f92672>.</span>adj[goal]):
-        expl[<span style=color:#e6db74>&#39;reasons&#39;</span>] <span style=color:#f92672>=</span> []
-      expl[goal] <span style=color:#f92672>=</span> dependency_graph<span style=color:#f92672>.</span>nodes[goal][<span style=color:#e6db74>&#39;display&#39;</span>][entity]
-      <span style=color:#66d9ef>for</span> neighbour <span style=color:#f92672>in</span> dependency_graph<span style=color:#f92672>.</span>adj[goal]:
-          expl[<span style=color:#e6db74>&#39;reasons&#39;</span>]<span style=color:#f92672>.</span>append(generate_explanation(neighbour,entity))
-      <span style=color:#66d9ef>return</span> expl
-
-  output <span style=color:#f92672>=</span> {}
-  <span style=color:#66d9ef>for</span> benefit <span style=color:#f92672>in</span> [<span style=color:#e6db74>&#39;OAS&#39;</span>,<span style=color:#e6db74>&#39;GIS&#39;</span>,<span style=color:#e6db74>&#39;Allowance&#39;</span>,<span style=color:#e6db74>&#39;AFS&#39;</span>]:
-    output[benefit] <span style=color:#f92672>=</span> {}
-
-
-  <span style=color:#75715e># This loop adds information to the output from the graph</span>
-  <span style=color:#75715e># It makes a number of assumptions, such as there is only ever one entity being</span>
-  <span style=color:#75715e># asked about.</span>
-  <span style=color:#66d9ef>for</span> goal <span style=color:#f92672>in</span> list(set([r<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#39;&lt;&#39;</span>)[<span style=color:#ae81ff>0</span>] <span style=color:#66d9ef>for</span> r <span style=color:#f92672>in</span> response[<span style=color:#e6db74>&#39;requestedCalculations&#39;</span>]])):
-    <span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#34;_known&#34;</span> <span style=color:#f92672>not</span> <span style=color:#f92672>in</span> goal:
-        i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
-        <span style=color:#66d9ef>while</span> i <span style=color:#f92672>&lt;</span> len(dependency_graph<span style=color:#f92672>.</span>nodes[goal][<span style=color:#e6db74>&#39;value&#39;</span>]):
-            relevant <span style=color:#f92672>=</span> []
-
-            <span style=color:#66d9ef>for</span> node <span style=color:#f92672>in</span> descendants(dependency_graph,goal):
-                <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> descendants(dependency_graph,node): <span style=color:#75715e># Only leaf nodes</span>
-                    <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> dependency_graph<span style=color:#f92672>.</span>nodes[node][<span style=color:#e6db74>&#39;known&#39;</span>][i]:
-                      known_parent <span style=color:#f92672>=</span> <span style=color:#66d9ef>False</span>
-                      <span style=color:#66d9ef>for</span> path <span style=color:#f92672>in</span> all_simple_paths(dependency_graph,goal,node):
-                        <span style=color:#66d9ef>for</span> parent <span style=color:#f92672>in</span> path:
-                            <span style=color:#66d9ef>if</span> dependency_graph<span style=color:#f92672>.</span>nodes[parent][<span style=color:#e6db74>&#39;known&#39;</span>][i] <span style=color:#f92672>==</span> <span style=color:#66d9ef>True</span>:
-                                known_parent <span style=color:#f92672>=</span> <span style=color:#66d9ef>True</span>
-                                <span style=color:#66d9ef>break</span>
-                        <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> known_parent:
-                            relevant<span style=color:#f92672>.</span>append(node)
-            
-            <span style=color:#75715e># dependency_graph.nodes[goal][&#39;relevant&#39;] = list(set(relevant))</span>
-            
-            
-
-            unaskable <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#39;eligible_under_social_agreement&#39;</span>]
-            relevant_and_askable <span style=color:#f92672>=</span> <span style=color:#66d9ef>False</span>
-            values <span style=color:#f92672>=</span> dependency_graph<span style=color:#f92672>.</span>nodes[goal][<span style=color:#e6db74>&#39;value&#39;</span>]
-            conditionals <span style=color:#f92672>=</span> [<span style=color:#66d9ef>False</span>] <span style=color:#f92672>*</span> len(values)
-            dependency_graph<span style=color:#f92672>.</span>nodes[goal][<span style=color:#e6db74>&#39;conditional&#39;</span>] <span style=color:#f92672>=</span> conditionals
-            <span style=color:#66d9ef>if</span> relevant:
-              <span style=color:#66d9ef>for</span> q <span style=color:#f92672>in</span> relevant:
-                <span style=color:#66d9ef>if</span> q <span style=color:#f92672>not</span> <span style=color:#f92672>in</span> unaskable:
-                    relevant_and_askable <span style=color:#f92672>=</span> <span style=color:#66d9ef>True</span>
-              <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> relevant_and_askable <span style=color:#f92672>and</span> dependency_graph<span style=color:#f92672>.</span>nodes[goal][<span style=color:#e6db74>&#39;known&#39;</span>][i] <span style=color:#f92672>==</span> <span style=color:#66d9ef>False</span>:
-                dependency_graph<span style=color:#f92672>.</span>nodes[goal][<span style=color:#e6db74>&#39;conditional&#39;</span>][i] <span style=color:#f92672>=</span> <span style=color:#66d9ef>True</span>
-                
-            explanation <span style=color:#f92672>=</span> generate_explanation(goal,i)
-</code></pre></div><p>The explanations generated are not used in the front end directly,
+analysis described above is included here:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># Post-Process the Results</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  dependency_graph <span style=color:#f92672>=</span> nx<span style=color:#f92672>.</span>DiGraph()
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> (K,V) <span style=color:#f92672>in</span> response[<span style=color:#e6db74>&#39;trace&#39;</span>]<span style=color:#f92672>.</span>items():
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#34;_known&lt;&#34;</span> <span style=color:#f92672>not</span> <span style=color:#f92672>in</span> K: <span style=color:#75715e># Exlclude _known variables, as they will be used to annotate</span>
+</span></span><span style=display:flex><span>          dependency_graph<span style=color:#f92672>.</span>add_node(K<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#39;&lt;&#39;</span>)[<span style=color:#ae81ff>0</span>], value<span style=color:#f92672>=</span>V[<span style=color:#e6db74>&#39;value&#39;</span>])
+</span></span><span style=display:flex><span>          <span style=color:#66d9ef>for</span> target <span style=color:#f92672>in</span> V[<span style=color:#e6db74>&#39;dependencies&#39;</span>]:
+</span></span><span style=display:flex><span>              dependency_graph<span style=color:#f92672>.</span>add_edge(K<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#39;&lt;&#39;</span>)[<span style=color:#ae81ff>0</span>],target<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#39;&lt;&#39;</span>)[<span style=color:#ae81ff>0</span>])
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> (K,V) <span style=color:#f92672>in</span> response[<span style=color:#e6db74>&#39;trace&#39;</span>]<span style=color:#f92672>.</span>items():
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#34;_known&lt;&#34;</span> <span style=color:#f92672>in</span> K:
+</span></span><span style=display:flex><span>          related_node <span style=color:#f92672>=</span> K<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#39;_known&#39;</span>)[<span style=color:#ae81ff>0</span>]
+</span></span><span style=display:flex><span>          dependency_graph<span style=color:#f92672>.</span>nodes[related_node][<span style=color:#e6db74>&#39;known&#39;</span>] <span style=color:#f92672>=</span> V[<span style=color:#e6db74>&#39;value&#39;</span>]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  incorrect_nodes <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> N <span style=color:#f92672>in</span> dependency_graph:
+</span></span><span style=display:flex><span>      <span style=color:#75715e># Not sure why this test is necessary, but duplicate nodes</span>
+</span></span><span style=display:flex><span>      <span style=color:#75715e># with no value show up for root elements in the graph</span>
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#39;value&#39;</span> <span style=color:#f92672>in</span> dependency_graph<span style=color:#f92672>.</span>nodes[N]:
+</span></span><span style=display:flex><span>        values <span style=color:#f92672>=</span> dependency_graph<span style=color:#f92672>.</span>nodes[N][<span style=color:#e6db74>&#39;value&#39;</span>]
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#39;known&#39;</span> <span style=color:#f92672>in</span> dependency_graph<span style=color:#f92672>.</span>nodes[N]:
+</span></span><span style=display:flex><span>          knowns <span style=color:#f92672>=</span> dependency_graph<span style=color:#f92672>.</span>nodes[N][<span style=color:#e6db74>&#39;known&#39;</span>]
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>: <span style=color:#75715e># Some output variables do not have associated &#34;known&#34; variables.</span>
+</span></span><span style=display:flex><span>          knowns <span style=color:#f92672>=</span> [<span style=color:#66d9ef>True</span>] <span style=color:#f92672>*</span> len(values)
+</span></span><span style=display:flex><span>          dependency_graph<span style=color:#f92672>.</span>nodes[N][<span style=color:#e6db74>&#39;known&#39;</span>] <span style=color:#f92672>=</span> knowns
+</span></span><span style=display:flex><span>        display <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>for</span> (value, known) <span style=color:#f92672>in</span> zip(values,knowns):
+</span></span><span style=display:flex><span>            display<span style=color:#f92672>.</span>append(value <span style=color:#66d9ef>if</span> known <span style=color:#66d9ef>else</span> <span style=color:#e6db74>&#34;unknown, potentially &#34;</span> <span style=color:#f92672>+</span> str(value))
+</span></span><span style=display:flex><span>        dependency_graph<span style=color:#f92672>.</span>nodes[N][<span style=color:#e6db74>&#39;display&#39;</span>] <span style=color:#f92672>=</span> display
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>        <span style=color:#75715e># Checking to see if this solves problems later for</span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># incorrectly duplicated nodes.</span>
+</span></span><span style=display:flex><span>        incorrect_nodes<span style=color:#f92672>.</span>append(N)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> i <span style=color:#f92672>in</span> incorrect_nodes:
+</span></span><span style=display:flex><span>    dependency_graph<span style=color:#f92672>.</span>remove_node(i)
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#75715e># print(str(nx.readwrite.json_graph.adjacency_data(dependency_graph)))</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>generate_explanation</span>(goal,entity):
+</span></span><span style=display:flex><span>      expl <span style=color:#f92672>=</span> {}
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> len(dependency_graph<span style=color:#f92672>.</span>adj[goal]):
+</span></span><span style=display:flex><span>        expl[<span style=color:#e6db74>&#39;reasons&#39;</span>] <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>      expl[goal] <span style=color:#f92672>=</span> dependency_graph<span style=color:#f92672>.</span>nodes[goal][<span style=color:#e6db74>&#39;display&#39;</span>][entity]
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>for</span> neighbour <span style=color:#f92672>in</span> dependency_graph<span style=color:#f92672>.</span>adj[goal]:
+</span></span><span style=display:flex><span>          expl[<span style=color:#e6db74>&#39;reasons&#39;</span>]<span style=color:#f92672>.</span>append(generate_explanation(neighbour,entity))
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>return</span> expl
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  output <span style=color:#f92672>=</span> {}
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> benefit <span style=color:#f92672>in</span> [<span style=color:#e6db74>&#39;OAS&#39;</span>,<span style=color:#e6db74>&#39;GIS&#39;</span>,<span style=color:#e6db74>&#39;Allowance&#39;</span>,<span style=color:#e6db74>&#39;AFS&#39;</span>]:
+</span></span><span style=display:flex><span>    output[benefit] <span style=color:#f92672>=</span> {}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># This loop adds information to the output from the graph</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># It makes a number of assumptions, such as there is only ever one entity being</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># asked about.</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>for</span> goal <span style=color:#f92672>in</span> list(set([r<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#39;&lt;&#39;</span>)[<span style=color:#ae81ff>0</span>] <span style=color:#66d9ef>for</span> r <span style=color:#f92672>in</span> response[<span style=color:#e6db74>&#39;requestedCalculations&#39;</span>]])):
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#34;_known&#34;</span> <span style=color:#f92672>not</span> <span style=color:#f92672>in</span> goal:
+</span></span><span style=display:flex><span>        i <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span> i <span style=color:#f92672>&lt;</span> len(dependency_graph<span style=color:#f92672>.</span>nodes[goal][<span style=color:#e6db74>&#39;value&#39;</span>]):
+</span></span><span style=display:flex><span>            relevant <span style=color:#f92672>=</span> []
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> node <span style=color:#f92672>in</span> descendants(dependency_graph,goal):
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> descendants(dependency_graph,node): <span style=color:#75715e># Only leaf nodes</span>
+</span></span><span style=display:flex><span>                    <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> dependency_graph<span style=color:#f92672>.</span>nodes[node][<span style=color:#e6db74>&#39;known&#39;</span>][i]:
+</span></span><span style=display:flex><span>                      known_parent <span style=color:#f92672>=</span> <span style=color:#66d9ef>False</span>
+</span></span><span style=display:flex><span>                      <span style=color:#66d9ef>for</span> path <span style=color:#f92672>in</span> all_simple_paths(dependency_graph,goal,node):
+</span></span><span style=display:flex><span>                        <span style=color:#66d9ef>for</span> parent <span style=color:#f92672>in</span> path:
+</span></span><span style=display:flex><span>                            <span style=color:#66d9ef>if</span> dependency_graph<span style=color:#f92672>.</span>nodes[parent][<span style=color:#e6db74>&#39;known&#39;</span>][i] <span style=color:#f92672>==</span> <span style=color:#66d9ef>True</span>:
+</span></span><span style=display:flex><span>                                known_parent <span style=color:#f92672>=</span> <span style=color:#66d9ef>True</span>
+</span></span><span style=display:flex><span>                                <span style=color:#66d9ef>break</span>
+</span></span><span style=display:flex><span>                        <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> known_parent:
+</span></span><span style=display:flex><span>                            relevant<span style=color:#f92672>.</span>append(node)
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            <span style=color:#75715e># dependency_graph.nodes[goal][&#39;relevant&#39;] = list(set(relevant))</span>
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            unaskable <span style=color:#f92672>=</span> [<span style=color:#e6db74>&#39;eligible_under_social_agreement&#39;</span>]
+</span></span><span style=display:flex><span>            relevant_and_askable <span style=color:#f92672>=</span> <span style=color:#66d9ef>False</span>
+</span></span><span style=display:flex><span>            values <span style=color:#f92672>=</span> dependency_graph<span style=color:#f92672>.</span>nodes[goal][<span style=color:#e6db74>&#39;value&#39;</span>]
+</span></span><span style=display:flex><span>            conditionals <span style=color:#f92672>=</span> [<span style=color:#66d9ef>False</span>] <span style=color:#f92672>*</span> len(values)
+</span></span><span style=display:flex><span>            dependency_graph<span style=color:#f92672>.</span>nodes[goal][<span style=color:#e6db74>&#39;conditional&#39;</span>] <span style=color:#f92672>=</span> conditionals
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> relevant:
+</span></span><span style=display:flex><span>              <span style=color:#66d9ef>for</span> q <span style=color:#f92672>in</span> relevant:
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> q <span style=color:#f92672>not</span> <span style=color:#f92672>in</span> unaskable:
+</span></span><span style=display:flex><span>                    relevant_and_askable <span style=color:#f92672>=</span> <span style=color:#66d9ef>True</span>
+</span></span><span style=display:flex><span>              <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> relevant_and_askable <span style=color:#f92672>and</span> dependency_graph<span style=color:#f92672>.</span>nodes[goal][<span style=color:#e6db74>&#39;known&#39;</span>][i] <span style=color:#f92672>==</span> <span style=color:#66d9ef>False</span>:
+</span></span><span style=display:flex><span>                dependency_graph<span style=color:#f92672>.</span>nodes[goal][<span style=color:#e6db74>&#39;conditional&#39;</span>][i] <span style=color:#f92672>=</span> <span style=color:#66d9ef>True</span>
+</span></span><span style=display:flex><span>                
+</span></span><span style=display:flex><span>            explanation <span style=color:#f92672>=</span> generate_explanation(goal,i)
+</span></span></code></pre></div><p>The explanations generated are not used in the front end directly,
 but are used to generate short explanations that are displayed to the user, in an effort to duplicate
-the behaviour of the existing implementation.</p>
-<p>A thin example of a front-end application accessing that middle layer is also available as a <a href="https://colab.research.google.com/drive/1FAwqjLRq2Ax7Y7-QextVNDeJkD01OV_W#scrollTo=L1JPR0sur8bn">Google
+the behaviour of the existing implementation.</p><p>A thin example of a front-end application accessing that middle layer is also available as a <a href="https://colab.research.google.com/drive/1FAwqjLRq2Ax7Y7-QextVNDeJkD01OV_W#scrollTo=L1JPR0sur8bn">Google
 Colab Notebook</a> and <a href=https://gist.github.com/JasonMorrisSC/11883ddbb36c0b0b9981a903c644179e>GitHub Gist</a>. Providing that code with the announced ngrok.io
 address for the middleware will allow you to make queries against middle layer, and display
 the results received. A video illustrating how a conversation
 might proceed between the front end of the application and the OpenFisca reasoner, is available on
-YouTube, and included here.</p>
-<p>TODO: YouTube Video</p>
-<p>If you provide only the age of 65, the server responds, with regard to OAS Eligibility,
+YouTube, and included here.</p><p>TODO: YouTube Video</p><p>If you provide only the age of 65, the server responds, with regard to OAS Eligibility,
 &ldquo;More Information Required&rdquo;, and provides a list of relevant inputs including whether the person is
-eligible under a social agreement with a different country, and where the person lives.</p>
-<p>If you then add information about the person&rsquo;s place of residence being Canada, and rerun the query,
+eligible under a social agreement with a different country, and where the person lives.</p><p>If you then add information about the person&rsquo;s place of residence being Canada, and rerun the query,
 the answer remains
-unknown, but agreements with different countries are no longer relevant.</p>
-<p>If you provide a legal
+unknown, but agreements with different countries are no longer relevant.</p><p>If you provide a legal
 status of &ldquo;Canadian Citizen&rdquo;, income of 10000, and duration of residence in Canada of 20, the
-response is that the person is eligible.</p>
-<p>If you then change the place of residence to Greece,
+response is that the person is eligible.</p><p>If you then change the place of residence to Greece,
 the person is reported as &ldquo;conditionally eligible&rdquo;, depending on the one remaining relevant input of
-whether they qualify under the agreement with Greece.</p>
-<h2 id=analysis-of-using-openfisca-for-expert-system-development>Analysis of Using OpenFisca for Expert System Development</h2>
-<p>Dealing with OpenFisca&rsquo;s vectorization of calculations is awkward. While being familiar with Python is
+whether they qualify under the agreement with Greece.</p><h2 id=analysis-of-using-openfisca-for-expert-system-development>Analysis of Using OpenFisca for Expert System Development</h2><p>Dealing with OpenFisca&rsquo;s vectorization of calculations is awkward. While being familiar with Python is
 an advantage, it is not as strong an advantage as you would expect unless you are also familiar with
 the mathematical library NumPy.
 Standard Python keywords like <code>and</code>, <code>or</code>, and <code>if</code> do not work as you would naively assume
@@ -736,239 +550,142 @@ when dealing with vectors, which makes the task of writing encodings in OpenFisc
 The need to always annotate input and output data and parameters with dates is also a frustrating
 but understandable annoyance. I anticipate these things would fade into the background with time spent
 working with OpenFisca code. Those are also problems that exist before applying the approach described
-above.</p>
-<p>Overall, my impression of having used OpenFisca to power a legal expert system was disappointing.
+above.</p><p>Overall, my impression of having used OpenFisca to power a legal expert system was disappointing.
 While the approach described above satisfied the requirements of
 the experiment, but my impression was that the above approach resulted in code that
 was long, repetitive, riskier and less useful than code written in other approaches. Expert
-systems is not what OpenFisca is for, and putting it to that use causes unnecessary friction.</p>
-<h3 id=rules-as-code-v-application-development>Rules as Code v Application Development</h3>
-<p>Recall that application development and Rules as Code
+systems is not what OpenFisca is for, and putting it to that use causes unnecessary friction.</p><h3 id=rules-as-code-v-application-development>Rules as Code v Application Development</h3><p>Recall that application development and Rules as Code
 are not the same thing. Analyzing whether or not OpenFisca, or any particular approach to the
 use of OpenFisca, is an appropriate tool for Rules as Code generally is a very different question
-from whether it is a good approach to expert systems.</p>
-<p>In fact, analyzing Rules as Code in the context of any single application is counter-productive.
+from whether it is a good approach to expert systems.</p><p>In fact, analyzing Rules as Code in the context of any single application is counter-productive.
 Encoding an entire piece of legislation so that it can be used both by your application
 and arbitrary others is, in economic terms, a public good. The benefits received by the other
 users of your encoded law is a positive externality that imposes costs on the current
 development project that are impossible to recoup. And the work involved in writing code that
 can do many things is necessarily higher than the work involved in writing code that can do
-only the thing you currently need.</p>
-<p>So if you are approaching it from the perspective of a person who needs to get a single product
+only the thing you currently need.</p><p>So if you are approaching it from the perspective of a person who needs to get a single product
 out the door as effectively and efficiently as possible, Rules as Code is always going to appear
-to make things harder, not easier.</p>
-<p>That is not the right context from which to approach Rules as Code generally.
+to make things harder, not easier.</p><p>That is not the right context from which to approach Rules as Code generally.
 Rules as Code is public administration infrastructure.
-Tools and techniques for Rules as Code need to be evaluated in that larger context.</p>
-<p>Therefore, the question that this
+Tools and techniques for Rules as Code need to be evaluated in that larger context.</p><p>Therefore, the question that this
 paper seeks to address is not whether or not we should &ldquo;do&rdquo; Rules as Code, or whether we
-should use OpenFisca to do it.</p>
-<p>Rather, the question this paper seeks to address is assuming that we have
+should use OpenFisca to do it.</p><p>Rather, the question this paper seeks to address is assuming that we have
 decided to use a Rules as Code approach to expert system development; and that we
 want the resulting system to be explainable, justified by reference to
 the source legislation, capable of understanding incomplete facts, and advising as to relevance;
-how does OpenFisca compare to the alternatives.</p>
-<h3 id=openfisca-exists>OpenFisca Exists</h3>
-<p>The main advantage that OpenFisca provides is that it is real. The alternatives, at least with regard
+how does OpenFisca compare to the alternatives.</p><h3 id=openfisca-exists>OpenFisca Exists</h3><p>The main advantage that OpenFisca provides is that it is real. The alternatives, at least with regard
 to open source technologies,
 are not yet deployable. They are works in progress, or they do not have the documentation and tooling and community
 that has built around OpenFisca, or they are hampered in their growth because they require the
 adoption of a declarative or functional programming paradigm that is unfamiliar to most software
-developers.</p>
-<p>Closed source technologies are undesireable in the Rules as Code realm because of the
+developers.</p><p>Closed source technologies are undesireable in the Rules as Code realm because of the
 requirements for transparency and accountability arising in admininstrative law, and the move
-of public sectors away from proprietary software solutions.</p>
-<p>But good open source alternatives to OpenFisca for expert system development
+of public sectors away from proprietary software solutions.</p><p>But good open source alternatives to OpenFisca for expert system development
 can nevertheless be anticipated. Work on tools like L4, Blawx,
 and Catala continues, and is very promising.
 An apples-to-apples comparison of OpenFisca and some
 of these alternatives applied to the same computational law
-task would be worthwhile, but remains future work.</p>
-<h3 id=openfisca-requires-verbose-code>OpenFisca Requires Verbose Code</h3>
-<p>Comparing the encoding of the knowledge in an entire law with the encoding of the knowledge in a law
+task would be worthwhile, but remains future work.</p><h3 id=openfisca-requires-verbose-code>OpenFisca Requires Verbose Code</h3><p>Comparing the encoding of the knowledge in an entire law with the encoding of the knowledge in a law
 required for answering a specific type of question is an &ldquo;apples and oranges&rdquo; affair. That said,
 if you compare the code length of all of the available approaches, both Rules as Code and status quo,
 the shortest code length is in the status quo. I would estimate the difference to be in the range of
 a factor of 10. It&rsquo;s hard to overstate the advantages for development time when you know in advance
-what question you need to answer, what inputs you will have, and what outputs you care to provide.</p>
-<p>I mention this not to applaud the status quo. The status quo remains extremely risky in terms of
+what question you need to answer, what inputs you will have, and what outputs you care to provide.</p><p>I mention this not to applaud the status quo. The status quo remains extremely risky in terms of
 legal compliance, duplicative of effort, and inconsistent in results.
 I mention it to make clear to Rules as Code advocates how steep the uphill battle
 is to convince people to adopt Rules as Code as an approach to application development.
 Application development is a use-case for encoded legislation, but it is not a reason to write those
 encodings. For Rules as Code to be a good idea inside the context of an application development process,
 the application would need to be astronomically complicated, or the encoding of the law
-<em>would need to already exist</em>. The latter is more realistic, and that&rsquo;s the approach I think we should pursue.</p>
-<p>With regard to the approach described above there is no way to avoid the conclusion that using OpenFisca
+<em>would need to already exist</em>. The latter is more realistic, and that&rsquo;s the approach I think we should pursue.</p><p>With regard to the approach described above there is no way to avoid the conclusion that using OpenFisca
 this way involves writing an enormous amount of code, much of which is boilerplate, and repetitive. In particular, the need to duplicate the logic of the encoding in order
 to calculate certainty results in a more-than doubling of the lines of code required. It is theoretically
 possible that some of that work could be automated, by generating the confidence code from the code
-for the other variables, but the difference is still stark.</p>
-<p>Let me provide an anecdotal example. I used a declarative logic programming language called s(CASP)
+for the other variables, but the difference is still stark.</p><p>Let me provide an anecdotal example. I used a declarative logic programming language called s(CASP)
 to encode a section of Singapore legislation last year with SMU Centre for Computational Law.
 The ratio of lines of code to words in the legislative text was 0.5. Every two words of legislation resulted in a line of code. When I did
 the same calculation for this work in OpenFisca, the ratio was 2. And at the time I did the calculation the code was unfinished, so the real ratio
-for the OAS code was ultimately going to be higher.</p>
-<p>That&rsquo;s more than a four-fold increase in lines of code using the approach
+for the OAS code was ultimately going to be higher.</p><p>That&rsquo;s more than a four-fold increase in lines of code using the approach
 described above as opposed to a declarative encoding.
 Even if you could automatically generate the confidence code, it is still more than
-a two-fold increase.</p>
-<h3 id=openfisca-is-efficient-when-dealing-with-large-data-sets-and-variables-over-time>OpenFisca Is Efficient When Dealing with Large Data Sets, and Variables Over Time</h3>
-<p>It must be mentioned that OpenFisca excels at solving the problems that it was specifically designed
+a two-fold increase.</p><h3 id=openfisca-is-efficient-when-dealing-with-large-data-sets-and-variables-over-time>OpenFisca Is Efficient When Dealing with Large Data Sets, and Variables Over Time</h3><p>It must be mentioned that OpenFisca excels at solving the problems that it was specifically designed
 to solve. If you need to deal with variables and legislative parameters that vary over time,
 and if you need to be able to process the same conclusions with regard to a large number
-of entities at the same time, OpenFisca provides excellent support for those capabilities.</p>
-<p>I understand that OpenFisca also has capabilities with regard to generating representative
+of entities at the same time, OpenFisca provides excellent support for those capabilities.</p><p>I understand that OpenFisca also has capabilities with regard to generating representative
 population data, which it was not necessary to explore in my work, but I anticipate those
-are equally effective.</p>
-<h3 id=openfisca-lacks-the-reasoning-capabilities-of-declarative-methods>OpenFisca Lacks the Reasoning Capabilities of Declarative Methods</h3>
-<p>OpenFisca is based on Python, which is imperative. Variables are calculated using formulas,
-which are imperative functions. Imperative functions go in only one direction, from inputs to outputs, and cannot be automatically reversed.</p>
-<p>Declarative logic programming, by contrast, allows you to specify relationships, and then use them
-in both directions.</p>
-<p>By way of illustration, an equivalent declarative logic programming encoding of the OAS rules might allow for asking
+are equally effective.</p><h3 id=openfisca-lacks-the-reasoning-capabilities-of-declarative-methods>OpenFisca Lacks the Reasoning Capabilities of Declarative Methods</h3><p>OpenFisca is based on Python, which is imperative. Variables are calculated using formulas,
+which are imperative functions. Imperative functions go in only one direction, from inputs to outputs, and cannot be automatically reversed.</p><p>Declarative logic programming, by contrast, allows you to specify relationships, and then use them
+in both directions.</p><p>By way of illustration, an equivalent declarative logic programming encoding of the OAS rules might allow for asking
 abstract reasoning questions, like &ldquo;are there any circumstances in which a person qualifies for GIS and
-lives outside of Canada?&rdquo; The logic required to answer that question starts at the conclusion - whether the person qualifies for GIS - and works backward to the inputs that can lead to that conclusion.</p>
-<p>With the OpenFisca approach described above, the only way to get an answer to that question would be to
+lives outside of Canada?&rdquo; The logic required to answer that question starts at the conclusion - whether the person qualifies for GIS - and works backward to the inputs that can lead to that conclusion.</p><p>With the OpenFisca approach described above, the only way to get an answer to that question would be to
 randomly generate a large population (which OpenFisca can help with), run the queries against all the
 entities in that population, and test the results to see whether or not the described situation arises.
-But even then, you don&rsquo;t know that it is impossible, you just know you didn&rsquo;t find any examples of it.</p>
-<p>A declarative logic encoding might be capable of saying categorically that such a scenario is impossible,
+But even then, you don&rsquo;t know that it is impossible, you just know you didn&rsquo;t find any examples of it.</p><p>A declarative logic encoding might be capable of saying categorically that such a scenario is impossible,
 or determining that it is possible, and providing an example, without having to generate any data or
-analyse the output of any queries.</p>
-<p>So while OpenFisca code can be written in such a way as to get some of the features of declarative code
+analyse the output of any queries.</p><p>So while OpenFisca code can be written in such a way as to get some of the features of declarative code
 alternatives, and the above method demonstrates that possibility, that method still does not get you
 all the capabilities of a declarative encoding of the same rules, which encoding would likely be
-dramatically shorter.</p>
-<h3 id=this-approach-is-error-prone>This Approach Is Error Prone</h3>
-<p>In addition to the cost of additional lines of code, there is a negative consequence for
+dramatically shorter.</p><h3 id=this-approach-is-error-prone>This Approach Is Error Prone</h3><p>In addition to the cost of additional lines of code, there is a negative consequence for
 software reliability. Every line of code is an opportunity for another bug. Given the complexity
 of the formula used for calculating &ldquo;known&rdquo; values in the above method, we are caught between
 a rock and a hard place. Either we simplify the variables to the point where the formulas for
 whether or not they are known are simple, and we multiply the number of variables we are encoding,
 or we leave ourselves with more complicated variable definitions and significantly increase the risk
-of errors in how the &ldquo;known&rdquo; variables are being calculated.</p>
-<h2 id=conclusion>Conclusion</h2>
-<p>Open Fisca clearly belongs in Rules as Code toolbox. If you need microsimulation,
+of errors in how the &ldquo;known&rdquo; variables are being calculated.</p><h2 id=conclusion>Conclusion</h2><p>Open Fisca clearly belongs in Rules as Code toolbox. If you need microsimulation,
 it is an excellent option. If you need microsimulation, and you don&rsquo;t need things like explanations, legal
-justification, relevance, and dealing with incomplete facts, it is also a reasonable way to build simple web apps.</p>
-<p>My experience also suggests that if you do need those additional features, or if you are trying to build a generalized encoding
+justification, relevance, and dealing with incomplete facts, it is also a reasonable way to build simple web apps.</p><p>My experience also suggests that if you do need those additional features, or if you are trying to build a generalized encoding
 for people who might, OpenFisca is suboptimal. It can be made to behave sort of like
-an expert system, but the effort and risk involved is high.</p>
-<p>This paper does not address the alternative
+an expert system, but the effort and risk involved is high.</p><p>This paper does not address the alternative
 of attempting to make declarative expert system code behave like a microsimulator. My instinct
 is that these would be result in relatively inefficient code if done with
 declarative logic approaches. Functional approaches seem well-suited to the microsimulation task,
 but I have no direct experience with them, and it is not clear whether they
-share all the advantages of logical code.</p>
-<p>What seems obvious to me from the experience of having used both OpenFisca and declarative methods to generate explainable legal expert systems is that
-microsimulation and declarative logic tools are more powerful in combination than either is alone.</p>
-<p>With both, you could use the declarative encoding with subject matter experts to verify it matches their expectations.
+share all the advantages of logical code.</p><p>What seems obvious to me from the experience of having used both OpenFisca and declarative methods to generate explainable legal expert systems is that
+microsimulation and declarative logic tools are more powerful in combination than either is alone.</p><p>With both, you could use the declarative encoding with subject matter experts to verify it matches their expectations.
 That is arguably easier to do with declarative code, because declarative code matches the structure of the source rules much better than imperative approaches. Then,
 the declarative encoding could be used to generate tests for microsimulation projects. If the microsimulation
 code passes all the of the tests generated by the declarative code, then we can have confidence it is consistent with the declarative code,
-which in turn is consistent with the experts' expectations. If a test fails, the declarative code can be used to
+which in turn is consistent with the experts&rsquo; expectations. If a test fails, the declarative code can be used to
 generate an explanation for why the result that was generated was not correct, and why the result that was expected is
-correct.</p>
-<p>This multi-layered approach would be a boon to legal software quality assurance, allowing you do add legal verifiability
+correct.</p><p>This multi-layered approach would be a boon to legal software quality assurance, allowing you do add legal verifiability
 to the list of features provided by whatever other technology you are using. Microsimulations would
-remain as efficient as you like, but we could also have greater confidence that they were legally accurate.</p>
-<p>Ultimately, the lesson from this experiment is to choose tools on the basis of whether the problem
+remain as efficient as you like, but we could also have greater confidence that they were legally accurate.</p><p>Ultimately, the lesson from this experiment is to choose tools on the basis of whether the problem
 you are trying to solve is the problem they were designed to address. We ought not cram microsimulator-shaped pegs into expert-system-shaped holes. OpenFisca should be used for what it is
 good at, which is microsimulation. We should continue and wherever possible invest in the
-work on developing and improving open source tools for the problem of expert systems.</p>
-<h2 id=acknowledgements>Acknowledgements</h2>
-<p>I would like to thank the maintainers of OpenFisca for their valuable and important tool.
+work on developing and improving open source tools for the problem of expert systems.</p><h2 id=acknowledgements>Acknowledgements</h2><p>I would like to thank the maintainers of OpenFisca for their valuable and important tool.
 I would like to thank the members of the OpenFisca community who have and continue to assist me in figuring out how to
 get OpenFisca to do things it wasn&rsquo;t designed to do. I would also like to thank the members of the Eligibility Estimator
 team for their help in understanding their use case and their needs, and for having done the work of encoding the status
 quo version before I even got started. I would also like to thank the organizers of the Computational Legal Studies
 Conference for hosting the conference, supporting the academic field of Computational Law, and creating forums for conversations
-around topics like Rules as Code.</p>
-<ul class=pa0>
-</ul>
-<div class="mt6 instapaper_ignoref">
-</div>
-</div>
-<aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-<p class="f5 b mb3">What's in this post</p>
-<nav id=TableOfContents>
+around topics like Rules as Code.</p><ul class=pa0>
+</ul><div class="mt6 instapaper_ignoref">
+</div></div><aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">What's in this post</p><nav id=TableOfContents>
 <ul>
 <li>
 <ul>
-<li><a href=#using-openfisca-to-power-expert-systems-in-the-canadian-public-service-lessons-learned>Using OpenFisca to Power Expert Systems in the Canadian Public Service: Lessons Learned</a></li>
-<li><a href=#abstract>Abstract</a></li>
-<li><a href=#introduction>Introduction</a>
+<li><a href=#using-openfisca-to-power-expert-systems-in-the-canadian-public-service-lessons-learned>Using OpenFisca to Power Expert Systems in the Canadian Public Service: Lessons Learned</a></li><li><a href=#abstract>Abstract</a></li><li><a href=#introduction>Introduction</a>
 <ul>
-<li><a href=#background>Background</a></li>
-<li><a href=#rules-as-code>Rules as Code</a></li>
-<li><a href=#expert-systems>Expert Systems</a></li>
-<li><a href=#the-eligibility-estimator-prototype-requirements>The Eligibility Estimator Prototype Requirements</a></li>
-</ul>
-</li>
-<li><a href=#openfisca>OpenFisca</a>
+<li><a href=#background>Background</a></li><li><a href=#rules-as-code>Rules as Code</a></li><li><a href=#expert-systems>Expert Systems</a></li><li><a href=#the-eligibility-estimator-prototype-requirements>The Eligibility Estimator Prototype Requirements</a></li></ul></li><li><a href=#openfisca>OpenFisca</a>
 <ul>
-<li><a href=#microsimulation>Microsimulation</a></li>
-<li><a href=#open-source-microsimulation-in-openfisca>Open Source Microsimulation in OpenFisca</a></li>
-<li><a href=#why-use-openfisca>Why Use OpenFisca?</a></li>
-</ul>
-</li>
-<li><a href=#typical-openfisca-code>Typical OpenFisca Code</a>
+<li><a href=#microsimulation>Microsimulation</a></li><li><a href=#open-source-microsimulation-in-openfisca>Open Source Microsimulation in OpenFisca</a></li><li><a href=#why-use-openfisca>Why Use OpenFisca?</a></li></ul></li><li><a href=#typical-openfisca-code>Typical OpenFisca Code</a>
 <ul>
-<li><a href=#entities-variables-and-parameters>Entities, Variables, and Parameters</a></li>
-<li><a href=#age-birth-date-minor>Age, Birth Date, Minor</a></li>
-</ul>
-</li>
-<li><a href=#using-openfisca-to-power-expert-systems>Using OpenFisca to Power Expert Systems</a>
+<li><a href=#entities-variables-and-parameters>Entities, Variables, and Parameters</a></li><li><a href=#age-birth-date-minor>Age, Birth Date, Minor</a></li></ul></li><li><a href=#using-openfisca-to-power-expert-systems>Using OpenFisca to Power Expert Systems</a>
 <ul>
-<li><a href=#using-trace-results>Using <code>/trace</code> Results</a></li>
-<li><a href=#legislative-parts-sub-parts-conditions-and-conclusions-are-all-variables>Legislative Parts, Sub-Parts, Conditions, and Conclusions are all &ldquo;Variables&rdquo;</a></li>
-<li><a href=#encoding-confidence>Encoding Confidence</a></li>
-<li><a href=#post-processing-the-results-of-openfisca-queries>Post-Processing the Results of OpenFisca Queries</a>
+<li><a href=#using-trace-results>Using <code>/trace</code> Results</a></li><li><a href=#legislative-parts-sub-parts-conditions-and-conclusions-are-all-variables>Legislative Parts, Sub-Parts, Conditions, and Conclusions are all &ldquo;Variables&rdquo;</a></li><li><a href=#encoding-confidence>Encoding Confidence</a></li><li><a href=#post-processing-the-results-of-openfisca-queries>Post-Processing the Results of OpenFisca Queries</a>
 <ul>
-<li><a href=#generate-an-explanation>Generate An Explanation</a></li>
-<li><a href=#determine-relevant-inputs>Determine Relevant Inputs</a></li>
-<li><a href=#answer-contingent-questions>Answer Contingent Questions</a></li>
-</ul>
-</li>
-<li><a href=#old-age-security-act-example>Old Age Security Act Example</a></li>
-</ul>
-</li>
-<li><a href=#analysis-of-using-openfisca-for-expert-system-development>Analysis of Using OpenFisca for Expert System Development</a>
+<li><a href=#generate-an-explanation>Generate An Explanation</a></li><li><a href=#determine-relevant-inputs>Determine Relevant Inputs</a></li><li><a href=#answer-contingent-questions>Answer Contingent Questions</a></li></ul></li><li><a href=#old-age-security-act-example>Old Age Security Act Example</a></li></ul></li><li><a href=#analysis-of-using-openfisca-for-expert-system-development>Analysis of Using OpenFisca for Expert System Development</a>
 <ul>
-<li><a href=#rules-as-code-v-application-development>Rules as Code v Application Development</a></li>
-<li><a href=#openfisca-exists>OpenFisca Exists</a></li>
-<li><a href=#openfisca-requires-verbose-code>OpenFisca Requires Verbose Code</a></li>
-<li><a href=#openfisca-is-efficient-when-dealing-with-large-data-sets-and-variables-over-time>OpenFisca Is Efficient When Dealing with Large Data Sets, and Variables Over Time</a></li>
-<li><a href=#openfisca-lacks-the-reasoning-capabilities-of-declarative-methods>OpenFisca Lacks the Reasoning Capabilities of Declarative Methods</a></li>
-<li><a href=#this-approach-is-error-prone>This Approach Is Error Prone</a></li>
-</ul>
-</li>
-<li><a href=#conclusion>Conclusion</a></li>
-<li><a href=#acknowledgements>Acknowledgements</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-<div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-<p class="f5 b mb3">Related</p>
-<ul class="pa0 list">
+<li><a href=#rules-as-code-v-application-development>Rules as Code v Application Development</a></li><li><a href=#openfisca-exists>OpenFisca Exists</a></li><li><a href=#openfisca-requires-verbose-code>OpenFisca Requires Verbose Code</a></li><li><a href=#openfisca-is-efficient-when-dealing-with-large-data-sets-and-variables-over-time>OpenFisca Is Efficient When Dealing with Large Data Sets, and Variables Over Time</a></li><li><a href=#openfisca-lacks-the-reasoning-capabilities-of-declarative-methods>OpenFisca Lacks the Reasoning Capabilities of Declarative Methods</a></li><li><a href=#this-approach-is-error-prone>This Approach Is Error Prone</a></li></ul></li><li><a href=#conclusion>Conclusion</a></li><li><a href=#acknowledgements>Acknowledgements</a></li></ul></li></ul></nav></div><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">Related</p><ul class="pa0 list">
 <li class=mb2>
 <a href=/post/roundtablelaw/explainable-openfisca-4c718d0fdc58/>Explainable OpenFisca</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/using-openfisca-as-an-expert-system-engine-e291ddc50815/>Using OpenFisca as an Expert System Engine</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/openfisca-in-google-colab-de92e2621d88/>OpenFisca in Google Colab</a>
-</li>
-</ul>
-</div>
-</aside>
-</article>
-</main>
-<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+</li></ul></div></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
 <div class="flex justify-between">
 <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://JasonMorrisSC.github.io>
 &copy; Jason Morris 2022
@@ -980,8 +697,4 @@ around topics like Rules as Code.</p>
 </span>
 <span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
 </span></a>
-</div></div>
-</div>
-</footer>
-</body>
-</html>
+</div></div></div></footer></body></html>

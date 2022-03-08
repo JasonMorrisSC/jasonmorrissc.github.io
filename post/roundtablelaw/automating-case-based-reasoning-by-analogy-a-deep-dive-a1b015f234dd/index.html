@@ -2,10 +2,9 @@
 <head>
 <meta charset=utf-8>
 <meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<title>Automating Case-Based Reasoning By Analogy-A Deep Dive | Jason Morris</title>
-<meta name=viewport content="width=device-width,minimum-scale=1">
+<title>Automating Case-Based Reasoning By Analogy-A Deep Dive | Jason Morris</title><meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="Next in my series of blog posts on my ABA Center for Innovation Innovation Fellowship, sponsored by Clio, I’d like to show you how a…">
-<meta name=generator content="Hugo 0.92.2">
+<meta name=generator content="Hugo 0.93.2">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/css/main.min.css>
 <meta property="og:title" content="Automating Case-Based Reasoning By Analogy-A Deep Dive">
@@ -21,8 +20,7 @@
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Automating Case-Based Reasoning By Analogy-A Deep Dive">
 <meta name=twitter:description content="Next in my series of blog posts on my ABA Center for Innovation Innovation Fellowship, sponsored by Clio, I’d like to show you how a…">
-</head>
-<body class="ma0 avenir bg-near-white">
+</head><body class="ma0 avenir bg-near-white">
 <header>
 <div class=bg-black>
 <nav class="pv3 ph3 ph4-ns" role=navigation>
@@ -36,149 +34,53 @@ Jason Morris
 <a class="hover-white no-underline white-90" href=/about/ title="About Jason page">
 About Jason
 </a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
+</li><li class="list f5 f4-ns fw4 dib pr3">
 <a class="hover-white no-underline white-90" href=/project/ title="Projects page">
 Projects
 </a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
+</li><li class="list f5 f4-ns fw4 dib pr3">
 <a class="hover-white no-underline white-90" href=/post/ title="Rules as Code Diary page">
 Rules as Code Diary
 </a>
-</li>
-</ul>
-<div class=ananke-socials>
+</li></ul><div class=ananke-socials>
 <a href=https://twitter.com/RoundTableLaw target=_blank class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel=noopener aria-label="follow on Twitter——Opens in a new window">
 <span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
 </span>
 <span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
 </span></a>
-</div>
-</div>
-</div>
-</nav>
-</div>
-</header>
-<main class=pb7 role=main>
+</div></div></div></nav></div></header><main class=pb7 role=main>
 <article class="flex-l flex-wrap justify-between mw8 center ph3">
 <header class="mt4 w-100">
 <aside class="instapaper_ignoref b helvetica tracked">
 RULES AS CODE DIARY
-</aside>
-<div id=sharing class="mt3 ananke-socials">
+</aside><div id=sharing class="mt3 ananke-socials">
 <a href="https://twitter.com/share?url=https://JasonMorrisSC.github.io/post/roundtablelaw/automating-case-based-reasoning-by-analogy-a-deep-dive-a1b015f234dd/&text=Automating%20Case-Based%20Reasoning%20By%20Analogy-A%20Deep%20Dive" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
 <span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
 </span>
 </a>
-</div>
-<h1 class="f1 athelas mt3 mb1">Automating Case-Based Reasoning By Analogy-A Deep Dive</h1>
-<time class="f6 mv4 dib tracked" datetime=2018-10-24T21:14:06Z>October 24, 2018</time>
-</header>
-<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Next in my <a href=https://medium.com/@jason_90344/why-i-study-old-artificial-intelligence-in-law-d0abf23e42aa>series</a> of <a href=https://medium.com/@jason_90344/legal-expert-systems-just-got-smarter-e7e12b75e872>blog posts</a> on my <a href=http://abacenterforinnovation.org/>ABA Center for Innovation</a> Innovation Fellowship, sponsored by <a href=http://www.clio.com>Clio,</a> I’d like to show you how a computer does case-based reasoning by analogy by taking a deep dive into the IBP algorithm.</p>
-<p>If you’d like to try the live demo of the tool I’m describing, <a href="https://testda.roundtablelaw.ca/interview?i=docassemble.openlcbr%3Adata%2Fquestions%2Fexplain_lcbr_test.yml">click here</a>.</p>
-<h4 id=the-background-ibp>The Background: IBP</h4>
-<p>In 2003, Kevin Ashley and Stefanie Brüninghaus published <a href=https://pdfs.semanticscholar.org/24a4/7ca6f5b2ebec9e809bf19d2b0f0da3dcab81.pdf>a paper</a> in which they described an algorithm they called “Issue Based Prediction” or IBP. IBP was later expanded upon by Matthias Grabmair. Matthias and Kevin recently agreed to re-implement IBP as an open source tool. That open source implementation is published <a href=https://github.com/mgrabmair/openlcbr>on GitHub as openlcbr</a>.</p>
-<p>The short version of what IBP does is that it allows you to have the computer do reasoning by analogy to previous cases in a way similar to the way that a lawyer who was an expert in the field might do it. But that’s the too-short version.</p>
-<p>Let’s get into the long version. And fair warning, it’s complicated. But it’s not so complicated you can’t understand it, I promise. And understanding it is an important part of being able to see its potential.</p>
-<h4 id=the-basics>The Basics</h4>
-<p>IBP needs to know certain things about the law, and then when you give it a description of a fact scenario, your test case, it can make a prediction about the answer to the legal question in that case.</p>
-<p>So let’s look at what IBP needs to know, and then what it does with it.</p>
-<h3 id=what-ibp-knows>What IBP Knows</h3>
-<p>IBP needs to know about the factors, the issues, and the cases.</p>
-<h4 id=the-factors>The Factors</h4>
-<p>The first thing that IBP needs to know is the various types of things which might be true about a given case, and which side of the argument they favour. It’s that simple. An expert needs to set these out.</p>
-<p>Here’s an example of a few of the factors that exist in the trade secret database which is a part of OpenLCBR:</p>
-<p>“plaintiff disclosed its product information to outsiders” — favours Defendant</p>
-<p>&ldquo;plaintiff&rsquo;s disclosures to outsiders were subject to confidentiality restrictions&rdquo; - favours Plaintiff</p>
-<p>&mldr;</p>
-<h4 id=the-issues>The Issues</h4>
-<p>The next thing IBP needs to know is the legal issue and sub-issues, and how the factors relate to them. An expert needs to set these out, too.</p>
-<p>In addition to identifying whether sub-issues must all be satisfied or only one, the expert also specifies who succeeds on that issue if it is not raised.</p>
-<p>Here is a plain-language version of the entire issue structure for the trade secret database.</p>
-<p>There was a misappropriation of a trade secret if (all of)</p>
-<ul>
+</div><h1 class="f1 athelas mt3 mb1">Automating Case-Based Reasoning By Analogy-A Deep Dive</h1><time class="f6 mv4 dib tracked" datetime=2018-10-24T21:14:06Z>October 24, 2018</time>
+</header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Next in my <a href=https://medium.com/@jason_90344/why-i-study-old-artificial-intelligence-in-law-d0abf23e42aa>series</a> of <a href=https://medium.com/@jason_90344/legal-expert-systems-just-got-smarter-e7e12b75e872>blog posts</a> on my <a href=http://abacenterforinnovation.org/>ABA Center for Innovation</a> Innovation Fellowship, sponsored by <a href=http://www.clio.com>Clio,</a> I’d like to show you how a computer does case-based reasoning by analogy by taking a deep dive into the IBP algorithm.</p><p>If you’d like to try the live demo of the tool I’m describing, <a href="https://testda.roundtablelaw.ca/interview?i=docassemble.openlcbr%3Adata%2Fquestions%2Fexplain_lcbr_test.yml">click here</a>.</p><h4 id=the-background-ibp>The Background: IBP</h4><p>In 2003, Kevin Ashley and Stefanie Brüninghaus published <a href=https://pdfs.semanticscholar.org/24a4/7ca6f5b2ebec9e809bf19d2b0f0da3dcab81.pdf>a paper</a> in which they described an algorithm they called “Issue Based Prediction” or IBP. IBP was later expanded upon by Matthias Grabmair. Matthias and Kevin recently agreed to re-implement IBP as an open source tool. That open source implementation is published <a href=https://github.com/mgrabmair/openlcbr>on GitHub as openlcbr</a>.</p><p>The short version of what IBP does is that it allows you to have the computer do reasoning by analogy to previous cases in a way similar to the way that a lawyer who was an expert in the field might do it. But that’s the too-short version.</p><p>Let’s get into the long version. And fair warning, it’s complicated. But it’s not so complicated you can’t understand it, I promise. And understanding it is an important part of being able to see its potential.</p><h4 id=the-basics>The Basics</h4><p>IBP needs to know certain things about the law, and then when you give it a description of a fact scenario, your test case, it can make a prediction about the answer to the legal question in that case.</p><p>So let’s look at what IBP needs to know, and then what it does with it.</p><h3 id=what-ibp-knows>What IBP Knows</h3><p>IBP needs to know about the factors, the issues, and the cases.</p><h4 id=the-factors>The Factors</h4><p>The first thing that IBP needs to know is the various types of things which might be true about a given case, and which side of the argument they favour. It’s that simple. An expert needs to set these out.</p><p>Here’s an example of a few of the factors that exist in the trade secret database which is a part of OpenLCBR:</p><p>“plaintiff disclosed its product information to outsiders” — favours Defendant</p><p>&ldquo;plaintiff&rsquo;s disclosures to outsiders were subject to confidentiality restrictions&rdquo; - favours Plaintiff</p><p>&mldr;</p><h4 id=the-issues>The Issues</h4><p>The next thing IBP needs to know is the legal issue and sub-issues, and how the factors relate to them. An expert needs to set these out, too.</p><p>In addition to identifying whether sub-issues must all be satisfied or only one, the expert also specifies who succeeds on that issue if it is not raised.</p><p>Here is a plain-language version of the entire issue structure for the trade secret database.</p><p>There was a misappropriation of a trade secret if (all of)</p><ul>
 <li>The information was a trade secret, which is true if (all of)
 <ul>
 <li>The information was valuable, which will be found for the<br>
-plaintiff if unraised and depends on the following factors&mldr;</li>
-<li>The information was kept secret, which will be found for the<br>
-plaintiff if unraised and depends on the following factors&mldr;</li>
-</ul>
-</li>
-<li>The information was misappropriated, which will be found for the<br>
+plaintiff if unraised and depends on the following factors&mldr;</li><li>The information was kept secret, which will be found for the<br>
+plaintiff if unraised and depends on the following factors&mldr;</li></ul></li><li>The information was misappropriated, which will be found for the<br>
 plaintiff if unraised, and is true if (any of)
 <ul>
 <li>There was a breach of confidentiality by the defendant,<br>
 which is true if (all of)
 <ul>
 <li>The information was used, which is found for the plaintiff<br>
-if unraised, and depends on the following factors&mldr;</li>
-<li>There was a relationship of confidentiality, which is<br>
+if unraised, and depends on the following factors&mldr;</li><li>There was a relationship of confidentiality, which is<br>
 found for the plaintiff if unraised, and depends on the<br>
-following factors&mldr;</li>
-</ul>
-</li>
-<li>There was improper means used by the defendants, which<br>
-depends on the following factors&mldr;</li>
-</ul>
-</li>
-</ul>
-<p>I have left out the lists of factors that are relevant to each leaf issue, but otherwise, that is the issue tree. This will all look very familiar to anyone who has ever studied for an exam in law school.</p>
-<p>The only other piece of information that is provided in the issue model is a list of factors called “knock-out” factors. These are factors which are more important than average, and can be used to justify ignoring precedential cases that do not share them with the test case.</p>
-<p>In the test trade secret database, for example, there are two knock-out factors. The first is whether the plaintiff disclosed the alleged trade secret in a public forum, and the second is whether the plaintiff completely failed to protect their trade secret.</p>
-<h4 id=the-cases>The Cases</h4>
-<p>The last thing that the algorithm needs to know is what has happened before. It needs a list of cases, and each case must have two pieces of information.</p>
-<ol>
-<li>What factors existed in that case?</li>
-<li>Who won?</li>
-</ol>
-<h3 id=what-ibp-does>What IBP Does</h3>
-<p>So now you want to know: What does IBP actually do with all of this information to mimic reasoning by analogy?</p>
-<p>OK, fair warning. This part is a bit… dense. But you don’t need to be able to repeat it from memory. Just give it a read through to satisfy yourself that it is neither magic, nor stupid.</p>
-<p>Ready? Here we go.</p>
-<p>You tell IBP the factors that exist in the case you are trying to predict. The algorithm starts at the root of the issue tree, the main legal question you are trying to decide. It then goes through the issue tree following these 7 rules:</p>
-<ol>
-<li>If the current issue was not raised, and there is no default, the algorithm “abstains” with regard to that issue. If the current issue was not raised, and there is a default, it predicts the default. “Raised” means either a relevant factor for the current issue exists in the test case, or the same is true of a sub-issue.</li>
-<li>If the current issue was raised and has sub-issues all of which must be true, it repeats the process from 1 for each sub-issue, and predicts for the plaintiff only if the prediction for all the sub-issues is also the plaintiff. It predicts for the defendant if the defendant is predicted for any of the sub-issues. If it abstains from predicting any sub-issues, it abstains from predicting this issue.</li>
-<li>If the current issue was raised and has sub-issues one of which must be true, it repeats the process from 1 for each sub-issue, and predicts for the plaintiff if any sub-issue is predicted for the plaintiff. If none is predicted for the plaintiff but any are abstained, this issue is also abstained. And if they are all predicted for the defendant, this issue is predicted for the defendant.</li>
-<li>If the current issue has no sub-issues, and all of the factors relevant to that issue are to the favour of the same party, the prediction is for that party.</li>
-<li>If the current issue has no sub-issues, and there are factors relevant to that issue going in both directions, the software collects all of the cases which share any of the factors of the test case. If it finds any precedents, and all of those cases were decided for the same party, that party is the prediction for this issue. If it finds precedents, but not all those cases were decided for the same party, it checks to see if any of the cases decided for the defendant can be explained away because they do not have the same knock-out factor as in the test case. If any cannot be explained away, it predicts for the defendant. If they can all be explained away, it predicts for the plaintiff.</li>
-<li>If the current issue has no sub-issues, and there are factors relevant to that issue going in both directions, and there are no precedents which share all of the factors in the test case, then it will search for cases with all but one of the relevant factors favouring the plaintiff, dropping each factor in turn. For each of those sets of factors, it re-does the analysis in 5 as if those were the only factors in the test case. If the result of all of those analyses is a prediction for the plaintiff, then a prediction for the plaintiff is made for the current issue. If the result of any of those predictions if for the defendant, the current issue is abstained.</li>
-<li>If it is a raised issue, with factors favouring the plaintiff, but there are no precedential cases even after dropping one factor at a time, the prediction for the current issue is abstained.</li>
-</ol>
-<h3 id=is-there-a-shorter-version>Is there a shorter version?</h3>
-<p>FINE.</p>
-<ol>
-<li>If the issue is unraised, predict the default or abstain if there isn’t one.</li>
-<li>Predict conjunctive issues for the plaintiff if all sub-issues are for the plaintiff.</li>
-<li>Predict disjunctive issues for the plaintiff if any sub-issue is for the plaintiff.</li>
-<li>If the factors relevant to an issue are unanimous, follow the factors.</li>
-<li>If the cases sharing factors are unanimous, or become unanimous when you ignore cases without knock-out factors, follow the cases.</li>
-<li>If there are no cases, see if you can find some by ignoring one relevant factor at a time. If all those searches are for the plaintiff, predict for the plaintiff.</li>
-<li>Otherwise, abstain.</li>
-</ol>
-<h3 id=thats-it>That’s it?</h3>
-<p>Yes. That’s it.</p>
-<h4 id=it-doesnt-seem-that-complicated>It doesn’t seem THAT complicated.</h4>
-<p>Right? Which is why it’s so strange to me that it doesn’t seem to have ever been implemented anywhere, either commercially or in an open-source tool. (Until now.)</p>
-<h4 id=how-reliable-is-it>How Reliable Is It?</h4>
-<p>In the article that Ashley and Brüninghaus published, they were able to get 91% accuracy in a “leave one out” test across 186 published cases in their database.</p>
-<h4 id=wow-91-is-pretty-good>Wow. 91% is pretty good.</h4>
-<p>You’re not kidding. I wonder whether most expert lawyers would be able to get that good a rate of prediction. To be fair, that result needs to be replicated before we can have an idea of the algorithm’s general usefulness. But that’s not really the point.</p>
-<h4 id=whats-the-point-then>What’s the point, then?</h4>
-<p>The point is that with the exception of other academic works that have built on it, IBP has sort of been sitting on a shelf gathering dust for 15 years.</p>
-<p>I’m not <em>cool</em> with that. People need to play with it. Test it. Build things with it. Break it. Improve it. And understand whether and how it changes the boundaries of what legal services you can automate.</p>
-<p>They can’t do that if it is a paper in an academic journal. But if all it takes to try it is copying and pasting an url address into their docassemble server and clicking “install”…</p>
-<p>That’s the point of the docassemble-openlcbr project. To get automated legal case-based reasoning out of academic journals to where it can grow, change, and evolve.</p>
-<ul class=pa0>
-</ul>
-<div class="mt6 instapaper_ignoref">
-</div>
-</div>
-<aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-<p class="f5 b mb3">What's in this post</p>
-<nav id=TableOfContents>
+following factors&mldr;</li></ul></li><li>There was improper means used by the defendants, which<br>
+depends on the following factors&mldr;</li></ul></li></ul><p>I have left out the lists of factors that are relevant to each leaf issue, but otherwise, that is the issue tree. This will all look very familiar to anyone who has ever studied for an exam in law school.</p><p>The only other piece of information that is provided in the issue model is a list of factors called “knock-out” factors. These are factors which are more important than average, and can be used to justify ignoring precedential cases that do not share them with the test case.</p><p>In the test trade secret database, for example, there are two knock-out factors. The first is whether the plaintiff disclosed the alleged trade secret in a public forum, and the second is whether the plaintiff completely failed to protect their trade secret.</p><h4 id=the-cases>The Cases</h4><p>The last thing that the algorithm needs to know is what has happened before. It needs a list of cases, and each case must have two pieces of information.</p><ol>
+<li>What factors existed in that case?</li><li>Who won?</li></ol><h3 id=what-ibp-does>What IBP Does</h3><p>So now you want to know: What does IBP actually do with all of this information to mimic reasoning by analogy?</p><p>OK, fair warning. This part is a bit… dense. But you don’t need to be able to repeat it from memory. Just give it a read through to satisfy yourself that it is neither magic, nor stupid.</p><p>Ready? Here we go.</p><p>You tell IBP the factors that exist in the case you are trying to predict. The algorithm starts at the root of the issue tree, the main legal question you are trying to decide. It then goes through the issue tree following these 7 rules:</p><ol>
+<li>If the current issue was not raised, and there is no default, the algorithm “abstains” with regard to that issue. If the current issue was not raised, and there is a default, it predicts the default. “Raised” means either a relevant factor for the current issue exists in the test case, or the same is true of a sub-issue.</li><li>If the current issue was raised and has sub-issues all of which must be true, it repeats the process from 1 for each sub-issue, and predicts for the plaintiff only if the prediction for all the sub-issues is also the plaintiff. It predicts for the defendant if the defendant is predicted for any of the sub-issues. If it abstains from predicting any sub-issues, it abstains from predicting this issue.</li><li>If the current issue was raised and has sub-issues one of which must be true, it repeats the process from 1 for each sub-issue, and predicts for the plaintiff if any sub-issue is predicted for the plaintiff. If none is predicted for the plaintiff but any are abstained, this issue is also abstained. And if they are all predicted for the defendant, this issue is predicted for the defendant.</li><li>If the current issue has no sub-issues, and all of the factors relevant to that issue are to the favour of the same party, the prediction is for that party.</li><li>If the current issue has no sub-issues, and there are factors relevant to that issue going in both directions, the software collects all of the cases which share any of the factors of the test case. If it finds any precedents, and all of those cases were decided for the same party, that party is the prediction for this issue. If it finds precedents, but not all those cases were decided for the same party, it checks to see if any of the cases decided for the defendant can be explained away because they do not have the same knock-out factor as in the test case. If any cannot be explained away, it predicts for the defendant. If they can all be explained away, it predicts for the plaintiff.</li><li>If the current issue has no sub-issues, and there are factors relevant to that issue going in both directions, and there are no precedents which share all of the factors in the test case, then it will search for cases with all but one of the relevant factors favouring the plaintiff, dropping each factor in turn. For each of those sets of factors, it re-does the analysis in 5 as if those were the only factors in the test case. If the result of all of those analyses is a prediction for the plaintiff, then a prediction for the plaintiff is made for the current issue. If the result of any of those predictions if for the defendant, the current issue is abstained.</li><li>If it is a raised issue, with factors favouring the plaintiff, but there are no precedential cases even after dropping one factor at a time, the prediction for the current issue is abstained.</li></ol><h3 id=is-there-a-shorter-version>Is there a shorter version?</h3><p>FINE.</p><ol>
+<li>If the issue is unraised, predict the default or abstain if there isn’t one.</li><li>Predict conjunctive issues for the plaintiff if all sub-issues are for the plaintiff.</li><li>Predict disjunctive issues for the plaintiff if any sub-issue is for the plaintiff.</li><li>If the factors relevant to an issue are unanimous, follow the factors.</li><li>If the cases sharing factors are unanimous, or become unanimous when you ignore cases without knock-out factors, follow the cases.</li><li>If there are no cases, see if you can find some by ignoring one relevant factor at a time. If all those searches are for the plaintiff, predict for the plaintiff.</li><li>Otherwise, abstain.</li></ol><h3 id=thats-it>That’s it?</h3><p>Yes. That’s it.</p><h4 id=it-doesnt-seem-that-complicated>It doesn’t seem THAT complicated.</h4><p>Right? Which is why it’s so strange to me that it doesn’t seem to have ever been implemented anywhere, either commercially or in an open-source tool. (Until now.)</p><h4 id=how-reliable-is-it>How Reliable Is It?</h4><p>In the article that Ashley and Brüninghaus published, they were able to get 91% accuracy in a “leave one out” test across 186 published cases in their database.</p><h4 id=wow-91-is-pretty-good>Wow. 91% is pretty good.</h4><p>You’re not kidding. I wonder whether most expert lawyers would be able to get that good a rate of prediction. To be fair, that result needs to be replicated before we can have an idea of the algorithm’s general usefulness. But that’s not really the point.</p><h4 id=whats-the-point-then>What’s the point, then?</h4><p>The point is that with the exception of other academic works that have built on it, IBP has sort of been sitting on a shelf gathering dust for 15 years.</p><p>I’m not <em>cool</em> with that. People need to play with it. Test it. Build things with it. Break it. Improve it. And understand whether and how it changes the boundaries of what legal services you can automate.</p><p>They can’t do that if it is a paper in an academic journal. But if all it takes to try it is copying and pasting an url address into their docassemble server and clicking “install”…</p><p>That’s the point of the docassemble-openlcbr project. To get automated legal case-based reasoning out of academic journals to where it can grow, change, and evolve.</p><ul class=pa0>
+</ul><div class="mt6 instapaper_ignoref">
+</div></div><aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">What's in this post</p><nav id=TableOfContents>
 <ul>
 <li>
 <ul>
@@ -186,38 +88,11 @@ depends on the following factors&mldr;</li>
 <ul>
 <li>
 <ul>
-<li><a href=#the-background-ibp>The Background: IBP</a></li>
-<li><a href=#the-basics>The Basics</a></li>
-</ul>
-</li>
-<li><a href=#what-ibp-knows>What IBP Knows</a>
+<li><a href=#the-background-ibp>The Background: IBP</a></li><li><a href=#the-basics>The Basics</a></li></ul></li><li><a href=#what-ibp-knows>What IBP Knows</a>
 <ul>
-<li><a href=#the-factors>The Factors</a></li>
-<li><a href=#the-issues>The Issues</a></li>
-<li><a href=#the-cases>The Cases</a></li>
-</ul>
-</li>
-<li><a href=#what-ibp-does>What IBP Does</a></li>
-<li><a href=#is-there-a-shorter-version>Is there a shorter version?</a></li>
-<li><a href=#thats-it>That’s it?</a>
+<li><a href=#the-factors>The Factors</a></li><li><a href=#the-issues>The Issues</a></li><li><a href=#the-cases>The Cases</a></li></ul></li><li><a href=#what-ibp-does>What IBP Does</a></li><li><a href=#is-there-a-shorter-version>Is there a shorter version?</a></li><li><a href=#thats-it>That’s it?</a>
 <ul>
-<li><a href=#it-doesnt-seem-that-complicated>It doesn’t seem THAT complicated.</a></li>
-<li><a href=#how-reliable-is-it>How Reliable Is It?</a></li>
-<li><a href=#wow-91-is-pretty-good>Wow. 91% is pretty good.</a></li>
-<li><a href=#whats-the-point-then>What’s the point, then?</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-</aside>
-</article>
-</main>
-<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+<li><a href=#it-doesnt-seem-that-complicated>It doesn’t seem THAT complicated.</a></li><li><a href=#how-reliable-is-it>How Reliable Is It?</a></li><li><a href=#wow-91-is-pretty-good>Wow. 91% is pretty good.</a></li><li><a href=#whats-the-point-then>What’s the point, then?</a></li></ul></li></ul></li></ul></li></ul></nav></div></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
 <div class="flex justify-between">
 <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://JasonMorrisSC.github.io>
 &copy; Jason Morris 2022
@@ -229,8 +104,4 @@ depends on the following factors&mldr;</li>
 </span>
 <span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
 </span></a>
-</div></div>
-</div>
-</footer>
-</body>
-</html>
+</div></div></div></footer></body></html>

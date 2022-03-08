@@ -2,10 +2,9 @@
 <head>
 <meta charset=utf-8>
 <meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<title>How Argumentation Theory Can Be Used in Automating Reasoning about Conflicts of Law | Jason Morris</title>
-<meta name=viewport content="width=device-width,minimum-scale=1">
+<title>How Argumentation Theory Can Be Used in Automating Reasoning about Conflicts of Law | Jason Morris</title><meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="Flora-2 is a logic programming language that implements defeasible reasoning using a method called “defaults and argumentation theories.”">
-<meta name=generator content="Hugo 0.92.2">
+<meta name=generator content="Hugo 0.93.2">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/css/main.min.css>
 <meta property="og:title" content="How Argumentation Theory Can Be Used in Automating Reasoning about Conflicts of Law">
@@ -21,8 +20,7 @@
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="How Argumentation Theory Can Be Used in Automating Reasoning about Conflicts of Law">
 <meta name=twitter:description content="Flora-2 is a logic programming language that implements defeasible reasoning using a method called “defaults and argumentation theories.”">
-</head>
-<body class="ma0 avenir bg-near-white">
+</head><body class="ma0 avenir bg-near-white">
 <header>
 <div class=bg-black>
 <nav class="pv3 ph3 ph4-ns" role=navigation>
@@ -36,237 +34,135 @@ Jason Morris
 <a class="hover-white no-underline white-90" href=/about/ title="About Jason page">
 About Jason
 </a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
+</li><li class="list f5 f4-ns fw4 dib pr3">
 <a class="hover-white no-underline white-90" href=/project/ title="Projects page">
 Projects
 </a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
+</li><li class="list f5 f4-ns fw4 dib pr3">
 <a class="hover-white no-underline white-90" href=/post/ title="Rules as Code Diary page">
 Rules as Code Diary
 </a>
-</li>
-</ul>
-<div class=ananke-socials>
+</li></ul><div class=ananke-socials>
 <a href=https://twitter.com/RoundTableLaw target=_blank class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel=noopener aria-label="follow on Twitter——Opens in a new window">
 <span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
 </span>
 <span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
 </span></a>
-</div>
-</div>
-</div>
-</nav>
-</div>
-</header>
-<main class=pb7 role=main>
+</div></div></div></nav></div></header><main class=pb7 role=main>
 <article class="flex-l flex-wrap justify-between mw8 center ph3">
 <header class="mt4 w-100">
 <aside class="instapaper_ignoref b helvetica tracked">
 RULES AS CODE DIARY
-</aside>
-<div id=sharing class="mt3 ananke-socials">
+</aside><div id=sharing class="mt3 ananke-socials">
 <a href="https://twitter.com/share?url=https://JasonMorrisSC.github.io/post/roundtablelaw/how-argumentation-theory-can-be-used-in-automating-reasoning-about-conflicts-of-law-5f9ce836a1b/&text=How%20Argumentation%20Theory%20Can%20Be%20Used%20in%20Automating%20Reasoning%20about%20Conflicts%20of%20Law" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
 <span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
 </span>
 </a>
-</div>
-<h1 class="f1 athelas mt3 mb1">How Argumentation Theory Can Be Used in Automating Reasoning about Conflicts of Law</h1>
-<time class="f6 mv4 dib tracked" datetime=2021-02-09T12:09:52Z>February 9, 2021</time>
-</header>
-<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Flora-2 is a logic programming language that implements defeasible reasoning using a method called “defaults and argumentation theories.”</p>
-<p>Here’s how it works.</p>
-<h3 id=choose-an-argumentation-theory>Choose An Argumentation Theory</h3>
-<p>The first thing you have to do is choose the argumentation theory that you want, but Flora-2 has a very intuitive default.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog>:- <span style=color:#e6db74>use_argumentation_theory</span>.
-</code></pre></div><h3 id=tag-your-rules>Tag Your Rules</h3>
-<p>Flora-2 gives you the option of specifying that some rules override others either by identifying the rules, or by identifying the conclusions. If you want to identify the rules, you need to give them tags. They can take more than one, and more than one rule can have the same tag. That’s done like this:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#e6db74>@</span>{<span style=color:#e6db74>tag</span>}  
-<span style=color:#a6e22e>conclusion</span> <span style=color:#f92672>:-</span> <span style=color:#e6db74>condition</span>.
-</code></pre></div><h3 id=say-what-the-contradictions-are>Say What the Contradictions Are</h3>
-<p>Third, you need to be clear about what constitutes a contradiction. Flora-2 knows that <code>A</code> and <code>\neg A</code> are opposites, and can’t possibly be true at the same time. But it might not know that <code>CatLover</code> and <code>DogLover</code> are equally incompatible. (I kid, of course. No one likes cats.)</p>
-<p>So it allows you to specify contradictions of conclusions like this:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#e6db74>\</span><span style=color:#a6e22e>opposes</span>(<span style=color:#e6db74>conclusion1</span>,<span style=color:#e6db74>conclusion2</span>).
-</code></pre></div><h3 id=say-what-overrides-what>Say What Overrides What</h3>
-<p>Lastly, you need to tell Flora-2 which rule, or conclusion, should win in a fight. That is done using the <code>\overrides</code> predicate, like this:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#e6db74>@</span>{<span style=color:#e6db74>default</span>}  
-<span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>bird</span>(<span style=color:#e6db74>?</span>X).
-
-<span style=color:#a6e22e>bird</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>penguin</span>(<span style=color:#e6db74>?</span>X).
-
-<span style=color:#e6db74>@</span>{<span style=color:#e6db74>exception</span>}  
-<span style=color:#e6db74>\neg</span> <span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>penguin</span>(<span style=color:#e6db74>?</span>X).
-
-<span style=color:#e6db74>\</span><span style=color:#a6e22e>overrides</span>(<span style=color:#e6db74>exception</span>,<span style=color:#e6db74>default</span>).
-</code></pre></div><h3 id=then-what-happens>Then what happens?</h3>
-<p>In the background, Flora-2 is re-writing these rules for you before you run them, in two simple ways. First, if you tagged your rule, the conclusion of that rule is being given that tag in a different predicate. Second, a requirement is added to your rule, that it not be defeated.</p>
-<p>So this:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#e6db74>@</span>{<span style=color:#e6db74>default</span>}  
-<span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>bird</span>(<span style=color:#e6db74>?</span>X).
-</code></pre></div><p>Becomes these two statements:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#a6e22e>rule_handle</span>(<span style=color:#e6db74>default</span>,<span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X)).  
-<span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>bird</span>(<span style=color:#e6db74>?</span>X), <span style=color:#e6db74>\naf</span> <span style=color:#a6e22e>defeated</span>(<span style=color:#a6e22e>rule_handle</span>(<span style=color:#e6db74>default</span>,<span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X)).
-</code></pre></div><p>Then, the argumentation theory does the rest of the work.</p>
-<h3 id=an-argumentation-theory>An Argumentation Theory</h3>
-<p>The job of an argumentation theory is to take the opposes statements and the overrides statements that you have provided, and figure out which conclusions are <code>defeated</code>.</p>
-<p>The default argumentation theory in Flora-2 works like this:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#a6e22e>defeated</span>(<span style=color:#a6e22e>rule_handle</span>(<span style=color:#e6db74>?</span>T1,<span style=color:#e6db74>?</span>H1)) :-  
-    
-  <span style=color:#e6db74>?</span>B1, <span style=color:#f92672>//</span> <span style=color:#e6db74>the</span> <span style=color:#e6db74>conditions</span> <span style=color:#e6db74>of</span> <span style=color:#e6db74>the</span> <span style=color:#e6db74>defeated</span> <span style=color:#e6db74>rule</span> <span style=color:#e6db74>are</span> <span style=color:#e6db74>true</span>  
-    
-  <span style=color:#e6db74>?</span>B2, <span style=color:#f92672>//</span> <span style=color:#e6db74>the</span> <span style=color:#e6db74>conditions</span> <span style=color:#e6db74>of</span> <span style=color:#e6db74>the</span> <span style=color:#e6db74>defeating</span> <span style=color:#e6db74>rule</span> <span style=color:#e6db74>are</span> <span style=color:#e6db74>true</span>  
-    
-  <span style=color:#f92672>//</span> <span style=color:#e6db74>the</span> <span style=color:#e6db74>conclusions</span> <span style=color:#e6db74>of</span> <span style=color:#e6db74>both</span> <span style=color:#e6db74>rules</span> <span style=color:#e6db74>oppose</span> <span style=color:#e6db74>each</span> <span style=color:#e6db74>other</span>  
-  <span style=color:#e6db74>\</span><span style=color:#a6e22e>opposes</span>(<span style=color:#a6e22e>rule_handle</span>(<span style=color:#e6db74>?</span>T1,<span style=color:#e6db74>?</span>H1),<span style=color:#a6e22e>rule_handle</span>(<span style=color:#e6db74>?</span>T2,<span style=color:#e6db74>?</span>H2)),  
-    
-  <span style=color:#f92672>//</span> <span style=color:#e6db74>the</span> <span style=color:#e6db74>second</span> <span style=color:#e6db74>rule</span> <span style=color:#e6db74>overrides</span> <span style=color:#e6db74>the</span> <span style=color:#e6db74>first</span> <span style=color:#e6db74>rule</span>  
-  <span style=color:#e6db74>\</span><span style=color:#a6e22e>overrides</span>(<span style=color:#a6e22e>rule_handle</span>(<span style=color:#e6db74>?</span>T2,<span style=color:#e6db74>?</span>H2),<span style=color:#a6e22e>rule_handle</span>(<span style=color:#e6db74>?</span>T1,<span style=color:#e6db74>?</span>H1)),  
-    
-  <span style=color:#f92672>//</span> And <span style=color:#e6db74>the</span> <span style=color:#e6db74>defeating</span> <span style=color:#e6db74>rule</span> <span style=color:#f92672>is</span> <span style=color:#f92672>not</span> <span style=color:#e6db74>itself</span> <span style=color:#e6db74>defeated</span>  
-  <span style=color:#e6db74>\naf</span> <span style=color:#a6e22e>defeated</span>(<span style=color:#a6e22e>rule_handle</span>(<span style=color:#e6db74>?</span>T2,<span style=color:#e6db74>?</span>H2)).
-</code></pre></div><p>This is the basic defeating relationship. One conclusion defeats the other conclusion if the conclusions conflict, one conclusion overrides the other, and the overriding conclusion is not also defeated.</p>
-<p>Additional rules are created to fill out the logic of the argumentation theory. In the default version used by Flora-2, those rules say:</p>
-<ul>
-<li>A rule is defeated if it is refuted or rebutted by a rule that is not compromised, or if it is disqualified.</li>
-<li>A rule is disqualified if it defeats itself.</li>
-<li>A rule is compromised if it is either refuted or defeated.</li>
-<li>A rule is refuted if there is another rule that conflicts with it and overrides it.</li>
-<li>A rule is rebutted if it conflicts with another rule, neither is refuted, the rebutting rule is not compromised, and there is no priority between them.</li>
-</ul>
-<p>That’s it. It’s a bit technical, but the point is not to understand the details. The point is to realize that an argumentation theory is not a huge deal to create.</p>
-<h3 id=why-do-we-care-about-this-in-law>Why Do We Care About This in Law?</h3>
-<p>There are a few things that are really useful about this approach to defeasible reasoning, particularly in the legal realm.</p>
-<h4 id=first-its-easy-to-use>First, It’s Easy To Use</h4>
-<p>The first of them is that it is very easy to use. You don’t have to write the argumentation theory yourself, you can just use one that’s provided. And if it doesn’t work the way you can expect, you can create a new one. All the different ways of doing defeasible reasoning can be implemented as argumentation theories, which gives you access to all of them in one place, but you never need to use anything other than <code>\override</code>, and <code>\oppose</code> to implement them.</p>
-<h4 id=second-it-maintains-a-one-to-one-relationship-between-rules-and-code>Second, It Maintains a One-to-One Relationship Between Rules and Code</h4>
-<p>Second, the <code>\override</code> command can go with the rule that it belongs to, when you are trying to encode laws. Take for example these two sets of rules:</p>
-<p>1. Birds fly.<br>
+</div><h1 class="f1 athelas mt3 mb1">How Argumentation Theory Can Be Used in Automating Reasoning about Conflicts of Law</h1><time class="f6 mv4 dib tracked" datetime=2021-02-09T12:09:52Z>February 9, 2021</time>
+</header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Flora-2 is a logic programming language that implements defeasible reasoning using a method called “defaults and argumentation theories.”</p><p>Here’s how it works.</p><h3 id=choose-an-argumentation-theory>Choose An Argumentation Theory</h3><p>The first thing you have to do is choose the argumentation theory that you want, but Flora-2 has a very intuitive default.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=display:flex><span>:- <span style=color:#e6db74>use_argumentation_theory</span>.
+</span></span></code></pre></div><h3 id=tag-your-rules>Tag Your Rules</h3><p>Flora-2 gives you the option of specifying that some rules override others either by identifying the rules, or by identifying the conclusions. If you want to identify the rules, you need to give them tags. They can take more than one, and more than one rule can have the same tag. That’s done like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=display:flex><span><span style=color:#e6db74>@</span>{<span style=color:#e6db74>tag</span>}  
+</span></span><span style=display:flex><span><span style=color:#a6e22e>conclusion</span> <span style=color:#f92672>:-</span> <span style=color:#e6db74>condition</span>.
+</span></span></code></pre></div><h3 id=say-what-the-contradictions-are>Say What the Contradictions Are</h3><p>Third, you need to be clear about what constitutes a contradiction. Flora-2 knows that <code>A</code> and <code>\neg A</code> are opposites, and can’t possibly be true at the same time. But it might not know that <code>CatLover</code> and <code>DogLover</code> are equally incompatible. (I kid, of course. No one likes cats.)</p><p>So it allows you to specify contradictions of conclusions like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=display:flex><span><span style=color:#e6db74>\</span><span style=color:#a6e22e>opposes</span>(<span style=color:#e6db74>conclusion1</span>,<span style=color:#e6db74>conclusion2</span>).
+</span></span></code></pre></div><h3 id=say-what-overrides-what>Say What Overrides What</h3><p>Lastly, you need to tell Flora-2 which rule, or conclusion, should win in a fight. That is done using the <code>\overrides</code> predicate, like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=display:flex><span><span style=color:#e6db74>@</span>{<span style=color:#e6db74>default</span>}  
+</span></span><span style=display:flex><span><span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>bird</span>(<span style=color:#e6db74>?</span>X).
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>bird</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>penguin</span>(<span style=color:#e6db74>?</span>X).
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>@</span>{<span style=color:#e6db74>exception</span>}  
+</span></span><span style=display:flex><span><span style=color:#e6db74>\neg</span> <span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>penguin</span>(<span style=color:#e6db74>?</span>X).
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>\</span><span style=color:#a6e22e>overrides</span>(<span style=color:#e6db74>exception</span>,<span style=color:#e6db74>default</span>).
+</span></span></code></pre></div><h3 id=then-what-happens>Then what happens?</h3><p>In the background, Flora-2 is re-writing these rules for you before you run them, in two simple ways. First, if you tagged your rule, the conclusion of that rule is being given that tag in a different predicate. Second, a requirement is added to your rule, that it not be defeated.</p><p>So this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=display:flex><span><span style=color:#e6db74>@</span>{<span style=color:#e6db74>default</span>}  
+</span></span><span style=display:flex><span><span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>bird</span>(<span style=color:#e6db74>?</span>X).
+</span></span></code></pre></div><p>Becomes these two statements:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=display:flex><span><span style=color:#a6e22e>rule_handle</span>(<span style=color:#e6db74>default</span>,<span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X)).  
+</span></span><span style=display:flex><span><span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>bird</span>(<span style=color:#e6db74>?</span>X), <span style=color:#e6db74>\naf</span> <span style=color:#a6e22e>defeated</span>(<span style=color:#a6e22e>rule_handle</span>(<span style=color:#e6db74>default</span>,<span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X)).
+</span></span></code></pre></div><p>Then, the argumentation theory does the rest of the work.</p><h3 id=an-argumentation-theory>An Argumentation Theory</h3><p>The job of an argumentation theory is to take the opposes statements and the overrides statements that you have provided, and figure out which conclusions are <code>defeated</code>.</p><p>The default argumentation theory in Flora-2 works like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=display:flex><span><span style=color:#a6e22e>defeated</span>(<span style=color:#a6e22e>rule_handle</span>(<span style=color:#e6db74>?</span>T1,<span style=color:#e6db74>?</span>H1)) :-  
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>?</span>B1, <span style=color:#f92672>//</span> <span style=color:#e6db74>the</span> <span style=color:#e6db74>conditions</span> <span style=color:#e6db74>of</span> <span style=color:#e6db74>the</span> <span style=color:#e6db74>defeated</span> <span style=color:#e6db74>rule</span> <span style=color:#e6db74>are</span> <span style=color:#e6db74>true</span>  
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>?</span>B2, <span style=color:#f92672>//</span> <span style=color:#e6db74>the</span> <span style=color:#e6db74>conditions</span> <span style=color:#e6db74>of</span> <span style=color:#e6db74>the</span> <span style=color:#e6db74>defeating</span> <span style=color:#e6db74>rule</span> <span style=color:#e6db74>are</span> <span style=color:#e6db74>true</span>  
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>  <span style=color:#f92672>//</span> <span style=color:#e6db74>the</span> <span style=color:#e6db74>conclusions</span> <span style=color:#e6db74>of</span> <span style=color:#e6db74>both</span> <span style=color:#e6db74>rules</span> <span style=color:#e6db74>oppose</span> <span style=color:#e6db74>each</span> <span style=color:#e6db74>other</span>  
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>\</span><span style=color:#a6e22e>opposes</span>(<span style=color:#a6e22e>rule_handle</span>(<span style=color:#e6db74>?</span>T1,<span style=color:#e6db74>?</span>H1),<span style=color:#a6e22e>rule_handle</span>(<span style=color:#e6db74>?</span>T2,<span style=color:#e6db74>?</span>H2)),  
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>  <span style=color:#f92672>//</span> <span style=color:#e6db74>the</span> <span style=color:#e6db74>second</span> <span style=color:#e6db74>rule</span> <span style=color:#e6db74>overrides</span> <span style=color:#e6db74>the</span> <span style=color:#e6db74>first</span> <span style=color:#e6db74>rule</span>  
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>\</span><span style=color:#a6e22e>overrides</span>(<span style=color:#a6e22e>rule_handle</span>(<span style=color:#e6db74>?</span>T2,<span style=color:#e6db74>?</span>H2),<span style=color:#a6e22e>rule_handle</span>(<span style=color:#e6db74>?</span>T1,<span style=color:#e6db74>?</span>H1)),  
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>  <span style=color:#f92672>//</span> And <span style=color:#e6db74>the</span> <span style=color:#e6db74>defeating</span> <span style=color:#e6db74>rule</span> <span style=color:#f92672>is</span> <span style=color:#f92672>not</span> <span style=color:#e6db74>itself</span> <span style=color:#e6db74>defeated</span>  
+</span></span><span style=display:flex><span>  <span style=color:#e6db74>\naf</span> <span style=color:#a6e22e>defeated</span>(<span style=color:#a6e22e>rule_handle</span>(<span style=color:#e6db74>?</span>T2,<span style=color:#e6db74>?</span>H2)).
+</span></span></code></pre></div><p>This is the basic defeating relationship. One conclusion defeats the other conclusion if the conclusions conflict, one conclusion overrides the other, and the overriding conclusion is not also defeated.</p><p>Additional rules are created to fill out the logic of the argumentation theory. In the default version used by Flora-2, those rules say:</p><ul>
+<li>A rule is defeated if it is refuted or rebutted by a rule that is not compromised, or if it is disqualified.</li><li>A rule is disqualified if it defeats itself.</li><li>A rule is compromised if it is either refuted or defeated.</li><li>A rule is refuted if there is another rule that conflicts with it and overrides it.</li><li>A rule is rebutted if it conflicts with another rule, neither is refuted, the rebutting rule is not compromised, and there is no priority between them.</li></ul><p>That’s it. It’s a bit technical, but the point is not to understand the details. The point is to realize that an argumentation theory is not a huge deal to create.</p><h3 id=why-do-we-care-about-this-in-law>Why Do We Care About This in Law?</h3><p>There are a few things that are really useful about this approach to defeasible reasoning, particularly in the legal realm.</p><h4 id=first-its-easy-to-use>First, It’s Easy To Use</h4><p>The first of them is that it is very easy to use. You don’t have to write the argumentation theory yourself, you can just use one that’s provided. And if it doesn’t work the way you can expect, you can create a new one. All the different ways of doing defeasible reasoning can be implemented as argumentation theories, which gives you access to all of them in one place, but you never need to use anything other than <code>\override</code>, and <code>\oppose</code> to implement them.</p><h4 id=second-it-maintains-a-one-to-one-relationship-between-rules-and-code>Second, It Maintains a One-to-One Relationship Between Rules and Code</h4><p>Second, the <code>\override</code> command can go with the rule that it belongs to, when you are trying to encode laws. Take for example these two sets of rules:</p><p>1. Birds fly.<br>
 2. Penguins are birds.<br>
-3. Notwithstanding 1, penguins don&rsquo;t fly.</p>
-<p>…</p>
-<p>1. Subject to 3, birds fly.<br>
+3. Notwithstanding 1, penguins don&rsquo;t fly.</p><p>…</p><p>1. Subject to 3, birds fly.<br>
 2. Penguins are birds.<br>
-3. Penguins do not fly.</p>
-<p>In many logic programming languages neither of these can be written as-is. The relationship between the exception and the default needs to be made explicit in both places. To illustrate, you might be forced to write this:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>bird</span>(<span style=color:#e6db74>?</span>X), <span style=color:#e6db74>\naf</span> <span style=color:#a6e22e>exception_to_flies</span>(<span style=color:#e6db74>?</span>X).
-
-<span style=color:#a6e22e>bird</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>penguin</span>(<span style=color:#e6db74>?</span>X).
-
-<span style=color:#a6e22e>exception_to_flies</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>penguin</span>(<span style=color:#e6db74>?</span>X).  
-<span style=color:#e6db74>\neg</span> <span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X) <span style=color:#e6db74>:</span> <span style=color:#a6e22e>penguin</span>(<span style=color:#e6db74>?</span>X).
-</code></pre></div><p>I had to create an exception in rule 3, and then use that exception in rule 1.</p>
-<p>But Flora-2’s re-writing mechanism allows you to do it both ways:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#e6db74>@</span>{<span style=color:#e6db74>section1</span>}  
-<span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>bird</span>(<span style=color:#e6db74>?</span>X).
-
-<span style=color:#e6db74>@</span>{<span style=color:#e6db74>section2</span>}  
-<span style=color:#a6e22e>bird</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>penguin</span>(<span style=color:#e6db74>?</span>X).
-
-<span style=color:#e6db74>@</span>{<span style=color:#e6db74>section3</span>}  
-<span style=color:#e6db74>\neg</span> <span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>penguin</span>(<span style=color:#e6db74>?</span>X).  
-<span style=color:#e6db74>\</span><span style=color:#a6e22e>overrides</span>(<span style=color:#e6db74>section3</span>,<span style=color:#e6db74>section1</span>).
-</code></pre></div><p>… or …</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#e6db74>@</span>{<span style=color:#e6db74>section1</span>}  
-<span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>bird</span>(<span style=color:#e6db74>?</span>X).  
-<span style=color:#e6db74>\</span><span style=color:#a6e22e>overrides</span>(<span style=color:#e6db74>section3</span>,<span style=color:#e6db74>section1</span>).
-
-<span style=color:#e6db74>@</span>{<span style=color:#e6db74>section2</span>}  
-<span style=color:#a6e22e>bird</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>penguin</span>(<span style=color:#e6db74>?</span>X).
-
-<span style=color:#e6db74>@</span>{<span style=color:#e6db74>section3</span>}  
-<span style=color:#e6db74>\neg</span> <span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>penguin</span>(<span style=color:#e6db74>?</span>X).
-</code></pre></div><p>This ensures that in either case, there is a one-to-one relationship between sections of code, and sections of the rules. That makes the code easier to write, because you don’t have to go back and change your encoding of rule 1 when you find an exception in rule 3. It makes it easier to read, and compare to the source material, because all the same things are being said in the same places. And makes it easier to update when the rules change, because in either case, if section 1 changes, you only need to rewrite the code for section1.</p>
-<h4 id=third-law-has-its-own-argumentation-theories>Third, Law Has Its Own Argumentation Theories</h4>
-<p>Law has its own argumentation theories, with different rules for figuring out which rule wins in a conflict. One rule is that a newer rule beats an older rule. (<em>Lex Posterior</em>). Another is that a more specific rule beats a more general rule (<em>Lex Specialis</em>). Another is that a rule issued by a higher authority defeats a rule issued by a lower authority.</p>
-<p>Information about how specific a rule is already exists in the code. And information about who issued the rule, and when, can be added as meta-data when you tag the rules. So it may be possible to teach tools that use this style of defeasibility what the argumentation theory of law is in your jurisdiction, and then give it information about when rules were enacted, and by whom, and it will be able to figure out for itself, whether any of them override each other. How reliable that would be is up for experimentation and discovery, but it’s a promising option.</p>
-<ul class=pa0>
-</ul>
-<div class="mt6 instapaper_ignoref">
-</div>
-</div>
-<aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-<p class="f5 b mb3">What's in this post</p>
-<nav id=TableOfContents>
+3. Penguins do not fly.</p><p>In many logic programming languages neither of these can be written as-is. The relationship between the exception and the default needs to be made explicit in both places. To illustrate, you might be forced to write this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=display:flex><span><span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>bird</span>(<span style=color:#e6db74>?</span>X), <span style=color:#e6db74>\naf</span> <span style=color:#a6e22e>exception_to_flies</span>(<span style=color:#e6db74>?</span>X).
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>bird</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>penguin</span>(<span style=color:#e6db74>?</span>X).
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>exception_to_flies</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>penguin</span>(<span style=color:#e6db74>?</span>X).  
+</span></span><span style=display:flex><span><span style=color:#e6db74>\neg</span> <span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X) <span style=color:#e6db74>:</span> <span style=color:#a6e22e>penguin</span>(<span style=color:#e6db74>?</span>X).
+</span></span></code></pre></div><p>I had to create an exception in rule 3, and then use that exception in rule 1.</p><p>But Flora-2’s re-writing mechanism allows you to do it both ways:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=display:flex><span><span style=color:#e6db74>@</span>{<span style=color:#e6db74>section1</span>}  
+</span></span><span style=display:flex><span><span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>bird</span>(<span style=color:#e6db74>?</span>X).
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>@</span>{<span style=color:#e6db74>section2</span>}  
+</span></span><span style=display:flex><span><span style=color:#a6e22e>bird</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>penguin</span>(<span style=color:#e6db74>?</span>X).
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>@</span>{<span style=color:#e6db74>section3</span>}  
+</span></span><span style=display:flex><span><span style=color:#e6db74>\neg</span> <span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>penguin</span>(<span style=color:#e6db74>?</span>X).  
+</span></span><span style=display:flex><span><span style=color:#e6db74>\</span><span style=color:#a6e22e>overrides</span>(<span style=color:#e6db74>section3</span>,<span style=color:#e6db74>section1</span>).
+</span></span></code></pre></div><p>… or …</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=display:flex><span><span style=color:#e6db74>@</span>{<span style=color:#e6db74>section1</span>}  
+</span></span><span style=display:flex><span><span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>bird</span>(<span style=color:#e6db74>?</span>X).  
+</span></span><span style=display:flex><span><span style=color:#e6db74>\</span><span style=color:#a6e22e>overrides</span>(<span style=color:#e6db74>section3</span>,<span style=color:#e6db74>section1</span>).
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>@</span>{<span style=color:#e6db74>section2</span>}  
+</span></span><span style=display:flex><span><span style=color:#a6e22e>bird</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>penguin</span>(<span style=color:#e6db74>?</span>X).
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e6db74>@</span>{<span style=color:#e6db74>section3</span>}  
+</span></span><span style=display:flex><span><span style=color:#e6db74>\neg</span> <span style=color:#a6e22e>flies</span>(<span style=color:#e6db74>?</span>X) :- <span style=color:#a6e22e>penguin</span>(<span style=color:#e6db74>?</span>X).
+</span></span></code></pre></div><p>This ensures that in either case, there is a one-to-one relationship between sections of code, and sections of the rules. That makes the code easier to write, because you don’t have to go back and change your encoding of rule 1 when you find an exception in rule 3. It makes it easier to read, and compare to the source material, because all the same things are being said in the same places. And makes it easier to update when the rules change, because in either case, if section 1 changes, you only need to rewrite the code for section1.</p><h4 id=third-law-has-its-own-argumentation-theories>Third, Law Has Its Own Argumentation Theories</h4><p>Law has its own argumentation theories, with different rules for figuring out which rule wins in a conflict. One rule is that a newer rule beats an older rule. (<em>Lex Posterior</em>). Another is that a more specific rule beats a more general rule (<em>Lex Specialis</em>). Another is that a rule issued by a higher authority defeats a rule issued by a lower authority.</p><p>Information about how specific a rule is already exists in the code. And information about who issued the rule, and when, can be added as meta-data when you tag the rules. So it may be possible to teach tools that use this style of defeasibility what the argumentation theory of law is in your jurisdiction, and then give it information about when rules were enacted, and by whom, and it will be able to figure out for itself, whether any of them override each other. How reliable that would be is up for experimentation and discovery, but it’s a promising option.</p><ul class=pa0>
+</ul><div class="mt6 instapaper_ignoref">
+</div></div><aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">What's in this post</p><nav id=TableOfContents>
 <ul>
 <li>
 <ul>
 <li>
 <ul>
-<li><a href=#choose-an-argumentation-theory>Choose An Argumentation Theory</a></li>
-<li><a href=#tag-your-rules>Tag Your Rules</a></li>
-<li><a href=#say-what-the-contradictions-are>Say What the Contradictions Are</a></li>
-<li><a href=#say-what-overrides-what>Say What Overrides What</a></li>
-<li><a href=#then-what-happens>Then what happens?</a></li>
-<li><a href=#an-argumentation-theory>An Argumentation Theory</a></li>
-<li><a href=#why-do-we-care-about-this-in-law>Why Do We Care About This in Law?</a>
+<li><a href=#choose-an-argumentation-theory>Choose An Argumentation Theory</a></li><li><a href=#tag-your-rules>Tag Your Rules</a></li><li><a href=#say-what-the-contradictions-are>Say What the Contradictions Are</a></li><li><a href=#say-what-overrides-what>Say What Overrides What</a></li><li><a href=#then-what-happens>Then what happens?</a></li><li><a href=#an-argumentation-theory>An Argumentation Theory</a></li><li><a href=#why-do-we-care-about-this-in-law>Why Do We Care About This in Law?</a>
 <ul>
-<li><a href=#first-its-easy-to-use>First, It’s Easy To Use</a></li>
-<li><a href=#second-it-maintains-a-one-to-one-relationship-between-rules-and-code>Second, It Maintains a One-to-One Relationship Between Rules and Code</a></li>
-<li><a href=#third-law-has-its-own-argumentation-theories>Third, Law Has Its Own Argumentation Theories</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-<div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-<p class="f5 b mb3">Related</p>
-<ul class="pa0 list">
+<li><a href=#first-its-easy-to-use>First, It’s Easy To Use</a></li><li><a href=#second-it-maintains-a-one-to-one-relationship-between-rules-and-code>Second, It Maintains a One-to-One Relationship Between Rules and Code</a></li><li><a href=#third-law-has-its-own-argumentation-theories>Third, Law Has Its Own Argumentation Theories</a></li></ul></li></ul></li></ul></li></ul></nav></div><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">Related</p><ul class="pa0 list">
 <li class=mb2>
 <a href=/post/roundtablelaw/blawx-dev-notes-ca2bdf03cf3b/>Blawx Dev Notes</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/new-year-new-look-new-flora-2-c06ef3ad16a6/>New Year, New Look, New Flora-2</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/computational-law-diary-untying-complicated-not-s-a-wrap-on-coding-the-law-2020-and-singapore-bc75cf89015c/>Untying Complicated “Not”s, a Wrap on Coding the Law 2020, and Singapore…</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/computational-law-diary-jasons-timepoint-algebra-d8bc215db2ce/>Jason’s Timepoint Algebra</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/computational-law-diary-progress-on-allen-interval-algebra-e283a2ddf005/>Progress on Allen Interval Algebra</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/computational-law-diary-getting-smarter-about-time-7a72f5275ca7/>Getting Smarter about Time</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/computational-law-diary-more-explanations-encoding-safe-again-and-twitch-9f60d20d0a99/>More Explanations, Encoding SAFE again, and Twitch</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/computational-law-diary-progress-on-explanations-2ad8e37e30ad/>Progress on Explanations</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/computational-law-diary-adding-explanations-to-blawx-bdbd3e27e366/>Adding Explanations to Blawx</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/computational-law-diary-encoding-for-greater-clarity-provisions-698a83f4612c/>Encoding “For Greater Clarity” Provisions</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/playing-along-with-rules-as-code-6c837b42a33e/>Playing Along with Rules as Code</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/live-demo-integrating-docassemble-and-ergo-lite-for-logic-coding-f35e9f25f311/>Live Demo: Integrating Docassemble and Ergo Lite for Logic Coding</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/a-computer-takes-the-lsat-conclusion-86dc7467b14d/>A Computer Takes the LSAT: Conclusion</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/a-computer-takes-the-lsat-resources-77e5d07d7e3a/>A Computer Takes the LSAT: Resources</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/a-computer-takes-the-lsat-generating-fact-scenarios-3a52fd6fe908/>A Computer Takes the LSAT: Generating Fact Scenarios</a>
-</li>
-</ul>
-</div>
-</aside>
-</article>
-</main>
-<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+</li></ul></div></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
 <div class="flex justify-between">
 <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://JasonMorrisSC.github.io>
 &copy; Jason Morris 2022
@@ -278,8 +174,4 @@ RULES AS CODE DIARY
 </span>
 <span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
 </span></a>
-</div></div>
-</div>
-</footer>
-</body>
-</html>
+</div></div></div></footer></body></html>

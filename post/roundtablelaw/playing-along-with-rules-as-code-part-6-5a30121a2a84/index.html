@@ -2,10 +2,9 @@
 <head>
 <meta charset=utf-8>
 <meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<title>Playing Along with Rules As Code: Part 6 | Jason Morris</title>
-<meta name=viewport content="width=device-width,minimum-scale=1">
+<title>Playing Along with Rules As Code: Part 6 | Jason Morris</title><meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="So in the last post we got to the point where our model of the law understands what it needs to understand in order to be able to generate…">
-<meta name=generator content="Hugo 0.92.2">
+<meta name=generator content="Hugo 0.93.2">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/css/main.min.css>
 <meta property="og:title" content="Playing Along with Rules As Code: Part 6">
@@ -21,8 +20,7 @@
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Playing Along with Rules As Code: Part 6">
 <meta name=twitter:description content="So in the last post we got to the point where our model of the law understands what it needs to understand in order to be able to generate…">
-</head>
-<body class="ma0 avenir bg-near-white">
+</head><body class="ma0 avenir bg-near-white">
 <header>
 <div class=bg-black>
 <nav class="pv3 ph3 ph4-ns" role=navigation>
@@ -36,52 +34,32 @@ Jason Morris
 <a class="hover-white no-underline white-90" href=/about/ title="About Jason page">
 About Jason
 </a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
+</li><li class="list f5 f4-ns fw4 dib pr3">
 <a class="hover-white no-underline white-90" href=/project/ title="Projects page">
 Projects
 </a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
+</li><li class="list f5 f4-ns fw4 dib pr3">
 <a class="hover-white no-underline white-90" href=/post/ title="Rules as Code Diary page">
 Rules as Code Diary
 </a>
-</li>
-</ul>
-<div class=ananke-socials>
+</li></ul><div class=ananke-socials>
 <a href=https://twitter.com/RoundTableLaw target=_blank class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel=noopener aria-label="follow on Twitter——Opens in a new window">
 <span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
 </span>
 <span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
 </span></a>
-</div>
-</div>
-</div>
-</nav>
-</div>
-</header>
-<main class=pb7 role=main>
+</div></div></div></nav></div></header><main class=pb7 role=main>
 <article class="flex-l flex-wrap justify-between mw8 center ph3">
 <header class="mt4 w-100">
 <aside class="instapaper_ignoref b helvetica tracked">
 RULES AS CODE DIARY
-</aside>
-<div id=sharing class="mt3 ananke-socials">
+</aside><div id=sharing class="mt3 ananke-socials">
 <a href="https://twitter.com/share?url=https://JasonMorrisSC.github.io/post/roundtablelaw/playing-along-with-rules-as-code-part-6-5a30121a2a84/&text=Playing%20Along%20with%20Rules%20As%20Code:%20Part%206" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
 <span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
 </span>
 </a>
-</div>
-<h1 class="f1 athelas mt3 mb1">Playing Along with Rules As Code: Part 6</h1>
-<time class="f6 mv4 dib tracked" datetime=2020-03-05T22:36:44Z>March 5, 2020</time>
-</header>
-<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>So in the <a href="https://medium.com/@jason_90344/playing-along-with-rules-as-code-part-5-8195334dcb35?source=friends_link&sk=20b4d1f8c38851cf0ff446572e4e1e89">last post</a> we got to the point where our model of the law understands what it needs to understand in order to be able to generate “Year of Employment” objects. In this post, we’re going to finish our rules, we’re going to generate an interview, and use it to debug problems in the law.</p>
-<h3 id=fudging-it-a-little>Fudging It (a little)</h3>
-<p>I spent some time trying to get OPM to play nice, but ran into a number of brick walls. So for the sake of getting on with thing’s we’re going to fudge it, and manually enter in a list of Years of Employment. We will only need to provide three pieces of information for each, the date on which it starts (either the employment start date or the designated year start date or the anniversary of either of those), which Year of Employment follows the current one, and the wages that the employee earned in that year.</p>
-<p>We’re also going to drop the calculation of whether the year of employment is interrupted and the calculation of whether it lasted a year from the temporal values attached to the employment, and instead calculate those values as true or false values on the Year of Employment Object.</p>
-<h3 id=setting-up-our-year-of-employment-rules>Setting Up Our Year of Employment Rules</h3>
-<p>Here’s what the rules look like:</p>
-<pre tabindex=0><code>Year of Employment is interrupted if  
+</div><h1 class="f1 athelas mt3 mb1">Playing Along with Rules As Code: Part 6</h1><time class="f6 mv4 dib tracked" datetime=2020-03-05T22:36:44Z>March 5, 2020</time>
+</header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>So in the <a href="https://medium.com/@jason_90344/playing-along-with-rules-as-code-part-5-8195334dcb35?source=friends_link&sk=20b4d1f8c38851cf0ff446572e4e1e89">last post</a> we got to the point where our model of the law understands what it needs to understand in order to be able to generate “Year of Employment” objects. In this post, we’re going to finish our rules, we’re going to generate an interview, and use it to debug problems in the law.</p><h3 id=fudging-it-a-little>Fudging It (a little)</h3><p>I spent some time trying to get OPM to play nice, but ran into a number of brick walls. So for the sake of getting on with thing’s we’re going to fudge it, and manually enter in a list of Years of Employment. We will only need to provide three pieces of information for each, the date on which it starts (either the employment start date or the designated year start date or the anniversary of either of those), which Year of Employment follows the current one, and the wages that the employee earned in that year.</p><p>We’re also going to drop the calculation of whether the year of employment is interrupted and the calculation of whether it lasted a year from the temporal values attached to the employment, and instead calculate those values as true or false values on the Year of Employment Object.</p><h3 id=setting-up-our-year-of-employment-rules>Setting Up Our Year of Employment Rules</h3><p>Here’s what the rules look like:</p><pre tabindex=0><code>Year of Employment is interrupted if  
   YearDifference(  
     Year of Employment,  
     for(  
@@ -103,16 +81,11 @@ Year of Employment Employed For Twelve Months if
     for(  
       next yoe,  
       Year of Employment)) = 12
-</code></pre><p>The first says that the year of employment was interrupted if the difference, in years, between the date on which that year of employment began and the date on which the next year of employment began is less than one.</p>
-<p>The second says that the employee was employed for twelve months (as of the end of the year of employment) if at all times between the start of this year of employment and the start of the next year of employment the temporal value for employed by this employer in the same industrial establishment is true; and, the difference in months between those two dates is 12.</p>
-<p>We can now use those two factors, plus the dates that we are manually entering (though we are also calculating them… grrr) to determine which are valid years of employment. The rule for that looks like this:</p>
-<pre tabindex=0><code>Year of Employment is Valid if  
+</code></pre><p>The first says that the year of employment was interrupted if the difference, in years, between the date on which that year of employment began and the date on which the next year of employment began is less than one.</p><p>The second says that the employee was employed for twelve months (as of the end of the year of employment) if at all times between the start of this year of employment and the start of the next year of employment the temporal value for employed by this employer in the same industrial establishment is true; and, the difference in months between those two dates is 12.</p><p>We can now use those two factors, plus the dates that we are manually entering (though we are also calculating them… grrr) to determine which are valid years of employment. The rule for that looks like this:</p><pre tabindex=0><code>Year of Employment is Valid if  
   Year of Employment Employed for Twelve Months  
   and  
   Year of Employment is not interrupted
-</code></pre><h3 id=calculating-employment-duration-anywhere>Calculating Employment Duration Anywhere</h3>
-<p>So before we needed to know how long a person had been employed in the same location, in order to determine whether they had been employed in that location for a 12-month period. Now, in order to calculate their vacation entitlement, we need to know how long they have been employed by the same employer, regardless of where. So we’re going to create another couple of temporal variables to answer that question in much the same way, except we no longer care whether the industrial establishments match. Here’s what the new rules look like:</p>
-<pre tabindex=0><code>Employment (other_employment) is a member of relevant employment anywhere if  
+</code></pre><h3 id=calculating-employment-duration-anywhere>Calculating Employment Duration Anywhere</h3><p>So before we needed to know how long a person had been employed in the same location, in order to determine whether they had been employed in that location for a 12-month period. Now, in order to calculate their vacation entitlement, we need to know how long they have been employed by the same employer, regardless of where. So we’re going to create another couple of temporal variables to answer that question in much the same way, except we no longer care whether the industrial establishments match. Here’s what the new rules look like:</p><pre tabindex=0><code>Employment (other_employment) is a member of relevant employment anywhere if  
   instanceequals(  
     other_employment employer,   
     employment employer)  
@@ -126,166 +99,35 @@ Employment Employee Employed By This Employer Anywhere = TemporalFromRange(relev
 Employment Duration Anywhere Start Date = WhenLast(the current date, uncertain(Employment Employee Employed By This Employer Anywhere))
 
 Employment Duration Anywhere = TemporalYearsSince(Employment Duration Anywhere Start Date, the current date)
-</code></pre><p>Now we have an “Employment Duration Anywhere” attribute that we can use to calculate vacation entitlement as of the end of a year of employment. So to do that, we are going to rewrite our table for calculating vacation rates:</p>
-<p><img src=/1__570a6YCcfk3QGGtvU__mwHA.png alt></p>
-<p>The conditions now read “if, with regard to the employment for the current year of employment, the value of the employment duration value anywhere as of the start date of the following year of employment is greater than or equal to 10 (or 5)”.</p>
-<h3 id=recalculating-vacation-pay>Recalculating Vacation Pay</h3>
-<p>Now previously we had defined the vacation pay amount as a multiple of the wages by the pay rate. But we want the vacation pay amount for invalid years of employment to be zero. So we will rewrite that rule as a table that looks like this:</p>
-<p><img src=/1__LghI4PneTevvFcAhQEYNdQ.png alt></p>
-<h3 id=using-the-encoded-rules-to-build-something-cool>Using The Encoded Rules To Build Something Cool</h3>
-<p>OPM will automatically generate an interview that is capable of answering the question of how much vacation pay was owed in each year of employment with regard to a particular employee. So I’m going to take the generic interview, and I’m going to add a single line to a label on the final screen that will display for each Year of Employment in the tool.</p>
-<p>The vacation pay owing for the year starting on %Year_of_Employment% is %vacation_pay_amount%.</p>
-<p>I have defined “vacation_pay_amount” as the name that I can use to display that value inside the Data screen, like this:</p>
-<p><img src=/1__b8pcCNeVQ7W5Nr81r0Xy9w.png alt></p>
-<p>Now I hit the Debug button, and it loads the default interview.</p>
-<p>The default interview is going to ask for things in strange ways, and in strange orders, but if the rules are working properly, it should ask for what it needs in order to answer the question. Let’s see what we get.</p>
-<h3 id=the-interview>The Interview</h3>
-<p>First it asks for an employer, so I give it “GoC”.</p>
-<p><img src=/1__4iSeOQs__LIcw0tZS2LVUow.png alt></p>
-<p>You can see that you can add more than one employer to the tool. I click “Next” and it asks me about industrial establishments. We will pretend that Canada School of Public Service is the industrial establishment we are interested in, here.</p>
-<p><img src=/1__KAoM88TJuJPZs6dVuOM__uA.png alt></p>
-<p>By default the interview asks for everything that it can, so if there is an industrial establishment, that establishment might have an established practice for when to pay vacation pay. It asks.</p>
-<p><img src=/1__DQvAnPIr6pFE2xfJnGMipw.png alt></p>
-<p>I haven’t told it what variables aren’t required, so it treats everything as thought it was mandatory. For now we will patronize the interview and give it an answer for each question. Now it wants to know if there are any determined years of employment for CSPS.</p>
-<p><img src=/1__t9Hq9yDR5yDXljQGrzR9Qw.png alt></p>
-<p>We create one called 2019 Determination. It then asks for regular pay days, but we’re not doing anything with that, yet, so I’ll leave it blank.</p>
-<p><img src=/1__vID6OwE__q7EbvaYptFBSMQ.png alt></p>
-<p>Next it asks about Employees. We will tell it about Scott McNaughton.</p>
-<p><img src=/1__4BHRa9Gte2i__MpclCHTIxA.png alt></p>
-<p>Next it wants to know about an employment object. We will create one called “Scott’s Job”.</p>
-<p><img src=/1__XZoNJfGRMYTSxq__iA__q5Ig.png alt></p>
-<p>Next it asks about vacation periods, but again, we don’t care.</p>
-<p><img src=/1__8ixaC3H__2u0I58YZLBbJOg.png alt></p>
-<p>Next it asks about the Years of Employment for Scott’s Job. Here’s where we have to do some manual data entry. To test our calculations for vacation pay, we’re going to pretend that Scott has been employed at CSPS since June of 2008. And we’re going to say that CSPS created a determined year of employment effective January of 2019. So we enter in all the dates on which those years of employment would start.</p>
-<p><img src=/1__Bjq0FZysg6v__O8zeCJK__iQ.png alt></p>
-<p>At this point the interview gives us an error that something is missing. This is because it would have asked about the start and end dates for Scott’s Job immediately after we told it about Scott’s Job, except it didn’t yet have anything to do with them. Once we give it a bunch of years of employment, it needs to know what the start date is to calculate various things. This is just another of the many problems you would be able to fix by actually designing the interview instead of allowing OPM to generate it automatically. So we click on the screen for Employment Start Date and start from there.</p>
-<p><img src=/1__H6wyEycWLs4fXIiD816bUA.png alt></p>
-<p>It then asks for the end date of the employment, and because it will complain if we don’t, we just make one up in the future.</p>
-<p><img src=/1____QFTa4DliDk2f39JkciM6g.png alt></p>
-<p>We go back through Vacation Period and Years of Employment, which we have already done, and when we click forward the error is gone and we are asked for Scott’s Wages in each year of employment. We’re going to throw $50,000 in there for each year. (Give Scott a raise, you guys.)</p>
-<p><img src=/1__h9dF2hJIqja3gz8RrIrRvw.png alt></p>
-<p>It then asks for the employer, the employee, and the industrial establishment for “Scott’s Job”.</p>
-<p><img src=/1__tuBpYqGJda1MXeR3FtKTMg.png alt>
+</code></pre><p>Now we have an “Employment Duration Anywhere” attribute that we can use to calculate vacation entitlement as of the end of a year of employment. So to do that, we are going to rewrite our table for calculating vacation rates:</p><p><img src=/1__570a6YCcfk3QGGtvU__mwHA.png alt></p><p>The conditions now read “if, with regard to the employment for the current year of employment, the value of the employment duration value anywhere as of the start date of the following year of employment is greater than or equal to 10 (or 5)”.</p><h3 id=recalculating-vacation-pay>Recalculating Vacation Pay</h3><p>Now previously we had defined the vacation pay amount as a multiple of the wages by the pay rate. But we want the vacation pay amount for invalid years of employment to be zero. So we will rewrite that rule as a table that looks like this:</p><p><img src=/1__LghI4PneTevvFcAhQEYNdQ.png alt></p><h3 id=using-the-encoded-rules-to-build-something-cool>Using The Encoded Rules To Build Something Cool</h3><p>OPM will automatically generate an interview that is capable of answering the question of how much vacation pay was owed in each year of employment with regard to a particular employee. So I’m going to take the generic interview, and I’m going to add a single line to a label on the final screen that will display for each Year of Employment in the tool.</p><p>The vacation pay owing for the year starting on %Year_of_Employment% is %vacation_pay_amount%.</p><p>I have defined “vacation_pay_amount” as the name that I can use to display that value inside the Data screen, like this:</p><p><img src=/1__b8pcCNeVQ7W5Nr81r0Xy9w.png alt></p><p>Now I hit the Debug button, and it loads the default interview.</p><p>The default interview is going to ask for things in strange ways, and in strange orders, but if the rules are working properly, it should ask for what it needs in order to answer the question. Let’s see what we get.</p><h3 id=the-interview>The Interview</h3><p>First it asks for an employer, so I give it “GoC”.</p><p><img src=/1__4iSeOQs__LIcw0tZS2LVUow.png alt></p><p>You can see that you can add more than one employer to the tool. I click “Next” and it asks me about industrial establishments. We will pretend that Canada School of Public Service is the industrial establishment we are interested in, here.</p><p><img src=/1__KAoM88TJuJPZs6dVuOM__uA.png alt></p><p>By default the interview asks for everything that it can, so if there is an industrial establishment, that establishment might have an established practice for when to pay vacation pay. It asks.</p><p><img src=/1__DQvAnPIr6pFE2xfJnGMipw.png alt></p><p>I haven’t told it what variables aren’t required, so it treats everything as thought it was mandatory. For now we will patronize the interview and give it an answer for each question. Now it wants to know if there are any determined years of employment for CSPS.</p><p><img src=/1__t9Hq9yDR5yDXljQGrzR9Qw.png alt></p><p>We create one called 2019 Determination. It then asks for regular pay days, but we’re not doing anything with that, yet, so I’ll leave it blank.</p><p><img src=/1__vID6OwE__q7EbvaYptFBSMQ.png alt></p><p>Next it asks about Employees. We will tell it about Scott McNaughton.</p><p><img src=/1__4BHRa9Gte2i__MpclCHTIxA.png alt></p><p>Next it wants to know about an employment object. We will create one called “Scott’s Job”.</p><p><img src=/1__XZoNJfGRMYTSxq__iA__q5Ig.png alt></p><p>Next it asks about vacation periods, but again, we don’t care.</p><p><img src=/1__8ixaC3H__2u0I58YZLBbJOg.png alt></p><p>Next it asks about the Years of Employment for Scott’s Job. Here’s where we have to do some manual data entry. To test our calculations for vacation pay, we’re going to pretend that Scott has been employed at CSPS since June of 2008. And we’re going to say that CSPS created a determined year of employment effective January of 2019. So we enter in all the dates on which those years of employment would start.</p><p><img src=/1__Bjq0FZysg6v__O8zeCJK__iQ.png alt></p><p>At this point the interview gives us an error that something is missing. This is because it would have asked about the start and end dates for Scott’s Job immediately after we told it about Scott’s Job, except it didn’t yet have anything to do with them. Once we give it a bunch of years of employment, it needs to know what the start date is to calculate various things. This is just another of the many problems you would be able to fix by actually designing the interview instead of allowing OPM to generate it automatically. So we click on the screen for Employment Start Date and start from there.</p><p><img src=/1__H6wyEycWLs4fXIiD816bUA.png alt></p><p>It then asks for the end date of the employment, and because it will complain if we don’t, we just make one up in the future.</p><p><img src=/1____QFTa4DliDk2f39JkciM6g.png alt></p><p>We go back through Vacation Period and Years of Employment, which we have already done, and when we click forward the error is gone and we are asked for Scott’s Wages in each year of employment. We’re going to throw $50,000 in there for each year. (Give Scott a raise, you guys.)</p><p><img src=/1__h9dF2hJIqja3gz8RrIrRvw.png alt></p><p>It then asks for the employer, the employee, and the industrial establishment for “Scott’s Job”.</p><p><img src=/1__tuBpYqGJda1MXeR3FtKTMg.png alt>
 <img src=/1__fRfwsyC2RECyk4mVd__jW7w.png alt>
-<img src=/1__xC91q5HHKgucvhdA4MeaEw.png alt></p>
-<p>It then needs us to link each year of employment to the next one manually. This would be done automatically if I could get OPM to play nice, but whatever.</p>
-<p><img src=/1__cKTQR9s6wW2F8VLqo9ZJkA.png alt></p>
-<p>And that’s it, and we get to the last screen of the interview.</p>
-<p><img src=/1__Gv7PXFM8wU7xTZJQwiEQTg.png alt></p>
-<p>Wait… that’s not right. Why are the first years uncertain?</p>
-<p>Oh. I said his employment started in 2013 instead of saying it started in 2008, so the “has he been employed here for the last 12 months” part is failing for those years. I’ll fix it on the “Employment Start Date” screen, and come back.</p>
-<p><img src=/1__Q__BophQivzr1wRFyiNVtwA.png alt></p>
-<p>There you have it. The rules are showing that Scott’s vacation pay for the first 4 years is $2,000 (4% of $50,000), starting at the end of year 5 it’s $3,000 (6% of $50,000), and starting at the end of year 10 it’s $4,000 (8% of $50,000), except for the year of employment starting on June 1, 2018, which is invalid (because during that “year of employment” he did not work 12 months). And the vacation pay for the current year of employment is uncertain, because we don’t yet know when it will terminate. A new determined year of employment could be set between now and December 31.</p>
-<h3 id=creating-test-cases>Creating Test Cases</h3>
-<p>One of the nice features about OPM is that it allows you to save the data that you enter in a debug interview as a “test case” which is saved in an Excel file.</p>
-<p>Once page of the excel file for the data I just entered looks like this:</p>
-<p><img src=/1__PVS__xYbY7EyP__Vyfek1m7w.png alt></p>
-<p>It is very easy to use this excel file to add test cases, and then select any of them that you want to get its conclusions. You can also use your Excel-fu to randomly generate test scenarios in order to give your application possibilities you hadn’t personally considered.</p>
-<h3 id=explaining-answers>Explaining Answers</h3>
-<p>An important features of OPM is the ability to generate explanations for the answers that it gives. If I go back into the default interview and add a single control, the explanation for the year of employment vacation pay amount attribute, to the screen, here is what you get:</p>
-<p><img src=/1__U0__ZlalVrr4dDpThRbhU7Q.png alt></p>
-<p>I have clicked on “show details” for the first year of employment above. You can see that because OPM knows it is using the validity of the year of employment, the pay rate, and the wages to determine the pay amount, it has shown those three variables. Factors with sub-factors are available in a drop down. If I expand both of them, this is what you see:</p>
-<p><img src=/1__2kloQL6eA7RYZkdsPIYiOw.png alt></p>
-<p>It’s clearly not going to win any awards for poetry. But remember: this is what you get with zero additional effort on top of writing the rules. The explanations can be considerably improved.</p>
-<p>And it is possible to include annotations for source rules. If I go into Microsoft Word and add a reference tag to the rule like this:</p>
-<p><img src=/1__M7Ju45pvNYUQcHvXD6W54A.png alt></p>
-<p>Then the explanation changes to look like this:</p>
-<p><img src=/1__SBICGAe0BMVv__PFkCuexqg.png alt></p>
-<p>Now let’s say I’m curious why Scott’s vacation pay in the section half of 2018 is $0. I can scroll down and take a look:</p>
-<p><img src=/1__f__NPbunNNknEGYLgB7S3HA.png alt></p>
-<p>Again, there’s a lot we could do to improve how that explanation is presented, but it is enough to point you in the right direction as it is.</p>
-<h2 id=the-important-thing>The Important Thing</h2>
-<p>This is the part that I worry is going to get lost by virtue of the fact that this is a series of blog posts, and not a video. Drafting the rules and getting them to work properly took several hours. That’s partly because they are complicated, and required the use of some advanced features. It’s also partly because I haven’t actively used OPM in three years, so I’m relearning some things as I go.</p>
-<p><strong>But once that was done, generating a web interview that could collect the information required to answer complicated legal questions and provide explanations for those answers that refer to the source law took approximately 3 minutes.</strong></p>
-<p>Honestly. Here’s what I had to do:</p>
-<ol>
-<li>Add a label to the vacation pay amount attribute so I could include it in a label.</li>
-<li>Create a section on the interface screen for each year of employment.</li>
-<li>Add a label to that section with the required text.</li>
-<li>Add an explanation to that section for the attribute’s value.</li>
-</ol>
-<p>That is the most important thing. If you do the work up front with the rules, application development is <em>just crazy easier</em>.</p>
-<h3 id=what-are-these-sections-doing-wrong>What are These Sections Doing Wrong?</h3>
-<p>One of the interesting questions is “if we had been using Rules as Code while writing these sections of law and regulation, how might we have ended up doing it differently?”</p>
-<p>If I was the coder-lawyer in the room, here’s what I would have said:</p>
-<p>What we are interested in how much is owed, and when. We have decided on annual periods, which is fine, but we have also given them the ability to modify when the annual period happens. That will create sub-annual periods of time. So we don’t want to define “year of employment”. We want to define “period of employment,” which is a year long by default, but can be any length equal to or less than a year. Whatever the length of a period of employment, if you worked a part of it, you are entitled to vacation pay for one year, prorated for the amount of time that you actually worked in that period of employment, regardless of how long it was.</p>
-<h3 id=what-have-we-learned>What Have We Learned?</h3>
-<p>We’ve covered a lot of territory in the last 6 posts. Here are the big takeaways:</p>
-<ol>
-<li>Encoding “normal” rules sucks.</li>
-<li>Encoding rules while drafting them will reveal some problems that you might not otherwise have noticed, and can reveal more problems you don’t notice while drafting.</li>
-<li>If someone else is encoding the rules, application development becomes crazy easy. And so, potentially, does compliance.</li>
-<li>The tools available are cool, but none of them are perfect.</li>
-<li>Encoding laws doesn’t need to look like you’re a character in the Matrix.</li>
-</ol>
-<p>All of which falls under one or both of two bigger points:</p>
-<ol>
-<li>Rules as code has the power to improve the laws, if we do it while we are drafting the rules.</li>
-<li>Rules as code has the power to simplify service delivery and compliance, and more-so if we do it while we are drafting the rules.</li>
-</ol>
-<h3 id=whats-next-not-much>What’s Next? Not much.</h3>
-<p>I could still add features to be able to calculate when the vacation pay is due, but frankly, I’m sort of OPA’d out. So that’s probably not going to happen. But let me know if there’s something specific you’d like to see.</p>
-<p>The OPM software is available for free for educational purposes from Oracle, and I would be happy to provide the project file to anyone interested in trying it. Just hit me up <a href=https://www.twitter.com/RoundTableLaw>on twitter at @RoundTableLaw</a>.</p>
-<p>Thanks for following along, and thanks to the great people in the Government of Canada who are pushing us into the future with this work. I hope these posts have contributed somewhat.</p>
-<ul class=pa0>
-</ul>
-<div class="mt6 instapaper_ignoref">
-</div>
-</div>
-<aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-<p class="f5 b mb3">What's in this post</p>
-<nav id=TableOfContents>
+<img src=/1__xC91q5HHKgucvhdA4MeaEw.png alt></p><p>It then needs us to link each year of employment to the next one manually. This would be done automatically if I could get OPM to play nice, but whatever.</p><p><img src=/1__cKTQR9s6wW2F8VLqo9ZJkA.png alt></p><p>And that’s it, and we get to the last screen of the interview.</p><p><img src=/1__Gv7PXFM8wU7xTZJQwiEQTg.png alt></p><p>Wait… that’s not right. Why are the first years uncertain?</p><p>Oh. I said his employment started in 2013 instead of saying it started in 2008, so the “has he been employed here for the last 12 months” part is failing for those years. I’ll fix it on the “Employment Start Date” screen, and come back.</p><p><img src=/1__Q__BophQivzr1wRFyiNVtwA.png alt></p><p>There you have it. The rules are showing that Scott’s vacation pay for the first 4 years is $2,000 (4% of $50,000), starting at the end of year 5 it’s $3,000 (6% of $50,000), and starting at the end of year 10 it’s $4,000 (8% of $50,000), except for the year of employment starting on June 1, 2018, which is invalid (because during that “year of employment” he did not work 12 months). And the vacation pay for the current year of employment is uncertain, because we don’t yet know when it will terminate. A new determined year of employment could be set between now and December 31.</p><h3 id=creating-test-cases>Creating Test Cases</h3><p>One of the nice features about OPM is that it allows you to save the data that you enter in a debug interview as a “test case” which is saved in an Excel file.</p><p>Once page of the excel file for the data I just entered looks like this:</p><p><img src=/1__PVS__xYbY7EyP__Vyfek1m7w.png alt></p><p>It is very easy to use this excel file to add test cases, and then select any of them that you want to get its conclusions. You can also use your Excel-fu to randomly generate test scenarios in order to give your application possibilities you hadn’t personally considered.</p><h3 id=explaining-answers>Explaining Answers</h3><p>An important features of OPM is the ability to generate explanations for the answers that it gives. If I go back into the default interview and add a single control, the explanation for the year of employment vacation pay amount attribute, to the screen, here is what you get:</p><p><img src=/1__U0__ZlalVrr4dDpThRbhU7Q.png alt></p><p>I have clicked on “show details” for the first year of employment above. You can see that because OPM knows it is using the validity of the year of employment, the pay rate, and the wages to determine the pay amount, it has shown those three variables. Factors with sub-factors are available in a drop down. If I expand both of them, this is what you see:</p><p><img src=/1__2kloQL6eA7RYZkdsPIYiOw.png alt></p><p>It’s clearly not going to win any awards for poetry. But remember: this is what you get with zero additional effort on top of writing the rules. The explanations can be considerably improved.</p><p>And it is possible to include annotations for source rules. If I go into Microsoft Word and add a reference tag to the rule like this:</p><p><img src=/1__M7Ju45pvNYUQcHvXD6W54A.png alt></p><p>Then the explanation changes to look like this:</p><p><img src=/1__SBICGAe0BMVv__PFkCuexqg.png alt></p><p>Now let’s say I’m curious why Scott’s vacation pay in the section half of 2018 is $0. I can scroll down and take a look:</p><p><img src=/1__f__NPbunNNknEGYLgB7S3HA.png alt></p><p>Again, there’s a lot we could do to improve how that explanation is presented, but it is enough to point you in the right direction as it is.</p><h2 id=the-important-thing>The Important Thing</h2><p>This is the part that I worry is going to get lost by virtue of the fact that this is a series of blog posts, and not a video. Drafting the rules and getting them to work properly took several hours. That’s partly because they are complicated, and required the use of some advanced features. It’s also partly because I haven’t actively used OPM in three years, so I’m relearning some things as I go.</p><p><strong>But once that was done, generating a web interview that could collect the information required to answer complicated legal questions and provide explanations for those answers that refer to the source law took approximately 3 minutes.</strong></p><p>Honestly. Here’s what I had to do:</p><ol>
+<li>Add a label to the vacation pay amount attribute so I could include it in a label.</li><li>Create a section on the interface screen for each year of employment.</li><li>Add a label to that section with the required text.</li><li>Add an explanation to that section for the attribute’s value.</li></ol><p>That is the most important thing. If you do the work up front with the rules, application development is <em>just crazy easier</em>.</p><h3 id=what-are-these-sections-doing-wrong>What are These Sections Doing Wrong?</h3><p>One of the interesting questions is “if we had been using Rules as Code while writing these sections of law and regulation, how might we have ended up doing it differently?”</p><p>If I was the coder-lawyer in the room, here’s what I would have said:</p><p>What we are interested in how much is owed, and when. We have decided on annual periods, which is fine, but we have also given them the ability to modify when the annual period happens. That will create sub-annual periods of time. So we don’t want to define “year of employment”. We want to define “period of employment,” which is a year long by default, but can be any length equal to or less than a year. Whatever the length of a period of employment, if you worked a part of it, you are entitled to vacation pay for one year, prorated for the amount of time that you actually worked in that period of employment, regardless of how long it was.</p><h3 id=what-have-we-learned>What Have We Learned?</h3><p>We’ve covered a lot of territory in the last 6 posts. Here are the big takeaways:</p><ol>
+<li>Encoding “normal” rules sucks.</li><li>Encoding rules while drafting them will reveal some problems that you might not otherwise have noticed, and can reveal more problems you don’t notice while drafting.</li><li>If someone else is encoding the rules, application development becomes crazy easy. And so, potentially, does compliance.</li><li>The tools available are cool, but none of them are perfect.</li><li>Encoding laws doesn’t need to look like you’re a character in the Matrix.</li></ol><p>All of which falls under one or both of two bigger points:</p><ol>
+<li>Rules as code has the power to improve the laws, if we do it while we are drafting the rules.</li><li>Rules as code has the power to simplify service delivery and compliance, and more-so if we do it while we are drafting the rules.</li></ol><h3 id=whats-next-not-much>What’s Next? Not much.</h3><p>I could still add features to be able to calculate when the vacation pay is due, but frankly, I’m sort of OPA’d out. So that’s probably not going to happen. But let me know if there’s something specific you’d like to see.</p><p>The OPM software is available for free for educational purposes from Oracle, and I would be happy to provide the project file to anyone interested in trying it. Just hit me up <a href=https://www.twitter.com/RoundTableLaw>on twitter at @RoundTableLaw</a>.</p><p>Thanks for following along, and thanks to the great people in the Government of Canada who are pushing us into the future with this work. I hope these posts have contributed somewhat.</p><ul class=pa0>
+</ul><div class="mt6 instapaper_ignoref">
+</div></div><aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">What's in this post</p><nav id=TableOfContents>
 <ul>
 <li>
 <ul>
 <li>
 <ul>
-<li><a href=#fudging-it-a-little>Fudging It (a little)</a></li>
-<li><a href=#setting-up-our-year-of-employment-rules>Setting Up Our Year of Employment Rules</a></li>
-<li><a href=#calculating-employment-duration-anywhere>Calculating Employment Duration Anywhere</a></li>
-<li><a href=#recalculating-vacation-pay>Recalculating Vacation Pay</a></li>
-<li><a href=#using-the-encoded-rules-to-build-something-cool>Using The Encoded Rules To Build Something Cool</a></li>
-<li><a href=#the-interview>The Interview</a></li>
-<li><a href=#creating-test-cases>Creating Test Cases</a></li>
-<li><a href=#explaining-answers>Explaining Answers</a></li>
-</ul>
-</li>
-<li><a href=#the-important-thing>The Important Thing</a>
+<li><a href=#fudging-it-a-little>Fudging It (a little)</a></li><li><a href=#setting-up-our-year-of-employment-rules>Setting Up Our Year of Employment Rules</a></li><li><a href=#calculating-employment-duration-anywhere>Calculating Employment Duration Anywhere</a></li><li><a href=#recalculating-vacation-pay>Recalculating Vacation Pay</a></li><li><a href=#using-the-encoded-rules-to-build-something-cool>Using The Encoded Rules To Build Something Cool</a></li><li><a href=#the-interview>The Interview</a></li><li><a href=#creating-test-cases>Creating Test Cases</a></li><li><a href=#explaining-answers>Explaining Answers</a></li></ul></li><li><a href=#the-important-thing>The Important Thing</a>
 <ul>
-<li><a href=#what-are-these-sections-doing-wrong>What are These Sections Doing Wrong?</a></li>
-<li><a href=#what-have-we-learned>What Have We Learned?</a></li>
-<li><a href=#whats-next-not-much>What’s Next? Not much.</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-<div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-<p class="f5 b mb3">Related</p>
-<ul class="pa0 list">
+<li><a href=#what-are-these-sections-doing-wrong>What are These Sections Doing Wrong?</a></li><li><a href=#what-have-we-learned>What Have We Learned?</a></li><li><a href=#whats-next-not-much>What’s Next? Not much.</a></li></ul></li></ul></li></ul></nav></div><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">Related</p><ul class="pa0 list">
 <li class=mb2>
 <a href=/post/roundtablelaw/playing-along-with-rules-as-code-part-5-8195334dcb35/>Playing Along with Rules as Code: Part 5</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/playing-along-with-rules-as-code-part-4-b715c1a924a9/>Playing Along with Rules As Code: Part 4</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/playing-along-with-rules-as-code-part-3-52d6286f8245/>Playing along with Rules as Code Part 3</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/playing-along-with-rules-as-code-part-2-4acc82c53f95/>Playing Along With Rules as Code Part 2</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/playing-along-with-rules-as-code-6c837b42a33e/>Playing Along with Rules as Code</a>
-</li>
-</ul>
-</div>
-</aside>
-</article>
-</main>
-<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+</li></ul></div></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
 <div class="flex justify-between">
 <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://JasonMorrisSC.github.io>
 &copy; Jason Morris 2022
@@ -297,8 +139,4 @@ Employment Duration Anywhere = TemporalYearsSince(Employment Duration Anywhere S
 </span>
 <span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
 </span></a>
-</div></div>
-</div>
-</footer>
-</body>
-</html>
+</div></div></div></footer></body></html>

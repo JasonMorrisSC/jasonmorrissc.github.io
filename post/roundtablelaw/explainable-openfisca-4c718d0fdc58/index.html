@@ -2,10 +2,9 @@
 <head>
 <meta charset=utf-8>
 <meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<title>Explainable OpenFisca | Jason Morris</title>
-<meta name=viewport content="width=device-width,minimum-scale=1">
+<title>Explainable OpenFisca | Jason Morris</title><meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="Following up on the plan I wrote about a few days ago… By exposing all of the intermediate conclusions, and by adding separate variables…">
-<meta name=generator content="Hugo 0.92.2">
+<meta name=generator content="Hugo 0.93.2">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/css/main.min.css>
 <meta property="og:title" content="Explainable OpenFisca">
@@ -21,8 +20,7 @@
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Explainable OpenFisca">
 <meta name=twitter:description content="Following up on the plan I wrote about a few days ago… By exposing all of the intermediate conclusions, and by adding separate variables…">
-</head>
-<body class="ma0 avenir bg-near-white">
+</head><body class="ma0 avenir bg-near-white">
 <header>
 <div class=bg-black>
 <nav class="pv3 ph3 ph4-ns" role=navigation>
@@ -36,52 +34,32 @@ Jason Morris
 <a class="hover-white no-underline white-90" href=/about/ title="About Jason page">
 About Jason
 </a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
+</li><li class="list f5 f4-ns fw4 dib pr3">
 <a class="hover-white no-underline white-90" href=/project/ title="Projects page">
 Projects
 </a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
+</li><li class="list f5 f4-ns fw4 dib pr3">
 <a class="hover-white no-underline white-90" href=/post/ title="Rules as Code Diary page">
 Rules as Code Diary
 </a>
-</li>
-</ul>
-<div class=ananke-socials>
+</li></ul><div class=ananke-socials>
 <a href=https://twitter.com/RoundTableLaw target=_blank class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel=noopener aria-label="follow on Twitter——Opens in a new window">
 <span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
 </span>
 <span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
 </span></a>
-</div>
-</div>
-</div>
-</nav>
-</div>
-</header>
-<main class=pb7 role=main>
+</div></div></div></nav></div></header><main class=pb7 role=main>
 <article class="flex-l flex-wrap justify-between mw8 center ph3">
 <header class="mt4 w-100">
 <aside class="instapaper_ignoref b helvetica tracked">
 RULES AS CODE DIARY
-</aside>
-<div id=sharing class="mt3 ananke-socials">
+</aside><div id=sharing class="mt3 ananke-socials">
 <a href="https://twitter.com/share?url=https://JasonMorrisSC.github.io/post/roundtablelaw/explainable-openfisca-4c718d0fdc58/&text=Explainable%20OpenFisca" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
 <span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
 </span>
 </a>
-</div>
-<h1 class="f1 athelas mt3 mb1">Explainable OpenFisca</h1>
-<time class="f6 mv4 dib tracked" datetime=2021-12-16T09:35:02Z>December 16, 2021</time>
-</header>
-<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Following up on <a href=/post/roundtablelaw/using-openfisca-as-an-expert-system-engine-e291ddc50815>the plan</a> I wrote about a few days ago… By exposing all of the intermediate conclusions, and by adding separate variables that represent whether the primary variables are “known,” I’ve managed to create an encoding in OpenFisca that is capable of doing some cool stuff over the Web API.</p>
-<p>You can see the source code in <a href=https://github.com/JasonMorrisSC/openfisca-canada/tree/stub_version>this GitHub repository</a>, and the <code>demos/explanations.py</code> file demonstrates the use of the OpenFisca Web API with my rules as code encoding in Python.</p>
-<p>You can also try it in <a href="https://colab.research.google.com/drive/1ievnP8CAgfWBqKQI2XXRz2ZqeWTWu7VL?usp=sharing">this Google Colab notebook</a>.</p>
-<h4 id=explanations>Explanations</h4>
-<p>First, you can hit the <code>/trace</code> endpoint of the Web API, and query both the answer, and whether the answer is known, in one go. By combining the regular and “known” variables and their dependencies into a single dependency tree, we can generate a textual explanation for how OpenFisca reached its conclusions.</p>
-<p>For one of the two example scenarios, the output looks like this:</p>
-<pre tabindex=0><code>oas_eligible as of 2021-12-01 is unknown, because  
+</div><h1 class="f1 athelas mt3 mb1">Explainable OpenFisca</h1><time class="f6 mv4 dib tracked" datetime=2021-12-16T09:35:02Z>December 16, 2021</time>
+</header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Following up on <a href=/post/roundtablelaw/using-openfisca-as-an-expert-system-engine-e291ddc50815>the plan</a> I wrote about a few days ago… By exposing all of the intermediate conclusions, and by adding separate variables that represent whether the primary variables are “known,” I’ve managed to create an encoding in OpenFisca that is capable of doing some cool stuff over the Web API.</p><p>You can see the source code in <a href=https://github.com/JasonMorrisSC/openfisca-canada/tree/stub_version>this GitHub repository</a>, and the <code>demos/explanations.py</code> file demonstrates the use of the OpenFisca Web API with my rules as code encoding in Python.</p><p>You can also try it in <a href="https://colab.research.google.com/drive/1ievnP8CAgfWBqKQI2XXRz2ZqeWTWu7VL?usp=sharing">this Google Colab notebook</a>.</p><h4 id=explanations>Explanations</h4><p>First, you can hit the <code>/trace</code> endpoint of the Web API, and query both the answer, and whether the answer is known, in one go. By combining the regular and “known” variables and their dependencies into a single dependency tree, we can generate a textual explanation for how OpenFisca reached its conclusions.</p><p>For one of the two example scenarios, the output looks like this:</p><pre tabindex=0><code>oas_eligible as of 2021-12-01 is unknown, because  
   oas_eligible_income_requirement_satisfied as of 2021-12-01 is unknown, because  
     oas_eligible__income_not_above_limit as of 2021-12-01 is unknown, because  
       income as of 2021 is unknown, and  
@@ -102,29 +80,13 @@ RULES AS CODE DIARY
       resides_in_agreement_country as of 2021-12-01 is unknown, because  
         place_of_residence as of 2021-12-01 is unknown, and  
       eligible_under_social_agreement as of 2021-12-01 is unknown
-</code></pre><p>That’s not as readable as you would want to make it before you displayed it to a user, but the point is that all the relevant information is there, and your interface can do with it as you please.</p>
-<h4 id=relevance>Relevance</h4>
-<p>By looking for leaf nodes in the justification tree that have only “unknown” parents, we are able to come up with the list of relevant questions to ask the user. For the same example, the demonstration generates the following output for relevance:</p>
-<pre tabindex=0><code>The remaining relevant inputs are ['place_of_residence&lt;2021-12-01&gt;', 'legal_status&lt;2021-12-01&gt;', 'eligible_under_social_agreement&lt;2021-12-01&gt;', 'years_in_canada_since_18&lt;2021-12-01&gt;', 'income&lt;2021&gt;']
-</code></pre><p>That information can be used to avoid asking the user questions that can no longer possibly impact the question you are trying to answer, which makes the application smarter, with less work for the developers, and in particular without the developers needing to know the logic of the legislation in order to predict when things will matter.</p>
-<h4 id=contingent-conclusions>Contingent Conclusions</h4>
-<p>Sometimes, the answer depends on things that you aren’t going to ask the user, because the interface would be too complicated, or it’s not reasonable to expect the user to know. If you know the list of questions that can’t be posed to the user, but are considered in the code, and the list of relevant questions is entirely in that category, you can advise the user that the answer is “it depends”, and describe what it depends on, and advise the user what to do next. For another example, the demonstration output looks like this:</p>
-<pre tabindex=0><code>The remaining relevant inputs are ['eligible_under_social_agreement&lt;2021-12-01&gt;']  
+</code></pre><p>That’s not as readable as you would want to make it before you displayed it to a user, but the point is that all the relevant information is there, and your interface can do with it as you please.</p><h4 id=relevance>Relevance</h4><p>By looking for leaf nodes in the justification tree that have only “unknown” parents, we are able to come up with the list of relevant questions to ask the user. For the same example, the demonstration generates the following output for relevance:</p><pre tabindex=0><code>The remaining relevant inputs are [&#39;place_of_residence&lt;2021-12-01&gt;&#39;, &#39;legal_status&lt;2021-12-01&gt;&#39;, &#39;eligible_under_social_agreement&lt;2021-12-01&gt;&#39;, &#39;years_in_canada_since_18&lt;2021-12-01&gt;&#39;, &#39;income&lt;2021&gt;&#39;]
+</code></pre><p>That information can be used to avoid asking the user questions that can no longer possibly impact the question you are trying to answer, which makes the application smarter, with less work for the developers, and in particular without the developers needing to know the logic of the legislation in order to predict when things will matter.</p><h4 id=contingent-conclusions>Contingent Conclusions</h4><p>Sometimes, the answer depends on things that you aren’t going to ask the user, because the interface would be too complicated, or it’s not reasonable to expect the user to know. If you know the list of questions that can’t be posed to the user, but are considered in the code, and the list of relevant questions is entirely in that category, you can advise the user that the answer is “it depends”, and describe what it depends on, and advise the user what to do next. For another example, the demonstration output looks like this:</p><pre tabindex=0><code>The remaining relevant inputs are [&#39;eligible_under_social_agreement&lt;2021-12-01&gt;&#39;]  
 There are no askable relevant variables, so this goal is contingently known.
-</code></pre><h4 id=why-it-matters>Why it Matters</h4>
-<p>We now have proof that it is possible to generate explainable expert systems on the basis of encodings of legislation done in OpenFisca, and accessed over the standard OpenFisca Web API.</p>
-<p>We also have a much better idea of how difficult it is.</p>
-<p>Next we will satisfy our front-end developers that the OpenFisca Web API is friendly to them. Then work begins on a version of the encoding that is based more directly on the relevant legislation, as opposed to someone’s short-hand interpretation of it.</p>
-<p>That will teach us another important lesson, which is how much more difficult, if at all, is it to do an encoding in OpenFisca that has higher fidelity with the source legislation? By comparing the difficulty of the two approaches, and taking a look at the nature of some of the amendments that have been made to the legislation over time, and examining how those amendments would be made to the code in both versions, we should get some idea of whether the increased effort in encoding is worth it in terms of maintenance and the ability to tie explanations to the source legal material.</p>
-<p>We are also already starting to explore techniques to keep the encoding in sync with legislative changes. The possibility of generating OpenFisca parameter files, <a href=https://github.com/JasonMorrisSC/openfisca-canada/blob/stub_version/openfisca_canada/parameters/benefits/social_agreement_countries.yaml>like this one</a>, by scraping government web pages <a href=https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/canada-pension-plan-cpp/foreign-employees-employers/canada-s-social-agreements-other-countries.html>like this one</a>, is on the agenda. As is the possibility of tracking changes to legislation through tools like <a href="https://sso.lexum.com/auth/realms/lexum/protocol/openid-connect/auth?response_type=code&client_id=lexbox-web&redirect_uri=https%3A%2F%2Fapp.mylexbox.com%2Fapi%2Fsso%2Flogin?realm%3Dlexum&state=93e6e22f-adcf-4228-96f7-8c431eae80d3&login=true&scope=openid">LexBox</a>. Perhaps when the law changes, we can create a GitHub issue with a link to the legislative changes on CanLII.</p>
-<ul class=pa0>
-</ul>
-<div class="mt6 instapaper_ignoref">
-</div>
-</div>
-<aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-<p class="f5 b mb3">What's in this post</p>
-<nav id=TableOfContents>
+</code></pre><h4 id=why-it-matters>Why it Matters</h4><p>We now have proof that it is possible to generate explainable expert systems on the basis of encodings of legislation done in OpenFisca, and accessed over the standard OpenFisca Web API.</p><p>We also have a much better idea of how difficult it is.</p><p>Next we will satisfy our front-end developers that the OpenFisca Web API is friendly to them. Then work begins on a version of the encoding that is based more directly on the relevant legislation, as opposed to someone’s short-hand interpretation of it.</p><p>That will teach us another important lesson, which is how much more difficult, if at all, is it to do an encoding in OpenFisca that has higher fidelity with the source legislation? By comparing the difficulty of the two approaches, and taking a look at the nature of some of the amendments that have been made to the legislation over time, and examining how those amendments would be made to the code in both versions, we should get some idea of whether the increased effort in encoding is worth it in terms of maintenance and the ability to tie explanations to the source legal material.</p><p>We are also already starting to explore techniques to keep the encoding in sync with legislative changes. The possibility of generating OpenFisca parameter files, <a href=https://github.com/JasonMorrisSC/openfisca-canada/blob/stub_version/openfisca_canada/parameters/benefits/social_agreement_countries.yaml>like this one</a>, by scraping government web pages <a href=https://www.canada.ca/en/revenue-agency/services/tax/businesses/topics/payroll/payroll-deductions-contributions/canada-pension-plan-cpp/foreign-employees-employers/canada-s-social-agreements-other-countries.html>like this one</a>, is on the agenda. As is the possibility of tracking changes to legislation through tools like <a href="https://sso.lexum.com/auth/realms/lexum/protocol/openid-connect/auth?response_type=code&client_id=lexbox-web&redirect_uri=https%3A%2F%2Fapp.mylexbox.com%2Fapi%2Fsso%2Flogin?realm%3Dlexum&state=93e6e22f-adcf-4228-96f7-8c431eae80d3&login=true&scope=openid">LexBox</a>. Perhaps when the law changes, we can create a GitHub issue with a link to the legislative changes on CanLII.</p><ul class=pa0>
+</ul><div class="mt6 instapaper_ignoref">
+</div></div><aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">What's in this post</p><nav id=TableOfContents>
 <ul>
 <li>
 <ul>
@@ -132,34 +94,13 @@ There are no askable relevant variables, so this goal is contingently known.
 <ul>
 <li>
 <ul>
-<li><a href=#explanations>Explanations</a></li>
-<li><a href=#relevance>Relevance</a></li>
-<li><a href=#contingent-conclusions>Contingent Conclusions</a></li>
-<li><a href=#why-it-matters>Why it Matters</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-<div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-<p class="f5 b mb3">Related</p>
-<ul class="pa0 list">
+<li><a href=#explanations>Explanations</a></li><li><a href=#relevance>Relevance</a></li><li><a href=#contingent-conclusions>Contingent Conclusions</a></li><li><a href=#why-it-matters>Why it Matters</a></li></ul></li></ul></li></ul></li></ul></nav></div><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">Related</p><ul class="pa0 list">
 <li class=mb2>
 <a href=/post/roundtablelaw/using-openfisca-as-an-expert-system-engine-e291ddc50815/>Using OpenFisca as an Expert System Engine</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/openfisca-in-google-colab-de92e2621d88/>OpenFisca in Google Colab</a>
-</li>
-</ul>
-</div>
-</aside>
-</article>
-</main>
-<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+</li></ul></div></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
 <div class="flex justify-between">
 <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://JasonMorrisSC.github.io>
 &copy; Jason Morris 2022
@@ -171,8 +112,4 @@ There are no askable relevant variables, so this goal is contingently known.
 </span>
 <span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
 </span></a>
-</div></div>
-</div>
-</footer>
-</body>
-</html>
+</div></div></div></footer></body></html>

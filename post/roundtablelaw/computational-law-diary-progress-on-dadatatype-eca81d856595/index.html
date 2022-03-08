@@ -2,10 +2,9 @@
 <head>
 <meta charset=utf-8>
 <meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<title>Progress on DADataType | Jason Morris</title>
-<meta name=viewport content="width=device-width,minimum-scale=1">
+<title>Progress on DADataType | Jason Morris</title><meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="This week we made some progress bringing features of top-of-the-class logic programming tools to open source.">
-<meta name=generator content="Hugo 0.92.2">
+<meta name=generator content="Hugo 0.93.2">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/css/main.min.css>
 <meta property="og:title" content="Progress on DADataType">
@@ -21,8 +20,7 @@
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Progress on DADataType">
 <meta name=twitter:description content="This week we made some progress bringing features of top-of-the-class logic programming tools to open source.">
-</head>
-<body class="ma0 avenir bg-near-white">
+</head><body class="ma0 avenir bg-near-white">
 <header>
 <div class=bg-black>
 <nav class="pv3 ph3 ph4-ns" role=navigation>
@@ -36,96 +34,43 @@ Jason Morris
 <a class="hover-white no-underline white-90" href=/about/ title="About Jason page">
 About Jason
 </a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
+</li><li class="list f5 f4-ns fw4 dib pr3">
 <a class="hover-white no-underline white-90" href=/project/ title="Projects page">
 Projects
 </a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
+</li><li class="list f5 f4-ns fw4 dib pr3">
 <a class="hover-white no-underline white-90" href=/post/ title="Rules as Code Diary page">
 Rules as Code Diary
 </a>
-</li>
-</ul>
-<div class=ananke-socials>
+</li></ul><div class=ananke-socials>
 <a href=https://twitter.com/RoundTableLaw target=_blank class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel=noopener aria-label="follow on Twitter——Opens in a new window">
 <span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
 </span>
 <span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
 </span></a>
-</div>
-</div>
-</div>
-</nav>
-</div>
-</header>
-<main class=pb7 role=main>
+</div></div></div></nav></div></header><main class=pb7 role=main>
 <article class="flex-l flex-wrap justify-between mw8 center ph3">
 <header class="mt4 w-100">
 <aside class="instapaper_ignoref b helvetica tracked">
 RULES AS CODE DIARY
-</aside>
-<div id=sharing class="mt3 ananke-socials">
+</aside><div id=sharing class="mt3 ananke-socials">
 <a href="https://twitter.com/share?url=https://JasonMorrisSC.github.io/post/roundtablelaw/computational-law-diary-progress-on-dadatatype-eca81d856595/&text=Progress%20on%20DADataType" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
 <span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
 </span>
 </a>
-</div>
-<h1 class="f1 athelas mt3 mb1">Progress on DADataType</h1>
-<time class="f6 mv4 dib tracked" datetime=2020-10-20T21:30:21Z>October 20, 2020</time>
-</header>
-<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><img src=/1__50O53AFGEN__h1oqqkeJKxQ.png alt></p>
-<p>This week we made some progress bringing features of top-of-the-class logic programming tools to open source.</p>
-<p>If you are using a tool like <a href=https://twitter.com/OracleOPA>Oracle Intelligent Advisor</a>, or <a href=https://twitter.com/neotalogic>Neota Logic</a>, for example, you can follow these steps:</p>
-<ol>
+</div><h1 class="f1 athelas mt3 mb1">Progress on DADataType</h1><time class="f6 mv4 dib tracked" datetime=2020-10-20T21:30:21Z>October 20, 2020</time>
+</header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><img src=/1__50O53AFGEN__h1oqqkeJKxQ.png alt></p><p>This week we made some progress bringing features of top-of-the-class logic programming tools to open source.</p><p>If you are using a tool like <a href=https://twitter.com/OracleOPA>Oracle Intelligent Advisor</a>, or <a href=https://twitter.com/neotalogic>Neota Logic</a>, for example, you can follow these steps:</p><ol>
 <li>Describe the domain.<br>
-For example, you might explain to the tool that a game has two players and a winner, players throw a sign, the signs are Rock, Paper, and Scissors.</li>
-<li>Encode the rules.<br>
-For example, you might explain to the tool that Rock beats Scissors, Scissors beats Paper, and Paper beats Rock. And you might explain that the winner of the game is the person whose sign beats the other person’s sign.</li>
-<li>Ask a question.<br>
-For example you might ask about the winners of any games.</li>
-</ol>
-<p>With those three pieces of information, and without you needing to do any interface design work, tools like OIA and Neota can generate a web-based interface that will ask the user for the required facts until it has the data it needs to answer your question.</p>
-<p>For example, the interface may have a screen that asks “are there any games?” If there are, it will ask what the throws were of the two players in those games. And then, on the last screen, it will give the answer to the question of who won.</p>
-<p>The questions may come in a strange order, and the interface may be less than perfectly user-friendly, but this automatically-generated interface feature allows you to rapidly prototype and test applications that are based on encoded rules, making it easier to demonstrate the value you get from encoding the rules.</p>
-<h3 id=the-two-problems>The Two Problems</h3>
-<p>The two problems with the existing tools for this are that they are deeply integrated, and not open source.</p>
-<h4 id=deep-integration>Deep Integration</h4>
-<p>When I say that they are deeply integrated, what I mean is that you cannot use a non-OIA data structure or a non-OIA ruleset to generate an OIA interface. Similarly with Neota Logic. They come as a package deal. There is no ability to add Neota Logic interfaces to code that is written in a different rule language. That forces you into a specific tool in order to get those benefits.</p>
-<h4 id=cost>Cost</h4>
-<p>And being forced into those tools is less than agreeable for a lot of Rules as Code and legal automation purposes, because they are closed source, and relatively expensive. (Though Neota Logic is probably roughly a degree of magnitude less expensive that OIA to deploy.)</p>
-<h3 id=the-ideal-solution>The Ideal Solution</h3>
-<p>What would be nice is if we had a way to use open source software that was capable of generating a user interface for your expert system, and it did not care what language your rules were written in, or the language in which your domain was described.</p>
-<p>That doesn’t exist, yet, but SMU’s Centre for Computational Law is working on it, because we would like it to be easy to generate a user interface that allows you to prototype and test applications written in L4, our programming language for law.</p>
-<h3 id=breaking-down-the-problem>Breaking Down the Problem</h3>
-<p>There are two parts to the problem.</p>
-<ol>
-<li>Your interface needs to be able to know what questions to ask on the basis of the rules, the goal, and the data structure.</li>
-<li>Your interface needs to know how to ask any of those questions based on the data structure.</li>
-</ol>
-<p>What we are working on right now is part 2.</p>
-<p><a href=https://docassemble.org>Docassemble</a> works with Python modules and YAML interview files. Our module, <a href=https://github.com/smucclaw/docassemble-DADataType>docassemble-DADataType</a>, gives you a library of Python classes that you can use to describe the data structure in your code, and a set of default interfaces for asking about those kinds of data.</p>
-<p>The plan is to write code that will compile from our L4 language to a Docassemble package that can be imported with a single line of code in your docassemble interview, and then display questions for whatever the goal of the interview requires.</p>
-<p>Our proof of concept is to do that translation into Python objects manually, and see what sort of interface we end up with.</p>
-<h3 id=whats-new-in-dadatatype>What’s New in DADataType?</h3>
-<p>When we released DADataType some time ago, it only dealt with a few simple data types like numbers and text and email addresses. In order to be able to represent the types of data structures that we want to be able to represent in L4, we needed to add a few more capabilities.</p>
-<p>Critically, the improved version of DADataType is now able to deal with more complicated forms of data structures: objects as attributes, object references, and lists.</p>
-<h4 id=objects-as-attributes>Objects As Attributes</h4>
-<p>If in your rules a “game” is a thing that has two players, and a “player” is a thing that has a throw, then “game” is an object class, and “player” is an object class. Allowing DADataType to deal with objects as attributes means that your data structure can say “a game has player1, which is a player, and player2, which is a player.” The fact that both players have a “throw” is implicit. So your data structure, when you create a game object, will look like this:</p>
-<pre tabindex=0><code>Game1  
+For example, you might explain to the tool that a game has two players and a winner, players throw a sign, the signs are Rock, Paper, and Scissors.</li><li>Encode the rules.<br>
+For example, you might explain to the tool that Rock beats Scissors, Scissors beats Paper, and Paper beats Rock. And you might explain that the winner of the game is the person whose sign beats the other person’s sign.</li><li>Ask a question.<br>
+For example you might ask about the winners of any games.</li></ol><p>With those three pieces of information, and without you needing to do any interface design work, tools like OIA and Neota can generate a web-based interface that will ask the user for the required facts until it has the data it needs to answer your question.</p><p>For example, the interface may have a screen that asks “are there any games?” If there are, it will ask what the throws were of the two players in those games. And then, on the last screen, it will give the answer to the question of who won.</p><p>The questions may come in a strange order, and the interface may be less than perfectly user-friendly, but this automatically-generated interface feature allows you to rapidly prototype and test applications that are based on encoded rules, making it easier to demonstrate the value you get from encoding the rules.</p><h3 id=the-two-problems>The Two Problems</h3><p>The two problems with the existing tools for this are that they are deeply integrated, and not open source.</p><h4 id=deep-integration>Deep Integration</h4><p>When I say that they are deeply integrated, what I mean is that you cannot use a non-OIA data structure or a non-OIA ruleset to generate an OIA interface. Similarly with Neota Logic. They come as a package deal. There is no ability to add Neota Logic interfaces to code that is written in a different rule language. That forces you into a specific tool in order to get those benefits.</p><h4 id=cost>Cost</h4><p>And being forced into those tools is less than agreeable for a lot of Rules as Code and legal automation purposes, because they are closed source, and relatively expensive. (Though Neota Logic is probably roughly a degree of magnitude less expensive that OIA to deploy.)</p><h3 id=the-ideal-solution>The Ideal Solution</h3><p>What would be nice is if we had a way to use open source software that was capable of generating a user interface for your expert system, and it did not care what language your rules were written in, or the language in which your domain was described.</p><p>That doesn’t exist, yet, but SMU’s Centre for Computational Law is working on it, because we would like it to be easy to generate a user interface that allows you to prototype and test applications written in L4, our programming language for law.</p><h3 id=breaking-down-the-problem>Breaking Down the Problem</h3><p>There are two parts to the problem.</p><ol>
+<li>Your interface needs to be able to know what questions to ask on the basis of the rules, the goal, and the data structure.</li><li>Your interface needs to know how to ask any of those questions based on the data structure.</li></ol><p>What we are working on right now is part 2.</p><p><a href=https://docassemble.org>Docassemble</a> works with Python modules and YAML interview files. Our module, <a href=https://github.com/smucclaw/docassemble-DADataType>docassemble-DADataType</a>, gives you a library of Python classes that you can use to describe the data structure in your code, and a set of default interfaces for asking about those kinds of data.</p><p>The plan is to write code that will compile from our L4 language to a Docassemble package that can be imported with a single line of code in your docassemble interview, and then display questions for whatever the goal of the interview requires.</p><p>Our proof of concept is to do that translation into Python objects manually, and see what sort of interface we end up with.</p><h3 id=whats-new-in-dadatatype>What’s New in DADataType?</h3><p>When we released DADataType some time ago, it only dealt with a few simple data types like numbers and text and email addresses. In order to be able to represent the types of data structures that we want to be able to represent in L4, we needed to add a few more capabilities.</p><p>Critically, the improved version of DADataType is now able to deal with more complicated forms of data structures: objects as attributes, object references, and lists.</p><h4 id=objects-as-attributes>Objects As Attributes</h4><p>If in your rules a “game” is a thing that has two players, and a “player” is a thing that has a throw, then “game” is an object class, and “player” is an object class. Allowing DADataType to deal with objects as attributes means that your data structure can say “a game has player1, which is a player, and player2, which is a player.” The fact that both players have a “throw” is implicit. So your data structure, when you create a game object, will look like this:</p><pre tabindex=0><code>Game1  
  |- Player1  
  |   |-Throw  
  |- Player2  
  |  |-Throw  
  |- Winner
-</code></pre><p>Being able to build up these nested data structures is very helpful. If you create a game, that game will have information, <em>inside the game</em>, about the players and their throws.</p>
-<h4 id=objects-as-references>Objects as References</h4>
-<p>The important part about objects as attributes is that the information about the players is <em>inside the game</em>. Sometimes, you need to answer questions like “are there any players who are in more than one game?”</p>
-<p>For that sort of question to be answered, it is really inconvenient for the information about players to be inside the games. If it is, you are going to have to create some data element that uniquely identifies the players, make sure you enter it the same way each time you are referring to the same person, and manually add to your code that what you are checking for is whether there is a player whose identifying factor is the same in two different games. And good luck if you have two players with the same name. In order to know if the games are different, they need identifiers also.</p>
-<p>What is far more convenient is if players are off on their own, and games just refer to them. You can think of this as the Player1 attribute of the Game object being a role, and instead of holding all the information about the Person who fills it, it just points to that information somewhere else. That’s an object as a reference.</p>
-<p>Then it is simple to ask whether two players are the same player, or two games are the same game, without needing to give everything unique identifiers, and complicate your data structures and your queries.</p>
-<pre tabindex=0><code>Game1  
+</code></pre><p>Being able to build up these nested data structures is very helpful. If you create a game, that game will have information, <em>inside the game</em>, about the players and their throws.</p><h4 id=objects-as-references>Objects as References</h4><p>The important part about objects as attributes is that the information about the players is <em>inside the game</em>. Sometimes, you need to answer questions like “are there any players who are in more than one game?”</p><p>For that sort of question to be answered, it is really inconvenient for the information about players to be inside the games. If it is, you are going to have to create some data element that uniquely identifies the players, make sure you enter it the same way each time you are referring to the same person, and manually add to your code that what you are checking for is whether there is a player whose identifying factor is the same in two different games. And good luck if you have two players with the same name. In order to know if the games are different, they need identifiers also.</p><p>What is far more convenient is if players are off on their own, and games just refer to them. You can think of this as the Player1 attribute of the Game object being a role, and instead of holding all the information about the Person who fills it, it just points to that information somewhere else. That’s an object as a reference.</p><p>Then it is simple to ask whether two players are the same player, or two games are the same game, without needing to give everything unique identifiers, and complicate your data structures and your queries.</p><pre tabindex=0><code>Game1  
  |- Player1  
  |   |- Refers to Bob  
  |- Player2  
@@ -147,14 +92,7 @@ Jane
 
 Tim  
  |- Throw
-</code></pre><p>In my experience, this sort of problem comes up all the time in legal matters. “A person cannot witness their own will,” for example, requires you to ensure that the person making the will and the person witnessing it are not the same person. Encoding that sort of rule is made a lot easier with object references.</p>
-<p>DADataType implements two kinds of object references: pick one, or pick any. Pick one allows you to specify one object from a list, like “the person who will witness the will”. Pick any allows you to select zero or more items from a list, like “chocolate bars I like”.</p>
-<h4 id=lists>Lists</h4>
-<p>DADataType has also been expanded to be capable of asking the questions required to collect a list of objects of any data type that DADataType can handle.</p>
-<h3 id=the-proof-of-concept>The Proof of Concept</h3>
-<p>We took the <a href=https://medium.com/@jason_90344/computational-law-diary-safe-in-drools-f665ecc605e3>work that we have been doing on encoding the SAFE contract</a> and used that as a starting point for doing our PoC. We generated the Python classes that would represent the same data structure as we used in encoding the SAFE in Drools Rule Language in a way that it would be possible to automate.</p>
-<p>As a reminder, this is what the DRL data structure code looks like, but you could write a tool that translated from any data structure language into a DADataType package.</p>
-<pre tabindex=0><code>declare SAFE  
+</code></pre><p>In my experience, this sort of problem comes up all the time in legal matters. “A person cannot witness their own will,” for example, requires you to ensure that the person making the will and the person witnessing it are not the same person. Encoding that sort of rule is made a lot easier with object references.</p><p>DADataType implements two kinds of object references: pick one, or pick any. Pick one allows you to specify one object from a list, like “the person who will witness the will”. Pick any allows you to select zero or more items from a list, like “chocolate bars I like”.</p><h4 id=lists>Lists</h4><p>DADataType has also been expanded to be capable of asking the questions required to collect a list of objects of any data type that DADataType can handle.</p><h3 id=the-proof-of-concept>The Proof of Concept</h3><p>We took the <a href=https://medium.com/@jason_90344/computational-law-diary-safe-in-drools-f665ecc605e3>work that we have been doing on encoding the SAFE contract</a> and used that as a starting point for doing our PoC. We generated the Python classes that would represent the same data structure as we used in encoding the SAFE in Drools Rule Language in a way that it would be possible to automate.</p><p>As a reminder, this is what the DRL data structure code looks like, but you could write a tool that translated from any data structure language into a DADataType package.</p><pre tabindex=0><code>declare SAFE  
     investor: Person  
     company: Company  
     purchase_amount: Integer  
@@ -170,32 +108,11 @@ Tim
     cash_out_amount: Integer  
     terminating_event: RWEvent  
  end
-</code></pre><p>We then manually generated a Docassemble interview file that it would be possible to automatically generate from nothing other than the information above.</p>
-<p>Then we added a goal: a final screen showing details that were collected about SAFE contracts.</p>
-<p>Without having to describe how any of the pieces of information should be collected, we got a working Docassemble interview. Here is a video of what a test-run looked like:</p>
-<p>The question order is a bit strange, and the wording of the questions is a bit strange, but they are all being generated automatically without any work by the developer, and it is of a quality that is comparable to the industry-leading tools listed above.</p>
-<p>Plus, it will keep getting better. It is free, and anyone with a data definition language can very easily write code to generate a Docassemble package to generate similar interfaces.</p>
-<p>A huge thank you to the junior researchers at the Centre who took a break from learning Haskell to help get this project moving again.</p>
-<h3 id=whats-next>What’s Next?</h3>
-<p>We need to update the GitHub repository with the improved tool, which should happen soon. When the syntax for L4’s data structures and queries has solidified better, we will need to come back and write the code that goes from the L4 to a DADataType interview package in zero steps. We also need to write some documentation on how to name your classes and attributes so as to get the most mileage out of the way Docassemble comes up with names for things. And there are probably some tweaks that we could do to make the generated text better.</p>
-<p>Eventually, I also anticipate that we will want to return to part 1 of the problem above, and come up with a way for Docassemble to decide what questions to ask on the basis of L4 rules, as opposed to document templates or chunks of imperative code. But that will need to wait until we have L4 code running.</p>
-<h3 id=quick-notes>Quick Notes</h3>
-<ul>
-<li>Oct 29: Stanford CodeX lunch webinar on <a href=https://www.blawx.com/>Blawx</a> (free to join, if you’re interested)</li>
-<li>Nov 4: Cyberjustice Laboratory (University of Montreal) webinar on <a href=https://www.blawx.com/>Blawx</a></li>
-<li>Nov 17: European Commission Rules as Code <a href=https://www.blawx.com/>Blawx</a> demo in conjunction with the OECD’s “<a href=https://gov-after-shock.oecd-opsi.org/>Government After Shock</a>” event.</li>
-<li>Nov 17&18: Guest lecturing for Megan Ma’s course at Sciences Po.</li>
-<li>Nov 24: Rules as Code session with Canada School of Public Service</li>
-</ul>
-<p><em>I am a lawyer at Round Table Law, I teach “Coding the Law” at the University of Alberta Faculty of Law, and I’m a senior researcher at the Singapore Management University Centre for Computational Law. Computational Law Diary is a series of posts on what I’m thinking about in the computational law world. They are my own opinion, and do not reflect the opinions of the Centre, the Research Programme, SMU, U of A, or anyone else.</em></p>
-<ul class=pa0>
-</ul>
-<div class="mt6 instapaper_ignoref">
-</div>
-</div>
-<aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-<p class="f5 b mb3">What's in this post</p>
-<nav id=TableOfContents>
+</code></pre><p>We then manually generated a Docassemble interview file that it would be possible to automatically generate from nothing other than the information above.</p><p>Then we added a goal: a final screen showing details that were collected about SAFE contracts.</p><p>Without having to describe how any of the pieces of information should be collected, we got a working Docassemble interview. Here is a video of what a test-run looked like:</p><p>The question order is a bit strange, and the wording of the questions is a bit strange, but they are all being generated automatically without any work by the developer, and it is of a quality that is comparable to the industry-leading tools listed above.</p><p>Plus, it will keep getting better. It is free, and anyone with a data definition language can very easily write code to generate a Docassemble package to generate similar interfaces.</p><p>A huge thank you to the junior researchers at the Centre who took a break from learning Haskell to help get this project moving again.</p><h3 id=whats-next>What’s Next?</h3><p>We need to update the GitHub repository with the improved tool, which should happen soon. When the syntax for L4’s data structures and queries has solidified better, we will need to come back and write the code that goes from the L4 to a DADataType interview package in zero steps. We also need to write some documentation on how to name your classes and attributes so as to get the most mileage out of the way Docassemble comes up with names for things. And there are probably some tweaks that we could do to make the generated text better.</p><p>Eventually, I also anticipate that we will want to return to part 1 of the problem above, and come up with a way for Docassemble to decide what questions to ask on the basis of L4 rules, as opposed to document templates or chunks of imperative code. But that will need to wait until we have L4 code running.</p><h3 id=quick-notes>Quick Notes</h3><ul>
+<li>Oct 29: Stanford CodeX lunch webinar on <a href=https://www.blawx.com/>Blawx</a> (free to join, if you’re interested)</li><li>Nov 4: Cyberjustice Laboratory (University of Montreal) webinar on <a href=https://www.blawx.com/>Blawx</a></li><li>Nov 17: European Commission Rules as Code <a href=https://www.blawx.com/>Blawx</a> demo in conjunction with the OECD’s “<a href=https://gov-after-shock.oecd-opsi.org/>Government After Shock</a>” event.</li><li>Nov 17&18: Guest lecturing for Megan Ma’s course at Sciences Po.</li><li>Nov 24: Rules as Code session with Canada School of Public Service</li></ul><p><em>I am a lawyer at Round Table Law, I teach “Coding the Law” at the University of Alberta Faculty of Law, and I’m a senior researcher at the Singapore Management University Centre for Computational Law. Computational Law Diary is a series of posts on what I’m thinking about in the computational law world. They are my own opinion, and do not reflect the opinions of the Centre, the Research Programme, SMU, U of A, or anyone else.</em></p><ul class=pa0>
+</ul><div class="mt6 instapaper_ignoref">
+</div></div><aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">What's in this post</p><nav id=TableOfContents>
 <ul>
 <li>
 <ul>
@@ -203,33 +120,9 @@ Tim
 <ul>
 <li><a href=#the-two-problems>The Two Problems</a>
 <ul>
-<li><a href=#deep-integration>Deep Integration</a></li>
-<li><a href=#cost>Cost</a></li>
-</ul>
-</li>
-<li><a href=#the-ideal-solution>The Ideal Solution</a></li>
-<li><a href=#breaking-down-the-problem>Breaking Down the Problem</a></li>
-<li><a href=#whats-new-in-dadatatype>What’s New in DADataType?</a>
+<li><a href=#deep-integration>Deep Integration</a></li><li><a href=#cost>Cost</a></li></ul></li><li><a href=#the-ideal-solution>The Ideal Solution</a></li><li><a href=#breaking-down-the-problem>Breaking Down the Problem</a></li><li><a href=#whats-new-in-dadatatype>What’s New in DADataType?</a>
 <ul>
-<li><a href=#objects-as-attributes>Objects As Attributes</a></li>
-<li><a href=#objects-as-references>Objects as References</a></li>
-<li><a href=#lists>Lists</a></li>
-</ul>
-</li>
-<li><a href=#the-proof-of-concept>The Proof of Concept</a></li>
-<li><a href=#whats-next>What’s Next?</a></li>
-<li><a href=#quick-notes>Quick Notes</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-</aside>
-</article>
-</main>
-<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+<li><a href=#objects-as-attributes>Objects As Attributes</a></li><li><a href=#objects-as-references>Objects as References</a></li><li><a href=#lists>Lists</a></li></ul></li><li><a href=#the-proof-of-concept>The Proof of Concept</a></li><li><a href=#whats-next>What’s Next?</a></li><li><a href=#quick-notes>Quick Notes</a></li></ul></li></ul></li></ul></nav></div></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
 <div class="flex justify-between">
 <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://JasonMorrisSC.github.io>
 &copy; Jason Morris 2022
@@ -241,8 +134,4 @@ Tim
 </span>
 <span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
 </span></a>
-</div></div>
-</div>
-</footer>
-</body>
-</html>
+</div></div></div></footer></body></html>

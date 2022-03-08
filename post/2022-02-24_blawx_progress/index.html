@@ -2,11 +2,10 @@
 <head>
 <meta charset=utf-8>
 <meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<title>Progress on Blawx, SMU Conference, Beeck Centre Rules as Code Paper | Jason Morris</title>
-<meta name=viewport content="width=device-width,minimum-scale=1">
+<title>Progress on Blawx, SMU Conference, Beeck Centre Rules as Code Paper | Jason Morris</title><meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="Progress on Blawx Just a quick note to let you know what I&rsquo;ve been doing with Blawx over the last few weeks.
 Blawx was originally a single web page that could contain a single workspace of code, much like an IDE that could only have one file open at a time. Version 1 changed that by creating &ldquo;workspaces&rdquo; that are saved server-side, and giving you the ability to create multiple workspaces and edit each one separately.">
-<meta name=generator content="Hugo 0.92.2">
+<meta name=generator content="Hugo 0.93.2">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/css/main.min.css>
 <meta property="og:title" content="Progress on Blawx, SMU Conference, Beeck Centre Rules as Code Paper">
@@ -25,8 +24,7 @@ Blawx was originally a single web page that could contain a single workspace of 
 <meta name=twitter:title content="Progress on Blawx, SMU Conference, Beeck Centre Rules as Code Paper">
 <meta name=twitter:description content="Progress on Blawx Just a quick note to let you know what I&rsquo;ve been doing with Blawx over the last few weeks.
 Blawx was originally a single web page that could contain a single workspace of code, much like an IDE that could only have one file open at a time. Version 1 changed that by creating &ldquo;workspaces&rdquo; that are saved server-side, and giving you the ability to create multiple workspaces and edit each one separately.">
-</head>
-<body class="ma0 avenir bg-near-white">
+</head><body class="ma0 avenir bg-near-white">
 <header>
 <div class=bg-black>
 <nav class="pv3 ph3 ph4-ns" role=navigation>
@@ -40,181 +38,109 @@ Jason Morris
 <a class="hover-white no-underline white-90" href=/about/ title="About Jason page">
 About Jason
 </a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
+</li><li class="list f5 f4-ns fw4 dib pr3">
 <a class="hover-white no-underline white-90" href=/project/ title="Projects page">
 Projects
 </a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
+</li><li class="list f5 f4-ns fw4 dib pr3">
 <a class="hover-white no-underline white-90" href=/post/ title="Rules as Code Diary page">
 Rules as Code Diary
 </a>
-</li>
-</ul>
-<div class=ananke-socials>
+</li></ul><div class=ananke-socials>
 <a href=https://twitter.com/RoundTableLaw target=_blank class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel=noopener aria-label="follow on Twitter——Opens in a new window">
 <span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
 </span>
 <span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
 </span></a>
-</div>
-</div>
-</div>
-</nav>
-</div>
-</header>
-<main class=pb7 role=main>
+</div></div></div></nav></div></header><main class=pb7 role=main>
 <article class="flex-l flex-wrap justify-between mw8 center ph3">
 <header class="mt4 w-100">
 <aside class="instapaper_ignoref b helvetica tracked">
 RULES AS CODE DIARY
-</aside>
-<div id=sharing class="mt3 ananke-socials">
+</aside><div id=sharing class="mt3 ananke-socials">
 <a href="https://twitter.com/share?url=https://JasonMorrisSC.github.io/post/2022-02-24_blawx_progress/&text=Progress%20on%20Blawx,%20SMU%20Conference,%20Beeck%20Centre%20Rules%20as%20Code%20Paper" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
 <span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
 </span>
 </a>
-</div>
-<h1 class="f1 athelas mt3 mb1">Progress on Blawx, SMU Conference, Beeck Centre Rules as Code Paper</h1>
-<time class="f6 mv4 dib tracked" datetime=2022-02-24T11:52:35-07:00>February 24, 2022</time>
-</header>
-<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id=progress-on-blawx>Progress on Blawx</h2>
-<p>Just a quick note to let you know what I&rsquo;ve been doing with Blawx over the last few weeks.</p>
-<p>Blawx was originally a single web page that could contain a single workspace of code, much
+</div><h1 class="f1 athelas mt3 mb1">Progress on Blawx, SMU Conference, Beeck Centre Rules as Code Paper</h1><time class="f6 mv4 dib tracked" datetime=2022-02-24T11:52:35-07:00>February 24, 2022</time>
+</header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id=progress-on-blawx>Progress on Blawx</h2><p>Just a quick note to let you know what I&rsquo;ve been doing with Blawx over the last few weeks.</p><p>Blawx was originally a single web page that could contain a single workspace of code, much
 like an IDE that could only have one file open at a time. Version 1 changed that by creating
 &ldquo;workspaces&rdquo; that are saved server-side, and giving you the ability to create multiple
-workspaces and edit each one separately.</p>
-<p>For the last few weeks I&rsquo;ve been working on allowing the user to organize their code by
-the section of legislation it corresponds to.</p>
-<h3 id=deciding-on-akoma-ntoso>Deciding on Akoma Ntoso</h3>
-<p>The first question to answer was how to model the structure of the legislation inside the
+workspaces and edit each one separately.</p><p>For the last few weeks I&rsquo;ve been working on allowing the user to organize their code by
+the section of legislation it corresponds to.</p><h3 id=deciding-on-akoma-ntoso>Deciding on Akoma Ntoso</h3><p>The first question to answer was how to model the structure of the legislation inside the
 system. The options were basically to model the legislative structure inside the Blawx
 database directly, or to store text in the database that described the details of the legislation.
 I decided on the latter, partly because it simplified the database schema for the app, but
 also because it allowed me to integrate with other modern tools that are dealing with
 legislative text much more easily, by using the Akoma Ntoso standard as the internal
-representation of legislation.</p>
-<p>I was bolstered in this choice by the work of Laws.Africa, which is a Legal Information Institute
+representation of legislation.</p><p>I was bolstered in this choice by the work of Laws.Africa, which is a Legal Information Institute
 for Africa, and has developed a series of tools for generating and parsing Akoma Ntoso, for manipulating
 Akoma Ntoso in Python, and the Indigo Platform for legislative life cycle management, all of which
-are open source.</p>
-<h3 id=changing-the-interface>Changing the Interface</h3>
-<p>Once I decided that people would input laws using Akoma Ntoso markup, I needed to figure out how to
+are open source.</p><h3 id=changing-the-interface>Changing the Interface</h3><p>Once I decided that people would input laws using Akoma Ntoso markup, I needed to figure out how to
 get Blawx to automatically turn an Akoma Ntoso document into a navigation tool that would allow
 the user to quickly and easily find the section of law they were interested in and review or create
-some Blawx code for that section.</p>
-<p>Here&rsquo;s what the current development version looks like.</p>
-<p><img src=/blawx_legal_doc_preview.png alt="Blawx Dev Screenshot"></p>
-<p>The left side is a collapsible nested legal document with radio button selectors for each section of law,
+some Blawx code for that section.</p><p>Here&rsquo;s what the current development version looks like.</p><p><img src=/blawx_legal_doc_preview.png alt="Blawx Dev Screenshot"></p><p>The left side is a collapsible nested legal document with radio button selectors for each section of law,
 and the right is the Blawx code for the selected section. You can see in the example that I&rsquo;m using a
 version of the rules of Rock Paper Scissors as the law, and the selected section and encoding covers the
-idea that signs are a thing, and that there are three of them.</p>
-<p>The format on the left is a little messed up. The <a href=https://github.com/laws-africa/slaw>Slaw</a> tool from <a href=https://github.com/laws-africa/>laws.africa</a> that I&rsquo;m using to
+idea that signs are a thing, and that there are three of them.</p><p>The format on the left is a little messed up. The <a href=https://github.com/laws-africa/slaw>Slaw</a> tool from <a href=https://github.com/laws-africa/>laws.africa</a> that I&rsquo;m using to
 generate Akoma Ntoso is based on a particular style of legislative drafting. The
 examples on which the navigation tool was built use a different style, so there are still a lot of rough edges to be
-sanded down.</p>
-<p>Eventually, I would like to have a WYSIWYG editor for Akoma Ntoso built in, to allow easy access to editing
+sanded down.</p><p>Eventually, I would like to have a WYSIWYG editor for Akoma Ntoso built in, to allow easy access to editing
 the law as you go, and to put a boundary around the kinds of Akoma Ntoso we might end up with. I&rsquo;m hopeful that can be done, because it has been done in tools like LawMaker, from
 LDAPP. Check out <a href=https://youtu.be/WBmwiHY4Q-Q>their recent video</a>. But as of now,
-a WYSIWYG Akoma Ntoso editor is not something that exists in open source, so it&rsquo;s going to have to be future work.</p>
-<h3 id=learning-django>Learning Django</h3>
-<p>I wont go into all the reasons that organizing code this way is a good idea, but it is. There are a lot of
+a WYSIWYG Akoma Ntoso editor is not something that exists in open source, so it&rsquo;s going to have to be future work.</p><h3 id=learning-django>Learning Django</h3><p>I wont go into all the reasons that organizing code this way is a good idea, but it is. There are a lot of
 really cool features that I want to add to Blawx in the near future that depend on getting this right first.
 And I have already <em>felt</em> the advantages in terms of user experience. It just feels like there is less
-friction between what you want to do and what the app lets you do.</p>
-<p>But my learning curve with Django is still very steep. I spend more time guessing and navigating error messages than
+friction between what you want to do and what the app lets you do.</p><p>But my learning curve with Django is still very steep. I spend more time guessing and navigating error messages than
 just &ldquo;using&rdquo; it. That&rsquo;s been frustrating, but I&rsquo;m attempting to power through. If you&rsquo;re a Django genius,
-and you&rsquo;d be willing to help me out, let me know.</p>
-<p>I&rsquo;m hoping that the stuff I&rsquo;m working on now should be ready to release, and push to the development server,
-by next week. But the conference next week might delay things.</p>
-<h2 id=smu-computational-legal-studies-conference>SMU Computational Legal Studies Conference</h2>
-<p>But next week I&rsquo;m also attending the
+and you&rsquo;d be willing to help me out, let me know.</p><p>I&rsquo;m hoping that the stuff I&rsquo;m working on now should be ready to release, and push to the development server,
+by next week. But the conference next week might delay things.</p><h2 id=smu-computational-legal-studies-conference>SMU Computational Legal Studies Conference</h2><p>But next week I&rsquo;m also attending the
 <a href=https://cclaw.smu.edu.sg/events/computational-legal-studies-2022>Singapore Management University Computational Legal Studies Conference</a>, where I&rsquo;m presenting on my paper on OpenFisca.
 A <a href=https://jasonmorrissc.github.io/post/2022-03-02_openfisca_expert_systems/>draft of that paper</a> is
 also on the blog, if you are interested. The TL;DR is that OpenFisca is
 great for microsimulation, and less helpful if you need reasons, relevance, or the ability to deal with unknown
-inputs and still give useful answers.</p>
-<p>The conference papers are under consideration for publication in the MIT Computational Law Report, and I&rsquo;m
+inputs and still give useful answers.</p><p>The conference papers are under consideration for publication in the MIT Computational Law Report, and I&rsquo;m
 hoping before that happens there will be an opportunity to update the paper with an apples-to-apples comparison
-of encoding the same rules in OpenFisca and the new version of Blawx.</p>
-<p>Registration in the conference is free, the conference is virtual, online, and if you are interested in the space
-the slate of keynotes they have are top-notch, including Kevin Ashley, and Daniel Katz.</p>
-<h2 id=rules-as-code-paper-from-beeck-center>Rules as Code Paper from Beeck Center</h2>
-<p>I had never heard about the Beeck Center before this week, but they wrote <a href=https://beeckcenter.georgetown.edu/report/benefit-eligibility-rules-as-code/>a report on using Rules as Code
-in the US Benefits system</a>, and it&rsquo;s an absolute must-read if you&rsquo;re interested in the space.</p>
-<p>I&rsquo;m delighted by it because it opens up the US market, which has seemed a bit of a black box, and because it
+of encoding the same rules in OpenFisca and the new version of Blawx.</p><p>Registration in the conference is free, the conference is virtual, online, and if you are interested in the space
+the slate of keynotes they have are top-notch, including Kevin Ashley, and Daniel Katz.</p><h2 id=rules-as-code-paper-from-beeck-center>Rules as Code Paper from Beeck Center</h2><p>I had never heard about the Beeck Center before this week, but they wrote <a href=https://beeckcenter.georgetown.edu/report/benefit-eligibility-rules-as-code/>a report on using Rules as Code
+in the US Benefits system</a>, and it&rsquo;s an absolute must-read if you&rsquo;re interested in the space.</p><p>I&rsquo;m delighted by it because it opens up the US market, which has seemed a bit of a black box, and because it
 reveals that the smartest people in this space are already doing part of what Rules as Code advises: isolate the
 legal logic in tools that are better suited to that purpose. They just aren&rsquo;t doing the part where they
 release the code publicly (probably for proprietary reasons), and they are still doing it in tools that are
-sub-optimal for the job at hand.</p>
-<ul class=pa0>
-</ul>
-<div class="mt6 instapaper_ignoref">
-</div>
-</div>
-<aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-<p class="f5 b mb3">What's in this post</p>
-<nav id=TableOfContents>
+sub-optimal for the job at hand.</p><ul class=pa0>
+</ul><div class="mt6 instapaper_ignoref">
+</div></div><aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">What's in this post</p><nav id=TableOfContents>
 <ul>
 <li>
 <ul>
 <li><a href=#progress-on-blawx>Progress on Blawx</a>
 <ul>
-<li><a href=#deciding-on-akoma-ntoso>Deciding on Akoma Ntoso</a></li>
-<li><a href=#changing-the-interface>Changing the Interface</a></li>
-<li><a href=#learning-django>Learning Django</a></li>
-</ul>
-</li>
-<li><a href=#smu-computational-legal-studies-conference>SMU Computational Legal Studies Conference</a></li>
-<li><a href=#rules-as-code-paper-from-beeck-center>Rules as Code Paper from Beeck Center</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-<div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-<p class="f5 b mb3">Related</p>
-<ul class="pa0 list">
+<li><a href=#deciding-on-akoma-ntoso>Deciding on Akoma Ntoso</a></li><li><a href=#changing-the-interface>Changing the Interface</a></li><li><a href=#learning-django>Learning Django</a></li></ul></li><li><a href=#smu-computational-legal-studies-conference>SMU Computational Legal Studies Conference</a></li><li><a href=#rules-as-code-paper-from-beeck-center>Rules as Code Paper from Beeck Center</a></li></ul></li></ul></nav></div><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">Related</p><ul class="pa0 list">
 <li class=mb2>
 <a href=/post/2022-03-08_legal_docs_take_2/>Legal Documents in Blawx, Take 2</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/blawx_v1/>Announcing Blawx v1.0.0-alpha</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/2022-01-23_legal_docs_in_blawx/>Encoding Legal Documents in Blawx</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/blawx-dev-notes-ca2bdf03cf3b/>Blawx Dev Notes</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/world-logic-day-2021-bob-knows-my-name-844e99013548/>World Logic Day 2021 (Bob knows my name!)</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/computational-law-diary-adding-explanations-to-blawx-bdbd3e27e366/>Adding Explanations to Blawx</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/computational-law-diary-blawx-runner-up-at-atla-and-visual-interfaces-rock-904809dfbd26/>Blawx Runner Up at ATLA, and Visual Interfaces Rock</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/demo-of-blawx-integration-with-docassemble-over-api-for-rules-as-code-1c631a3c24fc/>Demo of Blawx Integration with Docassemble over API for Rules as Code</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/blawx-prototype-redux-29e6d7b26786/>Blawx Prototype Redux</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/blawx-seeking-feedback-on-a-prototype-tool-for-encoding-law-4b167ae4e634/>Blawx: Seeking Feedback on a Prototype Tool for Encoding Law</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/can-visual-programming-work-for-lawyers-b9f834fd32c8/>Can Visual Programming Work for Lawyers?</a>
-</li>
-</ul>
-</div>
-</aside>
-</article>
-</main>
-<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+</li></ul></div></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
 <div class="flex justify-between">
 <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://JasonMorrisSC.github.io>
 &copy; Jason Morris 2022
@@ -226,8 +152,4 @@ sub-optimal for the job at hand.</p>
 </span>
 <span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
 </span></a>
-</div></div>
-</div>
-</footer>
-</body>
-</html>
+</div></div></div></footer></body></html>

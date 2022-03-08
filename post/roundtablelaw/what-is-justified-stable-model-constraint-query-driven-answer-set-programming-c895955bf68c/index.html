@@ -2,10 +2,9 @@
 <head>
 <meta charset=utf-8>
 <meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<title>What is Justified Stable Model Constraint Query-Driven Answer Set Programming? | Jason Morris</title>
-<meta name=viewport content="width=device-width,minimum-scale=1">
+<title>What is Justified Stable Model Constraint Query-Driven Answer Set Programming? | Jason Morris</title><meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="I spent some time today trying to understand where s(CASP) fits into the world of programming languages more generally, and here’s what I…">
-<meta name=generator content="Hugo 0.92.2">
+<meta name=generator content="Hugo 0.93.2">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/css/main.min.css>
 <meta property="og:title" content="What is Justified Stable Model Constraint Query-Driven Answer Set Programming?">
@@ -21,8 +20,7 @@
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="What is Justified Stable Model Constraint Query-Driven Answer Set Programming?">
 <meta name=twitter:description content="I spent some time today trying to understand where s(CASP) fits into the world of programming languages more generally, and here’s what I…">
-</head>
-<body class="ma0 avenir bg-near-white">
+</head><body class="ma0 avenir bg-near-white">
 <header>
 <div class=bg-black>
 <nav class="pv3 ph3 ph4-ns" role=navigation>
@@ -36,184 +34,92 @@ Jason Morris
 <a class="hover-white no-underline white-90" href=/about/ title="About Jason page">
 About Jason
 </a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
+</li><li class="list f5 f4-ns fw4 dib pr3">
 <a class="hover-white no-underline white-90" href=/project/ title="Projects page">
 Projects
 </a>
-</li>
-<li class="list f5 f4-ns fw4 dib pr3">
+</li><li class="list f5 f4-ns fw4 dib pr3">
 <a class="hover-white no-underline white-90" href=/post/ title="Rules as Code Diary page">
 Rules as Code Diary
 </a>
-</li>
-</ul>
-<div class=ananke-socials>
+</li></ul><div class=ananke-socials>
 <a href=https://twitter.com/RoundTableLaw target=_blank class="twitter ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel=noopener aria-label="follow on Twitter——Opens in a new window">
 <span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
 </span>
 <span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
 </span></a>
-</div>
-</div>
-</div>
-</nav>
-</div>
-</header>
-<main class=pb7 role=main>
+</div></div></div></nav></div></header><main class=pb7 role=main>
 <article class="flex-l flex-wrap justify-between mw8 center ph3">
 <header class="mt4 w-100">
 <aside class="instapaper_ignoref b helvetica tracked">
 RULES AS CODE DIARY
-</aside>
-<div id=sharing class="mt3 ananke-socials">
+</aside><div id=sharing class="mt3 ananke-socials">
 <a href="https://twitter.com/share?url=https://JasonMorrisSC.github.io/post/roundtablelaw/what-is-justified-stable-model-constraint-query-driven-answer-set-programming-c895955bf68c/&text=What%20is%20Justified%20Stable%20Model%20Constraint%20Query-Driven%20Answer%20Set%20Programming?" class="ananke-social-link twitter no-underline" aria-label="share on Twitter">
 <span class=icon><svg style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:{{ .fill }}"/></svg>
 </span>
 </a>
-</div>
-<h1 class="f1 athelas mt3 mb1">What is Justified Stable Model Constraint Query-Driven Answer Set Programming?</h1>
-<time class="f6 mv4 dib tracked" datetime=2021-02-18T09:27:29Z>February 18, 2021</time>
-</header>
-<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>I spent some time today trying to understand where s(CASP) fits into the world of programming languages more generally, and here’s what I think is going on.</p>
-<p>Remember, I’m not an expert. This is my amateur understanding after playing with it for a few days.</p>
-<h3 id=what-is-the-usual-type-of-programming-language>What is the “Usual” type of programming language?</h3>
-<p>The usual paradigm for programming languages is called imperative programming, in which you basically tell the computer what to do, and in what order.</p>
-<h3 id=what-other-paradigms-are-there>What other paradigms are there?</h3>
-<p>Lots. Object-oriented programming, functional programming, logic programming. But we’re going to start from logic programming, and try to go from there to justified stable model constraint query-driven answer set programming, so that you have an idea what constrained answer set programming is.</p>
-<h3 id=whats-logic-programming>What’s Logic Programming?</h3>
-<p>Logic programming is when you write your code by making statements that have parallels in formal logic. There are different kinds of logic, but the simplest one is propositional logic. Propositional logic lets you say things like this</p>
-<p>if socrates is human, then socrates is mortal.<br>
+</div><h1 class="f1 athelas mt3 mb1">What is Justified Stable Model Constraint Query-Driven Answer Set Programming?</h1><time class="f6 mv4 dib tracked" datetime=2021-02-18T09:27:29Z>February 18, 2021</time>
+</header><div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>I spent some time today trying to understand where s(CASP) fits into the world of programming languages more generally, and here’s what I think is going on.</p><p>Remember, I’m not an expert. This is my amateur understanding after playing with it for a few days.</p><h3 id=what-is-the-usual-type-of-programming-language>What is the “Usual” type of programming language?</h3><p>The usual paradigm for programming languages is called imperative programming, in which you basically tell the computer what to do, and in what order.</p><h3 id=what-other-paradigms-are-there>What other paradigms are there?</h3><p>Lots. Object-oriented programming, functional programming, logic programming. But we’re going to start from logic programming, and try to go from there to justified stable model constraint query-driven answer set programming, so that you have an idea what constrained answer set programming is.</p><h3 id=whats-logic-programming>What’s Logic Programming?</h3><p>Logic programming is when you write your code by making statements that have parallels in formal logic. There are different kinds of logic, but the simplest one is propositional logic. Propositional logic lets you say things like this</p><p>if socrates is human, then socrates is mortal.<br>
 socrates is human<br>
-therefore, we know that socrates is mortal.</p>
-<p>in a logical language that looks like this:</p>
-<pre tabindex=0><code>H -&gt; M  
+therefore, we know that socrates is mortal.</p><p>in a logical language that looks like this:</p><pre tabindex=0><code>H -&gt; M  
 H  
 \----  
 M
-</code></pre><p>The logical language isn’t worried about the semantic content of the propositions, just about the “shape” of the argument, and whether you can get from the things above the line (premises), to the thing below the line (conclusion) only by using a small number of pre-defined rules for how those shapes can be manipulated.</p>
-<p>In Prolog, a logic programming language, you might encode that like this:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#a6e22e>mortal</span> <span style=color:#f92672>:-</span> <span style=color:#e6db74>human</span>.  
-<span style=color:#e6db74>human</span>.  
-<span style=color:#e6db74>?-</span> <span style=color:#e6db74>mortal</span>.
-</code></pre></div><p>The top line is a “rule”, the second line is a “fact”, and the bottom line is a “query”. The answer to the query will be “yes”, because Prolog can prove “mortal” is true by using the rule and the fact together.</p>
-<p>Predicate logic, or first-order logic, is a little more sophisticated, and allows you to say things like</p>
-<pre tabindex=0><code>every person has bob as a friend
-</code></pre><p>in a logical language that looks like this:</p>
-<pre tabindex=0><code>A(X)(person(X)-&gt;friend(X,bob))
-</code></pre><p>and which in Prolog code might look like this:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#a6e22e>friend</span>(X,<span style=color:#e6db74>bob</span>) :- <span style=color:#a6e22e>person</span>(X).
-</code></pre></div><p>The way that logic programming works on a closed-world assumption. It assumes that if you haven’t told it that something is true, and it can’t derive something is true from what it already knows, then that thing is false. And the “things” involved need to be specific.</p>
-<p>So there are some things that you can say in formal logic, like</p>
-<p>every person has a friend</p>
-<p>which can be stated like this</p>
-<pre tabindex=0><code>A(X)(person(X)-&gt;E(Y)(friend(X,Y)))
-</code></pre><p>but there isn’t really a way to say that in Prolog. If you try, by typing something like</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#a6e22e>friend</span>(X,Y) :- <span style=color:#a6e22e>person</span>(X).  
-<span style=color:#a6e22e>person</span>(<span style=color:#e6db74>jason</span>).  
-<span style=color:#e6db74>?-</span> <span style=color:#a6e22e>friend</span>(<span style=color:#e6db74>jason</span>,Y).
-</code></pre></div><p>It will try to find a specific value for ‘Y’ that makes the statement <code>friend(jason,Y)</code> true. And it cannot, so it will return the answer “no.”</p>
-<p>So logic programming is cool, but it doesn’t let you make abstract statements.</p>
-<h3 id=what-is-answer-set-programming>What is Answer Set Programming?</h3>
-<p>Answer set programming takes a different approach, and allows you set out rules and facts and constraints, and uses them to create all the different possible valid combinations. Rules and facts are pretty much the same, but constraints are sets of things that cannot all be true at the same time.</p>
-<p>Typically, your “query” is actually included as one of the things that you want to be true in the model, and then you ask it if if can find any models that match the description. This is called “satisfiability” checking.</p>
-<p>So if we had this idea:</p>
-<pre tabindex=0><code>pizza is either yummy, or not yummy.  
+</code></pre><p>The logical language isn’t worried about the semantic content of the propositions, just about the “shape” of the argument, and whether you can get from the things above the line (premises), to the thing below the line (conclusion) only by using a small number of pre-defined rules for how those shapes can be manipulated.</p><p>In Prolog, a logic programming language, you might encode that like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=display:flex><span><span style=color:#a6e22e>mortal</span> <span style=color:#f92672>:-</span> <span style=color:#e6db74>human</span>.  
+</span></span><span style=display:flex><span><span style=color:#e6db74>human</span>.  
+</span></span><span style=display:flex><span><span style=color:#e6db74>?-</span> <span style=color:#e6db74>mortal</span>.
+</span></span></code></pre></div><p>The top line is a “rule”, the second line is a “fact”, and the bottom line is a “query”. The answer to the query will be “yes”, because Prolog can prove “mortal” is true by using the rule and the fact together.</p><p>Predicate logic, or first-order logic, is a little more sophisticated, and allows you to say things like</p><pre tabindex=0><code>every person has bob as a friend
+</code></pre><p>in a logical language that looks like this:</p><pre tabindex=0><code>A(X)(person(X)-&gt;friend(X,bob))
+</code></pre><p>and which in Prolog code might look like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=display:flex><span><span style=color:#a6e22e>friend</span>(X,<span style=color:#e6db74>bob</span>) :- <span style=color:#a6e22e>person</span>(X).
+</span></span></code></pre></div><p>The way that logic programming works on a closed-world assumption. It assumes that if you haven’t told it that something is true, and it can’t derive something is true from what it already knows, then that thing is false. And the “things” involved need to be specific.</p><p>So there are some things that you can say in formal logic, like</p><p>every person has a friend</p><p>which can be stated like this</p><pre tabindex=0><code>A(X)(person(X)-&gt;E(Y)(friend(X,Y)))
+</code></pre><p>but there isn’t really a way to say that in Prolog. If you try, by typing something like</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=display:flex><span><span style=color:#a6e22e>friend</span>(X,Y) :- <span style=color:#a6e22e>person</span>(X).  
+</span></span><span style=display:flex><span><span style=color:#a6e22e>person</span>(<span style=color:#e6db74>jason</span>).  
+</span></span><span style=display:flex><span><span style=color:#e6db74>?-</span> <span style=color:#a6e22e>friend</span>(<span style=color:#e6db74>jason</span>,Y).
+</span></span></code></pre></div><p>It will try to find a specific value for ‘Y’ that makes the statement <code>friend(jason,Y)</code> true. And it cannot, so it will return the answer “no.”</p><p>So logic programming is cool, but it doesn’t let you make abstract statements.</p><h3 id=what-is-answer-set-programming>What is Answer Set Programming?</h3><p>Answer set programming takes a different approach, and allows you set out rules and facts and constraints, and uses them to create all the different possible valid combinations. Rules and facts are pretty much the same, but constraints are sets of things that cannot all be true at the same time.</p><p>Typically, your “query” is actually included as one of the things that you want to be true in the model, and then you ask it if if can find any models that match the description. This is called “satisfiability” checking.</p><p>So if we had this idea:</p><pre tabindex=0><code>pizza is either yummy, or not yummy.  
 pasta is either yummy, or not yummy.  
 pasticio is a yummy pasta.  
 pepperoni is a pizza.  
 is it possible for there to be a pizza and a pasta that are both not yummy?
-</code></pre><p>We could encode that, and the answer set program would figure out the following possibilities:</p>
-<pre tabindex=0><code>yummy(pepperoni), yummy(pasticio); and  
+</code></pre><p>We could encode that, and the answer set program would figure out the following possibilities:</p><pre tabindex=0><code>yummy(pepperoni), yummy(pasticio); and  
 yummy(pasticio), not yummy(pepperoni).
-</code></pre><p>And then it would search those possible answers for the thing you were asking about, and answer “no.” Because there is no possible combination of the rules and the specific examples that leads to both a not-yummy pizza and a not-yummy pasta.</p>
-<p>Again, like logic programming, this tool is requiring that the statements be “grounded” in specific examples. It isn’t able to just imagine pastas or pizzas that you didn’t tell it about. A fully-grounded predicate is essentially the same thing as a proposition, so Answer Set Programming is based on propositional logic.</p>
-<p>So in answer set programming you can say</p>
-<pre tabindex=0><code>a thing is always blue.  
+</code></pre><p>And then it would search those possible answers for the thing you were asking about, and answer “no.” Because there is no possible combination of the rules and the specific examples that leads to both a not-yummy pizza and a not-yummy pasta.</p><p>Again, like logic programming, this tool is requiring that the statements be “grounded” in specific examples. It isn’t able to just imagine pastas or pizzas that you didn’t tell it about. A fully-grounded predicate is essentially the same thing as a proposition, so Answer Set Programming is based on propositional logic.</p><p>So in answer set programming you can say</p><pre tabindex=0><code>a thing is always blue.  
 a thing is always not blue.  
 the pen is a thing.
-</code></pre><p>And then ask it whether there is any models generated by that set of rules at all. Obviously, for the example above the answer is “no”. But in more complicated sets of facts and rules it can be very difficult to tell.</p>
-<p>If you included your query in the model, getting no models back means that there is no way for your query to be true. If you didn’t, getting no models back means that your rules are impossible to satisfy, and contain some sort of contradiction. If you get an answer with your query in the model, those are the ways that your query can be true. If you get an answer without one, those are all the ways in which your model could be true.</p>
-<h3 id=what-is-query-driven-answer-set-programming>What is Query-Driven Answer Set Programming?</h3>
-<p>Generating all the possible combinations of facts and rules and then searching that entire database for the thing you are looking for is slow, particularly for complicated rule sets. Query-driven answer set programming speeds it up somewhat by not just generating every possible combination, but only checking the combinations of answers that can possibly result in what you are looking for.</p>
-<p>It’s basically just a little smarter, and faster than traditional answer set programming.</p>
-<p>Query-driven answer set programming also has the advantage that it knows what you are interested in, because the “query” is separate from the rest of the code, so it can tell you only those parts of the model that it is necessary to tell you about in order for you to understand the possibilities.</p>
-<p>For example, if you have a number of mutually-exclusive categories:</p>
-<pre tabindex=0><code>I am a cat lovers or a dog lover but not both.  
+</code></pre><p>And then ask it whether there is any models generated by that set of rules at all. Obviously, for the example above the answer is “no”. But in more complicated sets of facts and rules it can be very difficult to tell.</p><p>If you included your query in the model, getting no models back means that there is no way for your query to be true. If you didn’t, getting no models back means that your rules are impossible to satisfy, and contain some sort of contradiction. If you get an answer with your query in the model, those are the ways that your query can be true. If you get an answer without one, those are all the ways in which your model could be true.</p><h3 id=what-is-query-driven-answer-set-programming>What is Query-Driven Answer Set Programming?</h3><p>Generating all the possible combinations of facts and rules and then searching that entire database for the thing you are looking for is slow, particularly for complicated rule sets. Query-driven answer set programming speeds it up somewhat by not just generating every possible combination, but only checking the combinations of answers that can possibly result in what you are looking for.</p><p>It’s basically just a little smarter, and faster than traditional answer set programming.</p><p>Query-driven answer set programming also has the advantage that it knows what you are interested in, because the “query” is separate from the rest of the code, so it can tell you only those parts of the model that it is necessary to tell you about in order for you to understand the possibilities.</p><p>For example, if you have a number of mutually-exclusive categories:</p><pre tabindex=0><code>I am a cat lovers or a dog lover but not both.  
 My pet is a dog or a cat but not both.
-</code></pre><p>And you ask the system whether it is possible that your pet is a dog, by adding “my pet is a dog” to the database, the traditional answer-set programming language will tell you</p>
-<pre tabindex=0><code>dog, not cat, cat lover, not dog lover; or  
+</code></pre><p>And you ask the system whether it is possible that your pet is a dog, by adding “my pet is a dog” to the database, the traditional answer-set programming language will tell you</p><pre tabindex=0><code>dog, not cat, cat lover, not dog lover; or  
 dog, not cat, dog lover, not cat lover;
-</code></pre><p>That’s more information than you were asking for. A query-driven system will just answer:</p>
-<pre tabindex=0><code>dog, not cat
-</code></pre><p>because those are the only things relevant to the question you asked. That can help you focus on what was important, and make the results easier to read.</p>
-<p>Again, though, these systems are “grounded”. They require you to be talking about specific propositions, or predicates with grounded terms, not variable terms.</p>
-<p>If you want to be able to say something like</p>
-<pre tabindex=0><code>a person is either a cat lover or a dog lover but not both  
+</code></pre><p>That’s more information than you were asking for. A query-driven system will just answer:</p><pre tabindex=0><code>dog, not cat
+</code></pre><p>because those are the only things relevant to the question you asked. That can help you focus on what was important, and make the results easier to read.</p><p>Again, though, these systems are “grounded”. They require you to be talking about specific propositions, or predicates with grounded terms, not variable terms.</p><p>If you want to be able to say something like</p><pre tabindex=0><code>a person is either a cat lover or a dog lover but not both  
 a pet is either a cat or a dog but not both  
 I am a person, and I have a dog.
-</code></pre><p>and then ask it for models, it generates the following possible models</p>
-<pre tabindex=0><code>person(you), has(you,your_dog), pet(your_dog), dog(your_dog), not_cat(your_dog)
-</code></pre><p>But you cannot ask it whether or not it is possible for there to be a person who is both a cat lover and a dog lover. You can only ask it if there are any examples of things in the database that could be both cat lovers and dog lovers.</p>
-<p>One very useful feature of query-driven answer set programming is that you can say what might be true, and ask it to find models in which the thing you are interested in is actually true.</p>
-<p>So for instance, you can say</p>
-<pre tabindex=0><code>If I have a dog, I am a dog lover.  
+</code></pre><p>and then ask it for models, it generates the following possible models</p><pre tabindex=0><code>person(you), has(you,your_dog), pet(your_dog), dog(your_dog), not_cat(your_dog)
+</code></pre><p>But you cannot ask it whether or not it is possible for there to be a person who is both a cat lover and a dog lover. You can only ask it if there are any examples of things in the database that could be both cat lovers and dog lovers.</p><p>One very useful feature of query-driven answer set programming is that you can say what might be true, and ask it to find models in which the thing you are interested in is actually true.</p><p>So for instance, you can say</p><pre tabindex=0><code>If I have a dog, I am a dog lover.  
 I might have a dog.  
 Am I a dog lover?
-</code></pre><p>and the tool can reply something like:</p>
-<pre tabindex=0><code>assuming have_dog(you), dog_lover(you)
-</code></pre><p>That ability to derive the facts that would lead to a conclusion is called “abductive” reasoning.</p>
-<h3 id=what-is-stable-model-query-driven-answer-set-programming>What is stable model query-driven answer set programming?</h3>
-<p>Stable model query-driven answer set programming is a version of query-driven answer set programming eliminates the need to be specific. You no longer need to have specific examples of the things you are interested in to get answers about them.</p>
-<p>In stable model answer set programming, the idea</p>
-<pre tabindex=0><code>if something is a dog lover, it is not a cat_lover, and vice versa.
-</code></pre><p>… can be expressed as…</p>
-<pre tabindex=0><code>-cat_lover(X) :- dog_lover(X).  
+</code></pre><p>and the tool can reply something like:</p><pre tabindex=0><code>assuming have_dog(you), dog_lover(you)
+</code></pre><p>That ability to derive the facts that would lead to a conclusion is called “abductive” reasoning.</p><h3 id=what-is-stable-model-query-driven-answer-set-programming>What is stable model query-driven answer set programming?</h3><p>Stable model query-driven answer set programming is a version of query-driven answer set programming eliminates the need to be specific. You no longer need to have specific examples of the things you are interested in to get answers about them.</p><p>In stable model answer set programming, the idea</p><pre tabindex=0><code>if something is a dog lover, it is not a cat_lover, and vice versa.
+</code></pre><p>… can be expressed as…</p><pre tabindex=0><code>-cat_lover(X) :- dog_lover(X).  
 -dog_lover(X) :- cat_lover(X).
-</code></pre><p>And then you can ask whether anything can be a dog lover and a cat lover at the same time, by using the query</p>
-<pre tabindex=0><code>?- cat_lover(X), dog_lover(X).
-</code></pre><p>And you will get the answer “no models.”</p>
-<p>If you ask whether something can be a cat lover:</p>
-<pre tabindex=0><code>?- cat_lover(X).
-</code></pre><p>it will say “yes, anything that is not a dog lover”</p>
-<pre tabindex=0><code>cat_lover(X), -dog_lover(X).
-</code></pre><p>where the capital letter X stands for “anything”.</p>
-<p>Answer Set Programming uses propositional logic, not predicate logic. Stable model answer set programming allows you to use predicates, which are usually written using parentheses with a lower-case letter starting the name of the predicate, and capital letters used to represent variables inside them. So the first version of stable model answer set programming, instead of calling it SMASP or SASP, was called s(ASP).</p>
-<p>I <em>just</em> got it.</p>
-<p>Stable model query-driven answer set programming also gives you the ability to include predicates as the arguments of other predicates, which is a higher-order logic feature.</p>
-<h3 id=what-is-stable-model-query-driven-constraint-answer-set-programming>What is stable model query-driven constraint answer set programming?</h3>
-<p>Wait, don’t we already have constraints? Yes. We do.</p>
-<p>But “constraint programming” is a style of programming that is designed to let you deal with reasoning where the values of your predicates might have an infinite number of values, like when you are dealing with math. Every programming language knows that 1+2 = 3. But a constraint programming language knows that X>4 and X&lt;8 means X is more than four and less than eight, and can reason about the value without knowing what it is precisely.</p>
-<p>Constraint answer set programming adds the ability to deal with constraints to the other features of the language. So now you can say</p>
-<pre tabindex=0><code>a person with an age over 18 can drive a car
-</code></pre><p>by encoding</p>
-<pre tabindex=0><code>can_drive(X) :- age(X,Y), Y .&gt;=. 18.
-</code></pre><p>then, because you can ask questions about inspecific things, you can ask</p>
-<pre tabindex=0><code>who can drive a car?
-</code></pre><p>by writing the query</p>
-<pre tabindex=0><code>?- can_drive(X).
-</code></pre><p>and you will get an answer that looks sort of like this:</p>
-<pre tabindex=0><code>can_drive(X), age(X,Y | Y &gt; 18).
-</code></pre><p>Which says that “something can drive a car if that thing has an age, and the age is over 18.”</p>
-<h3 id=what-is-justified-stable-model-query-driven-constraint-answer-set-programming>What is justified stable model query-driven constraint answer set programming?</h3>
-<p>Just take everything we have above, and add the ability to generate an explanation for any given model, including what parts of that explanation were assumed to be true.</p>
-<p>So let’s say we have these rules:</p>
-<pre tabindex=0><code>a person can drive a car if they are over the age of 16  
+</code></pre><p>And then you can ask whether anything can be a dog lover and a cat lover at the same time, by using the query</p><pre tabindex=0><code>?- cat_lover(X), dog_lover(X).
+</code></pre><p>And you will get the answer “no models.”</p><p>If you ask whether something can be a cat lover:</p><pre tabindex=0><code>?- cat_lover(X).
+</code></pre><p>it will say “yes, anything that is not a dog lover”</p><pre tabindex=0><code>cat_lover(X), -dog_lover(X).
+</code></pre><p>where the capital letter X stands for “anything”.</p><p>Answer Set Programming uses propositional logic, not predicate logic. Stable model answer set programming allows you to use predicates, which are usually written using parentheses with a lower-case letter starting the name of the predicate, and capital letters used to represent variables inside them. So the first version of stable model answer set programming, instead of calling it SMASP or SASP, was called s(ASP).</p><p>I <em>just</em> got it.</p><p>Stable model query-driven answer set programming also gives you the ability to include predicates as the arguments of other predicates, which is a higher-order logic feature.</p><h3 id=what-is-stable-model-query-driven-constraint-answer-set-programming>What is stable model query-driven constraint answer set programming?</h3><p>Wait, don’t we already have constraints? Yes. We do.</p><p>But “constraint programming” is a style of programming that is designed to let you deal with reasoning where the values of your predicates might have an infinite number of values, like when you are dealing with math. Every programming language knows that 1+2 = 3. But a constraint programming language knows that X>4 and X&lt;8 means X is more than four and less than eight, and can reason about the value without knowing what it is precisely.</p><p>Constraint answer set programming adds the ability to deal with constraints to the other features of the language. So now you can say</p><pre tabindex=0><code>a person with an age over 18 can drive a car
+</code></pre><p>by encoding</p><pre tabindex=0><code>can_drive(X) :- age(X,Y), Y .&gt;=. 18.
+</code></pre><p>then, because you can ask questions about inspecific things, you can ask</p><pre tabindex=0><code>who can drive a car?
+</code></pre><p>by writing the query</p><pre tabindex=0><code>?- can_drive(X).
+</code></pre><p>and you will get an answer that looks sort of like this:</p><pre tabindex=0><code>can_drive(X), age(X,Y | Y &gt; 18).
+</code></pre><p>Which says that “something can drive a car if that thing has an age, and the age is over 18.”</p><h3 id=what-is-justified-stable-model-query-driven-constraint-answer-set-programming>What is justified stable model query-driven constraint answer set programming?</h3><p>Just take everything we have above, and add the ability to generate an explanation for any given model, including what parts of that explanation were assumed to be true.</p><p>So let’s say we have these rules:</p><pre tabindex=0><code>a person can drive a car if they are over the age of 16  
 a person can write a will if they are over the age of 18
-</code></pre><p>And we are interested in knowing whether or not there are any people who can drive cars, but who can’t write wills…</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#e6db74>#abducible</span> <span style=color:#a6e22e>age</span>(X,Y).  
-<span style=color:#a6e22e>can_drive</span>(X) :- <span style=color:#a6e22e>age</span>(X,Y), Y .<span style=color:#e6db74>&gt;.</span> <span style=color:#ae81ff>16.</span>  
-<span style=color:#a6e22e>can_make_will</span>(X) :- <span style=color:#a6e22e>age</span>(X,Y), Y .<span style=color:#e6db74>&gt;.</span> <span style=color:#ae81ff>18.</span>  
-<span style=color:#e6db74>?-</span> <span style=color:#a6e22e>can_drive</span>(X), <span style=color:#f92672>not</span> <span style=color:#a6e22e>can_make_will</span>(X).
-</code></pre></div><p>If you run that code, one of the models returned is:</p>
-<pre tabindex=0><code>can_drive(A),  age(A,B | {B #&gt; 16}),  not can_make_will(A),  age(A,C | {C #=&lt; 18}),  not age(A,D | {D #&gt; 18})
-</code></pre><p>Which says “yes, it is possible when the person can drive, the person’s age is over 16, the person cannot write a will, the person’s age is less than or equal to 18, and the person’s age is not over 18.”</p>
-<p>But that’s not terribly convenient to read. So we will add some information about how to describe these predicates to the user:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=color:#e6db74>#pred</span> <span style=color:#a6e22e>can_drive</span>(Y) <span style=color:#e6db74>::</span> <span style=color:#e6db74>&#39;@(Y) can drive a car&#39;</span>.  
-<span style=color:#e6db74>#pred</span> <span style=color:#a6e22e>can_make_will</span>(X) <span style=color:#e6db74>::</span> <span style=color:#e6db74>&#39;@(X) can make a will&#39;</span>.  
-<span style=color:#e6db74>#pred</span> <span style=color:#a6e22e>age</span>(X,Y) <span style=color:#e6db74>::</span> <span style=color:#e6db74>&#39;@(X) is @(Y) years of age&#39;</span>.
-</code></pre></div><p>Then we run the code again asking for a human-language explanation for the models. This time we get the following:</p>
-<pre tabindex=0><code>QUERY:I would like to know if  
+</code></pre><p>And we are interested in knowing whether or not there are any people who can drive cars, but who can’t write wills…</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=display:flex><span><span style=color:#e6db74>#abducible</span> <span style=color:#a6e22e>age</span>(X,Y).  
+</span></span><span style=display:flex><span><span style=color:#a6e22e>can_drive</span>(X) :- <span style=color:#a6e22e>age</span>(X,Y), Y .<span style=color:#e6db74>&gt;.</span> <span style=color:#ae81ff>16.</span>  
+</span></span><span style=display:flex><span><span style=color:#a6e22e>can_make_will</span>(X) :- <span style=color:#a6e22e>age</span>(X,Y), Y .<span style=color:#e6db74>&gt;.</span> <span style=color:#ae81ff>18.</span>  
+</span></span><span style=display:flex><span><span style=color:#e6db74>?-</span> <span style=color:#a6e22e>can_drive</span>(X), <span style=color:#f92672>not</span> <span style=color:#a6e22e>can_make_will</span>(X).
+</span></span></code></pre></div><p>If you run that code, one of the models returned is:</p><pre tabindex=0><code>can_drive(A),  age(A,B | {B #&gt; 16}),  not can_make_will(A),  age(A,C | {C #=&lt; 18}),  not age(A,D | {D #&gt; 18})
+</code></pre><p>Which says “yes, it is possible when the person can drive, the person’s age is over 16, the person cannot write a will, the person’s age is less than or equal to 18, and the person’s age is not over 18.”</p><p>But that’s not terribly convenient to read. So we will add some information about how to describe these predicates to the user:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-prolog data-lang=prolog><span style=display:flex><span><span style=color:#e6db74>#pred</span> <span style=color:#a6e22e>can_drive</span>(Y) <span style=color:#e6db74>::</span> <span style=color:#e6db74>&#39;@(Y) can drive a car&#39;</span>.  
+</span></span><span style=display:flex><span><span style=color:#e6db74>#pred</span> <span style=color:#a6e22e>can_make_will</span>(X) <span style=color:#e6db74>::</span> <span style=color:#e6db74>&#39;@(X) can make a will&#39;</span>.  
+</span></span><span style=display:flex><span><span style=color:#e6db74>#pred</span> <span style=color:#a6e22e>age</span>(X,Y) <span style=color:#e6db74>::</span> <span style=color:#e6db74>&#39;@(X) is @(Y) years of age&#39;</span>.
+</span></span></code></pre></div><p>Then we run the code again asking for a human-language explanation for the models. This time we get the following:</p><pre tabindex=0><code>QUERY:I would like to know if  
      A can drive a car and  
      there is no evidence that A can make a will.
 
@@ -231,64 +137,25 @@ there is no evidence that A can make a will, because
     there is no evidence that A is D greater than 18 years of age, because  
         it is assumed that there is no evidence that A is D greater than 18 years of age.  
 The global constraints hold.
-</code></pre><p>It made three assumptions: the age of the person is not above 18, the age of the person is less than or equal to 18, and the age of the person is not below 16. It doesn’t know about any specific people, or any specific ages, but it can understand how the rules interact, and it can explain the interactions.</p>
-<p>So it is a form of “explainable artificial intelligence.”</p>
-<h3 id=wrapping-it-all-up>Wrapping it All Up</h3>
-<p>So, justified stable model query-driven constraint answer set programming is a programming paradigm in which:</p>
-<ul>
-<li>You write facts (things that are definitely true), rules (ways of getting new information), and constraints (things that are definitely not true), and then pose queries (is it possible for this to be true?).</li>
-<li>Only valid answers are found (“query driven”). In the answers, only relevant information is included (“query driven”). Instead of getting the values that could make the query true, you get all of the possible ways in which any values could make the query true, and all the relevant things that are true in each case (“answer sets”). Which means two of the answers may have the same values for the variables in your query, but represent different “reasons” for why those values work. This also allows you to use the same rules to do both deduction (if these facts are true what can I conclude?), and abduction (if this conclusion is true, what facts might cause it to be true?).</li>
-<li>You can use predicate logic, and higher-order logical features, and you can write rules and ask queries that are entirely abstract, without reference to specific values (the “stable model”).</li>
-<li>If you want to reason about unspecific values over an infinite domain like numbers, you can do that using constraint programming features (“constraint”).</li>
-<li>It can explain its answers in a natural language way (“justified”).</li>
-</ul>
-<ul class=pa0>
-</ul>
-<div class="mt6 instapaper_ignoref">
-</div>
-</div>
-<aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-<p class="f5 b mb3">What's in this post</p>
-<nav id=TableOfContents>
+</code></pre><p>It made three assumptions: the age of the person is not above 18, the age of the person is less than or equal to 18, and the age of the person is not below 16. It doesn’t know about any specific people, or any specific ages, but it can understand how the rules interact, and it can explain the interactions.</p><p>So it is a form of “explainable artificial intelligence.”</p><h3 id=wrapping-it-all-up>Wrapping it All Up</h3><p>So, justified stable model query-driven constraint answer set programming is a programming paradigm in which:</p><ul>
+<li>You write facts (things that are definitely true), rules (ways of getting new information), and constraints (things that are definitely not true), and then pose queries (is it possible for this to be true?).</li><li>Only valid answers are found (“query driven”). In the answers, only relevant information is included (“query driven”). Instead of getting the values that could make the query true, you get all of the possible ways in which any values could make the query true, and all the relevant things that are true in each case (“answer sets”). Which means two of the answers may have the same values for the variables in your query, but represent different “reasons” for why those values work. This also allows you to use the same rules to do both deduction (if these facts are true what can I conclude?), and abduction (if this conclusion is true, what facts might cause it to be true?).</li><li>You can use predicate logic, and higher-order logical features, and you can write rules and ask queries that are entirely abstract, without reference to specific values (the “stable model”).</li><li>If you want to reason about unspecific values over an infinite domain like numbers, you can do that using constraint programming features (“constraint”).</li><li>It can explain its answers in a natural language way (“justified”).</li></ul><ul class=pa0>
+</ul><div class="mt6 instapaper_ignoref">
+</div></div><aside class="w-30-l mt6-l"><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">What's in this post</p><nav id=TableOfContents>
 <ul>
 <li>
 <ul>
 <li>
 <ul>
-<li><a href=#what-is-the-usual-type-of-programming-language>What is the “Usual” type of programming language?</a></li>
-<li><a href=#what-other-paradigms-are-there>What other paradigms are there?</a></li>
-<li><a href=#whats-logic-programming>What’s Logic Programming?</a></li>
-<li><a href=#what-is-answer-set-programming>What is Answer Set Programming?</a></li>
-<li><a href=#what-is-query-driven-answer-set-programming>What is Query-Driven Answer Set Programming?</a></li>
-<li><a href=#what-is-stable-model-query-driven-answer-set-programming>What is stable model query-driven answer set programming?</a></li>
-<li><a href=#what-is-stable-model-query-driven-constraint-answer-set-programming>What is stable model query-driven constraint answer set programming?</a></li>
-<li><a href=#what-is-justified-stable-model-query-driven-constraint-answer-set-programming>What is justified stable model query-driven constraint answer set programming?</a></li>
-<li><a href=#wrapping-it-all-up>Wrapping it All Up</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-<div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-<p class="f5 b mb3">Related</p>
-<ul class="pa0 list">
+<li><a href=#what-is-the-usual-type-of-programming-language>What is the “Usual” type of programming language?</a></li><li><a href=#what-other-paradigms-are-there>What other paradigms are there?</a></li><li><a href=#whats-logic-programming>What’s Logic Programming?</a></li><li><a href=#what-is-answer-set-programming>What is Answer Set Programming?</a></li><li><a href=#what-is-query-driven-answer-set-programming>What is Query-Driven Answer Set Programming?</a></li><li><a href=#what-is-stable-model-query-driven-answer-set-programming>What is stable model query-driven answer set programming?</a></li><li><a href=#what-is-stable-model-query-driven-constraint-answer-set-programming>What is stable model query-driven constraint answer set programming?</a></li><li><a href=#what-is-justified-stable-model-query-driven-constraint-answer-set-programming>What is justified stable model query-driven constraint answer set programming?</a></li><li><a href=#wrapping-it-all-up>Wrapping it All Up</a></li></ul></li></ul></li></ul></nav></div><div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3">Related</p><ul class="pa0 list">
 <li class=mb2>
 <a href=/post/roundtablelaw/s-casp-as-a-rules-as-code-tool-97ec3435975c/>s(CASP) as a Rules as Code Tool</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/computational-law-diary-encoding-covid-19-rules-using-basic-event-calculus-in-s-casp-32a55b789eeb/>Encoding Covid-19 rules using Basic Event Calculus in s(CASP)</a>
-</li>
-<li class=mb2>
+</li><li class=mb2>
 <a href=/post/roundtablelaw/computational-law-diary-explainable-legal-ai-in-s-casp-19da0a5d956/>Explainable Legal AI in s(CASP)</a>
-</li>
-</ul>
-</div>
-</aside>
-</article>
-</main>
-<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+</li></ul></div></aside></article></main><footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
 <div class="flex justify-between">
 <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://JasonMorrisSC.github.io>
 &copy; Jason Morris 2022
@@ -300,8 +167,4 @@ The global constraints hold.
 </span>
 <span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
 </span></a>
-</div></div>
-</div>
-</footer>
-</body>
-</html>
+</div></div></div></footer></body></html>
